@@ -9,7 +9,10 @@ $register = $mysqli->prepare("INSERT INTO `user` (`ID_User`, `Username`, `Passwo
 $Username = $_POST['Username'];
 $Password = $_POST['Password'];
 $Email = $_POST['Email'];
-$register->bind_param('sss', $Username, $Password, $Email);
+
+$hash = password_hash($Password, PASSWORD_BCRYPT);
+
+$register->bind_param('sss', $Username, $hash, $Email);
 
 $register->execute();
 $register->close();
