@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if ( $_SESSION['loggedin'] == true) {
+    header("location:../index.php");
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,11 +43,5 @@ session_start();
         <input type="submit" name="login" value="Loggin" id="login_button">
     </form>
     <div id="result"></div>
-
-    <?php
-        if ( $_SESSION['loggedin'] == true) {
-            header("location:../index.php");
-        }
-    ?>
 </body>
 </html>
