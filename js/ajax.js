@@ -16,7 +16,7 @@ function Login()
             success:function(response) {
                 if(response=="success")
                 {
-                    window.location.href="../index.php";
+                    window.location.href="index.php";
                 }
                 else if(response=="usernamefail")
                 {
@@ -56,11 +56,12 @@ function Register()
             success:function(response) {
                 if(response=="success")
                 {
-                    window.location.href="../index.php";
+                    document.getElementById("result").innerHTML = "success";
+                    window.location.href="index.php";
                 }
                 else if(response=="usernametaken")
                 {
-                    document.getElementById("result").innerHTML = "Username already taken";
+                    document.getElementById("result").innerHTML = "Username or email already taken";
                 }else if (response=="fail"){
                     document.getElementById("result").innerHTML = "Wrong Details";
                 }

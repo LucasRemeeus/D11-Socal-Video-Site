@@ -11,14 +11,16 @@ $Username = $_POST['Username'];
 $Password = $_POST['Password'];
 $Email = $_POST['Email'];
 
-$Usernamecheck = $mysqli->prepare("SELECT Username FROM user WHERE Username = ?");
-$Usernamecheck->bind_param('s', $Username);
+$Usernamecheck = $mysqli->prepare("SELECT Username FROM user WHERE Username = ? OR Email = ?");
+$Usernamecheck->bind_param('ss', $Username, $Email);
 $Usernamecheck->execute();
 $UsernamecheckResult = $Usernamecheck->get_result();
 if ($UsernamecheckResult->num_rows >= 1) {
     echo "usernametaken";
     $errors++;
 }
+
+
 
 if ($errors == 0) {
 
