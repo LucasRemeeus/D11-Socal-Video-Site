@@ -64,6 +64,8 @@ function Register()
                     document.getElementById("result").innerHTML = "Username or email already taken";
                 }else if (response=="fail"){
                     document.getElementById("result").innerHTML = "Wrong Details";
+                }else if (response=="wrongpassword"){
+                    document.getElementById("result").innerHTML = "Password must consist out of: Minimal eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:";
                 }
             }
         });
