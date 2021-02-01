@@ -1,4 +1,6 @@
 <?php
+
+
 session_start();
 
 if ( $_SESSION['loggedin'] == true) {
@@ -35,14 +37,32 @@ if ( $_SESSION['loggedin'] == true) {
 
 </head>
 <body>
-    <form method="post" onsubmit="return Login();">
-        <input type="text" name="username" id="username" placeholder="Username">
-        <br>
-        <input type="password" name="password" id="password" placeholder="Password">
-        <br>
-        <input type="submit" name="login" value="Login" id="login_button">
+   
+
+    <form method="POST" action="" class="login-form" onsubmit="return Login();">
+        <img src="img/TwotchLogo.png"><h1>Log in to Twotch</h1>
+        <div class="textb">
+            <p>Username</p>
+            <input type="text" name="username" id="username" required>
+            <br><br>
+            
+        </div>
+
+        <div class="textb">
+            <p>Password</p>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <a href="">Forgot Password?</a>
+        
+
+
+        <button class="btn fas fa-arrow-right" type="submit" name="login" >Login</button>
+
+        <p class="register">Don't have an account, click <a href="" >Here</a></p>
+
     </form>
     <div id="result"></div>
 
+    
 </body>
 </html>

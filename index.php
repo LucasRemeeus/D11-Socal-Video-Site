@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,13 +23,58 @@ session_start();
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg nav">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link">Left Link 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Left Link 2</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link">Log in</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Sign up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">PF PIC</a>
+        </li>
+      </ul>
+    </nav>
+
+    <aside class="col-12 col-md-2 p-0 flex-shrink-1">
+            <nav class="navbar navbar-expand navbar-dark flex-md-column flex-row align-items-start py-2 sidebar">
+                <div class="collapse navbar-collapse ">
+                    <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                    <p>Followed Channels</p>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0 text-nowrap" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+    </div>    
 
     <?php if(SESSION['id']) { ?><button name="Logout"> <?php } else { ?> <button name="Login"> <?php } ?> 
-
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
-    </script>    
 </body>
 </html>
