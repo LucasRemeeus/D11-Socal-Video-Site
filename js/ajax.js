@@ -60,7 +60,7 @@ function Register()
                 }
                 else if(response=="usernametaken")
                 {
-                    document.getElementById("result").innerHTML = "Username already taken";
+                    document.getElementById("result").innerHTML = "Username or email already taken";
                 }else if (response=="fail"){
                     document.getElementById("result").innerHTML = "Wrong Details";
                 }
