@@ -7,7 +7,7 @@ $errors = 0;
 
 $register = $mysqli->prepare("INSERT INTO `user` (`ID_User`, `Username`, `Password`, `Email`) VALUES (NULL, ?, ?, ?)");
 
-// check if fields are filled in
+//check if fields are filled in
 if (isset($_POST['Username']) &&
     isset($_POST['Password']) &&
     isset($_POST['Email'])){ 
@@ -17,7 +17,7 @@ if (isset($_POST['Username']) &&
 
 // check username
 $Username = $_POST['Username'];
-$pattern = "/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])*$/";
+$pattern = "/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/";
 if(!preg_match($pattern, $Username))
 {
     $errors++;
@@ -25,7 +25,7 @@ if(!preg_match($pattern, $Username))
 
 // check password
 $Password = $_POST['Password'];
-$pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}*$/";
+$pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
 if(!preg_match($pattern, $Password))
 {
     echo "wrongpassword";
