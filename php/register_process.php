@@ -29,6 +29,9 @@ if ($errors == 0) {
 
     if ($register->execute()) {
         echo "success";
+        $last_id = $mysqli->insert_id;
+        $_SESSION['ID_User'] = $last_id;
+        $_SESSION['loggedin'] = true;
     }else{
         echo "fail";
     }
