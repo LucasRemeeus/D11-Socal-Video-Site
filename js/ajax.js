@@ -56,7 +56,8 @@ function Register()
             success:function(response) {
                 if(response=="success")
                 {
-                    window.location.href="../index.php";
+                    document.getElementById("result").innerHTML = "success";
+                    window.location.href="index.php";
                 }
                 else if(response=="usernametaken")
                 {

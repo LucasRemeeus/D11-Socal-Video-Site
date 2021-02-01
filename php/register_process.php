@@ -28,12 +28,10 @@ if ($errors == 0) {
     $register->bind_param('sss', $Username, $hash, $Email);
 
     if ($register->execute()) {
-        return "success";
+        echo "success";
     }else{
-        return "fail";
+        echo "fail";
     }
-}else{
-    return "fail";
 }
 
 
