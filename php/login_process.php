@@ -16,6 +16,7 @@ $Password = $_POST['Password'];
                 echo "success";
                 session_start();
                 $_SESSION['Loggedin'] = true;
+                $_SESSION['ID_User'] = $UserRow['ID_User'];
             }else{
                 echo "fail";
             }
