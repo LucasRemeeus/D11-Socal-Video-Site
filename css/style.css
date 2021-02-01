@@ -1,9 +1,64 @@
-:root {
-    --main-background: #0E0E10;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0E0E10;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--main-background);
+.nav {
+  background-color: #18181B;
 }
+
+.nav .logo {
+  width: 80px;
+  height: 80px;
+  margin: -15px;
+}
+
+.nav .link {
+  color: #FFF;
+}
+
+.nav .link:hover {
+  color: #772CE8;
+}
+
+.nav .active {
+  color: #772CE8;
+  text-decoration: underline;
+}
+
+.nav .button-login {
+  background-color: #373737;
+  margin-right: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #FFF;
+}
+
+.nav .button-login:hover {
+  background-color: #772CE8;
+  padding: 10px;
+}
+
+.nav .button-signup {
+  background-color: #8433FB;
+  margin-right: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #FFF;
+}
+
+.nav .button-signup:hover {
+  background-color: #373737;
+  padding: 10px;
+}
+
+.sidebar {
+  background-color: #1F1F23;
+  height: 1080px;
+}
+
+.sidebar p {
+  color: #FFF;
+}
+/*# sourceMappingURL=style.css.map */
