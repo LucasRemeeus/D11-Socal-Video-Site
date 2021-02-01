@@ -43,11 +43,6 @@ if ( $_SESSION['loggedin'] == true) {
         <input type="submit" name="login" value="Loggin" id="login_button">
     </form>
     <div id="result"></div>
-
-    <?php
-        if ( $_SESSION['loggedin'] == true) {
-            header("location:../index.php");
-        }
-    ?>
+    
 </body>
 </html>
