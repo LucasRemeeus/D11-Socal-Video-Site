@@ -26,7 +26,11 @@ session_start();
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <?php if (!isset($_SESSION['loggedin'])){
+
+     ?>
+    <button>Inlog</button>
+    <?php }?>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
