@@ -14,6 +14,8 @@ $Password = $_POST['Password'];
         while ($UserRow = $GetUserDataResult->fetch_assoc()) {
             if(password_verify($Password, $UserRow['Password'] )){
                 echo "success";
+                session_start();
+                $_SESSION['Loggedin'] = true;
             }else{
                 echo "fail";
             }
