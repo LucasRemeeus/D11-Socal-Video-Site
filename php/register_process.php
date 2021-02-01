@@ -7,9 +7,37 @@ $errors = 0;
 
 $register = $mysqli->prepare("INSERT INTO `user` (`ID_User`, `Username`, `Password`, `Email`) VALUES (NULL, ?, ?, ?)");
 
+// check if fields are filled in
+if (isset($_POST['Username']) &&
+    isset($_POST['Password']) &&
+    isset($_POST['Email'])){ 
+} else {
+    $errors++;
+}
+
+// check username
 $Username = $_POST['Username'];
+$pattern = "/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])*$/";
+if(!preg_match($pattern, $Username))
+{
+    $errors++;
+}
+
+// check password
 $Password = $_POST['Password'];
+$pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}*$/";
+if(!preg_match($pattern, $Password))
+{
+    echo "Password must consist out of: Minimal eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:";
+    $errors++;
+}
+
+// check email
 $Email = $_POST['Email'];
+if(!filter_var($Email, FILTER_VALIDATE_EMAIL))
+{
+    $errors++;
+}
 
 $Usernamecheck = $mysqli->prepare("SELECT Username FROM user WHERE Username = ? OR Email = ?");
 $Usernamecheck->bind_param('ss', $Username, $Email);
@@ -19,8 +47,6 @@ if ($UsernamecheckResult->num_rows >= 1) {
     echo "usernametaken";
     $errors++;
 }
-
-
 
 if ($errors == 0) {
 
@@ -34,7 +60,4 @@ if ($errors == 0) {
     }
 }
 
-
 $register->close();
-
-
