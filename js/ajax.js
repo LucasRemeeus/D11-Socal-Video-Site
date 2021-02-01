@@ -16,7 +16,7 @@ function Login()
             success:function(response) {
                 if(response=="success")
                 {
-                    window.location.href="../index.php";
+                    window.location.href="index.php";
                 }
                 else if(response=="usernamefail")
                 {

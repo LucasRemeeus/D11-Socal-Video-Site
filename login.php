@@ -40,7 +40,7 @@ if ( $_SESSION['loggedin'] == true) {
         <br>
         <input type="password" name="password" id="password" placeholder="Password">
         <br>
-        <input type="submit" name="login" value="Loggin" id="login_button">
+        <input type="submit" name="login" value="Login" id="login_button">
     </form>
     <div id="result"></div>
 
