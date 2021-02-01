@@ -8,7 +8,7 @@ function Login()
         $.ajax
         ({
             type:'post',
-            url:'login_process.php',
+            url:'../php/login_process.php',
             data:{
                 Username:user,
                 Password:pass
@@ -16,7 +16,7 @@ function Login()
             success:function(response) {
                 if(response=="success")
                 {
-                    window.location.href="index.php";
+                    window.location.href="../index.php";
                 }
                 else if(response=="usernamefail")
                 {

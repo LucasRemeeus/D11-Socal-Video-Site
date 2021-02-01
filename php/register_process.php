@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once'config.php';
+require_once 'config.php';
 
 
 $register = $mysqli->prepare("INSERT INTO `user` (`ID_User`, `Username`, `Password`, `Email`) VALUES (NULL, ?, ?, ?)");
