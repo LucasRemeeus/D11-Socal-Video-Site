@@ -41,7 +41,9 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $uplaodfile)) {
         $VideoUpload = $mysqli->prepare("INSERT INTO `video` (`ID_Video`, `Video`, `ID_User`, `Catagory`, `Title`) VALUES (NULL, ?, ?, ?,?)");
         $VideoUpload -> bind_param('siis',$uplaodfile, $_SESSION['ID_User'],$catagory, $title );
-        $VideoUpload ->execute();
+        if($VideoUpload ->execute()){
+            header("location:index.php");
+        }
 
         echo "The file ". $title.".".$imageFileType. " has been uploaded.";
 
