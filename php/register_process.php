@@ -39,6 +39,7 @@ if(!filter_var($Email, FILTER_VALIDATE_EMAIL))
     $errors++;
 }
 
+// check if username and email aren't taken
 $Usernamecheck = $mysqli->prepare("SELECT Username FROM user WHERE Username = ? OR Email = ?");
 $Usernamecheck->bind_param('ss', $Username, $Email);
 $Usernamecheck->execute();
