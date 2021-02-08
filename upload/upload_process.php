@@ -1,7 +1,7 @@
 <?php
 session_start();
-require './php/config.php';
-if ( $_SESSION['loggedin'] !== true) {
+require '../php/config.php';
+if ( $_SESSION['Loggedin'] !== true) {
     header("location:./index.php");
     die();
 }
@@ -12,7 +12,7 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 $title = $_POST['title'];
-
+$catagory = $_POST['catagory'];
 
 // Check if file video exists
 if (file_exists($target_dir. $title.".".$imageFileType)) {
@@ -37,7 +37,12 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // Upload the video
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir. $title.".".$imageFileType)) {
+    $uplaodfile = $target_dir. $title.".".$imageFileType;
+    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $uplaodfile)) {
+        $VideoUpload = $mysqli->prepare("INSERT INTO `video` (`ID_Video`, `Video`, `ID_User`, `Catagory`, `Title`) VALUES (NULL, ?, ?, ?,?)");
+        $VideoUpload -> bind_param('siis',$uplaodfile, $_SESSION['ID_User'],$catagory, $title );
+        $VideoUpload ->execute();
+
         echo "The file ". $title.".".$imageFileType. " has been uploaded.";
 
     } else {
