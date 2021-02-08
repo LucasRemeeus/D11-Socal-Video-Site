@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  list-style: none;
   background-color: #0E0E10;
 }
 
@@ -36,21 +37,19 @@ body {
 }
 
 .nav .button-login:hover {
-  background-color: #772CE8;
-  padding: 10px;
+  background-color: #272727;
 }
 
 .nav .button-signup {
   background-color: #8433FB;
-  margin-right: 15px;
+  margin-right: 20px;
   margin-top: 10px;
   border-radius: 5px;
   color: #FFF;
 }
 
 .nav .button-signup:hover {
-  background-color: #373737;
-  padding: 10px;
+  background-color: #5a1bb9;
 }
 
 .sidebar {

@@ -52,9 +52,10 @@ session_start();
         </li>
       </ul>
     </nav>
-
+    <!-- <?php if(SESSION['ID_User']) { ?><button name="Logout"></button> <?php } else { ?> <button name="Login"></button> <?php } ?>  -->
+        <!-- Page Content -->
     <aside class="col-12 col-md-2 p-0 flex-shrink-1">
-            <nav class="navbar navbar-expand flex-md-column flex-row align-items-start py-2 sidebar">
+            <nav class="navbar navbar-expand flex-row align-items-start py-2 sidebar">
                 <div class="collapse navbar-collapse ">
                     <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                     <p>Followed Channels</p>
@@ -80,9 +81,6 @@ session_start();
                 </div>
             </nav>
         </aside>
-            <?php if(SESSION['ID_User']) { ?><button name="Logout"></button> <?php } else { ?> <button name="Login"></button> <?php } ?> 
-    </div>    
-
 
 </body>
 </html>
