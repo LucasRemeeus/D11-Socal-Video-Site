@@ -7,15 +7,18 @@ $main-sidebar-text: #d3d3d3
 $main-link-hover: #772CE8
 $main-buttons: #8433FB
 $main-login-button: #373737
-$main-login-button-hover: #772CE8
-$main-signup-button-hover: #373737
+$main-login-button-hover: #272727
+$main-signup-button-hover: #5a1bb9
 
 $main-logo-px: 80px
 
+@mixin reset-list
+  margin: 0
+  padding: 0
+  list-style: none
 
-body 
-    margin: 0
-    padding: 0
+body
+    @include reset-list
     background-color: $main-background
 
 
@@ -37,6 +40,7 @@ body
         color: $main-link-hover
         text-decoration: underline
 
+
     .button-login
         background-color: $main-login-button
         margin-right: 20px
@@ -46,18 +50,16 @@ body
 
         &:hover
             background-color: $main-login-button-hover
-            padding: 10px
 
     .button-signup
         background-color: $main-buttons
-        margin-right: 15px
+        margin-right: 20px
         margin-top: 10px
         border-radius: 5px
         color: $main-text
 
         &:hover
             background-color: $main-signup-button-hover
-            padding: 10px
 
 .sidebar
     background-color: $main-sidebar
