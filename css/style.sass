@@ -1,0 +1,69 @@
+$main-background: #0E0E10
+$main-nav: #18181B
+$main-sidebar: #1F1F23
+$main-text: #FFF
+$main-sidebar-text: #d3d3d3
+
+$main-link-hover: #772CE8
+$main-buttons: #8433FB
+$main-login-button: #373737
+$main-login-button-hover: #272727
+$main-signup-button-hover: #5a1bb9
+
+$main-logo-px: 80px
+
+@mixin reset-list
+  margin: 0
+  padding: 0
+  list-style: none
+
+body
+    @include reset-list
+    background-color: $main-background
+
+
+.nav 
+    background-color: $main-nav
+
+    .logo 
+        width: $main-logo-px
+        height: $main-logo-px
+        margin: -15px
+
+    .link
+        color: $main-text
+
+    .link:hover
+        color: $main-link-hover
+
+    .active
+        color: $main-link-hover
+        text-decoration: underline
+
+
+    .button-login
+        background-color: $main-login-button
+        margin-right: 20px
+        margin-top: 10px
+        border-radius: 5px
+        color: $main-text
+
+        &:hover
+            background-color: $main-login-button-hover
+
+    .button-signup
+        background-color: $main-buttons
+        margin-right: 20px
+        margin-top: 10px
+        border-radius: 5px
+        color: $main-text
+
+        &:hover
+            background-color: $main-signup-button-hover
+
+.sidebar
+    background-color: $main-sidebar
+    height: 1080px
+
+    p
+        color: $main-text
