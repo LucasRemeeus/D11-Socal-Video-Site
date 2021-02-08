@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #0E0E10;
+}
+
+.nav {
+  background-color: #18181B;
+}
+
+.nav .logo {
+  width: 80px;
+  height: 80px;
+  margin: -15px;
+}
+
+.nav .link {
+  color: #FFF;
+}
+
+.nav .link:hover {
+  color: #772CE8;
+}
+
+.nav .active {
+  color: #772CE8;
+  text-decoration: underline;
+}
+
+.nav .button-login {
+  background-color: #373737;
+  margin-right: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #FFF;
+}
+
+.nav:hover {
+  background-color: #272727;
+}
+
+.nav .button-signup {
+  background-color: #8433FB;
+  margin-right: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  color: #FFF;
+}
+
+.nav:hover {
+  background-color: #5a1bb9;
+}
+
+.sidebar {
+  background-color: #1F1F23;
+  height: 1080px;
+  float: left;
+}
+
+.sidebar p {
+  color: #FFF;
+}
+
+.container {
+  position: absolute;
+  color: #FFF;
+  background-color: black;
+  width: 1920px;
+  height: 1080px;
+  margin-left: 200px;
+  float: right;
+}
+
+.banner {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  max-height: 270px;
+  margin: 20px auto;
+  top: -10px;
+  background-color: #130e0e;
+}
+
+.ChannelInfo {
+  height: 175px;
+  width: 100%;
+  background-color: #130e0e;
+}
+
+.pf {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50px;
+  color: black;
+  text-align: center;
+  float: left;
+}
+
+.ChannelName {
+  float: left;
+  margin-left: 20px;
+  color: white;
+}
+/*# sourceMappingURL=channel.css.map */
