@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 
-if ( $_SESSION['loggedin'] == true) {
+if ( $_SESSION['Loggedin'] == true) {
     header("location:index.php");
     die();
 }
