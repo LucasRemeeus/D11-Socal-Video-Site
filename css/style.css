@@ -20,7 +20,7 @@ body {
   color: #FFF;
 }
 
-.nav .link:hover {
+.nav:hover {
   color: #772CE8;
 }
 
@@ -58,13 +58,15 @@ body {
 
 .sidebar {
   background-color: #1F1F23;
-  height: 1080px;
+  height: 100vh;
   width: 225px;
   display: inline-block;
 }
 
 .sidebar p {
   color: #FFF;
+  text-align: center;
+  font-size: 14px;
 }
 
 .container {
@@ -100,10 +102,16 @@ body {
   text-decoration: underline !important;
   margin-left: -50px;
   margin-right: 10px;
+  margin-top: 15px;
 }
 
 .container li .button-livechannels {
   color: #FFF;
+  margin-top: 15px;
+}
+
+.container li .button-livechannels:hover {
+  color: #772CE8;
 }
 
 .container .vid {
@@ -112,5 +120,9 @@ body {
   height: 290px;
   margin-top: 50px;
   margin-right: 5px;
+}
+
+.container .container-vid {
+  margin-bottom: 50px;
 }
 /*# sourceMappingURL=style.css.map */

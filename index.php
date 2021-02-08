@@ -85,27 +85,53 @@ session_start();
         </li>
       </ul>
 
-      <div class="col-2 col-md row">
-        <div class="col-md vid">
-        .
+      <div>
+        <div class="container-fluid container-vid">
+          <div class="row">
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+          </div>
         </div>
-        <div class="col-md vid">
-        .
-        </div>
-        <div class="col-md vid">
-        .
-        </div>
-        <div class="col-md vid">
-        .
-        </div>
-        <div class="col-md vid">
-        .
-        </div>
-        <div class="col-md vid">
-        .
+
+        <div class="container-fluid container-vid">
+          <div class="row">
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+          </div>
         </div>
       </div>
-
   </div>
 
 

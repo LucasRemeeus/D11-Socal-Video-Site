@@ -36,7 +36,7 @@ body
     .link
         color: $main-text
 
-    .link:hover
+    &:hover
         color: $main-link-hover
 
     .active
@@ -69,12 +69,14 @@ body
 
 .sidebar
     background-color: $main-sidebar
-    height: 1080px
+    height: 100vh
     width: 225px
     display: inline-block
 
     p
         color: $main-text
+        text-align: center
+        font-size: 14px
 
 .container
     position: absolute
@@ -107,10 +109,15 @@ body
             text-decoration: underline !important
             margin-left: -50px
             margin-right: 10px
+            margin-top: 15px
 
 
         .button-livechannels
             color: $main-text
+            margin-top: 15px
+
+            &:hover
+                color: $main-link-hover
     
     .vid
         background-color: #323234
@@ -118,3 +125,6 @@ body
         height: 290px
         margin-top: 50px
         margin-right: 5px
+
+    .container-vid
+        margin-bottom: 50px
