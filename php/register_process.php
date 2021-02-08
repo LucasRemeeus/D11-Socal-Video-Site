@@ -10,6 +10,7 @@ $register = $mysqli->prepare("INSERT INTO `user` (`ID_User`, `Username`, `Passwo
 //check if fields are filled in
 if (isset($_POST['Username']) &&
     isset($_POST['Password']) &&
+    isset($_POST['Password_confirm']) &&
     isset($_POST['Email'])){ 
 } else {
     $errors++;
@@ -17,7 +18,7 @@ if (isset($_POST['Username']) &&
 
 // check username
 $Username = $_POST['Username'];
-$pattern = "/^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/";
+$pattern = "/^[a-z\d_]{5,20}$/i";
 if(!preg_match($pattern, $Username))
 {
     $errors++;
@@ -32,6 +33,20 @@ if(!preg_match($pattern, $Password))
     $errors++;
 }
 
+// check password_confirm
+$Password = $_POST['Password_confirm'];
+$pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+if(!preg_match($pattern, $Password))
+{
+    echo "wrongpassword";
+    $errors++;
+}
+
+if ($_POST['Password'] !== $_POST['Password_confirm']) {
+    echo "Passwords do not match!";
+    $errors++;
+}
+
 // check email
 $Email = $_POST['Email'];
 if(!filter_var($Email, FILTER_VALIDATE_EMAIL))
@@ -39,6 +54,7 @@ if(!filter_var($Email, FILTER_VALIDATE_EMAIL))
     $errors++;
 }
 
+// check if username and email aren't taken
 $Usernamecheck = $mysqli->prepare("SELECT Username FROM user WHERE Username = ? OR Email = ?");
 $Usernamecheck->bind_param('ss', $Username, $Email);
 $Usernamecheck->execute();
@@ -55,6 +71,9 @@ if ($errors == 0) {
 
     if ($register->execute()) {
         echo "success";
+        $last_id = $mysqli->insert_id;
+        $_SESSION['ID_User'] = $last_id;
+        $_SESSION['loggedin'] = true;
     }else{
         echo "fail";
     }

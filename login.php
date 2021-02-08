@@ -1,10 +1,9 @@
 <?php
-
-
 session_start();
+error_reporting(0);
 
-if ( $_SESSION['loggedin'] == true) {
-    header("location:../index.php");
+if ( $_SESSION['Loggedin'] == true) {
+    header("location:index.php");
     die();
 }
 ?>
@@ -58,7 +57,7 @@ if ( $_SESSION['loggedin'] == true) {
 
         <button class="btn fas fa-arrow-right" type="submit" name="login" >Login</button>
 
-        <p class="register">Don't have an account, click <a href="" >Here</a></p>
+        <p class="register">Don't have an account, click <a href="register.php" >Here</a></p>
 
     </form>
     <div id="result"></div>

@@ -35,7 +35,6 @@ session_start();
         <div class="textb">
             <label for="username">Username:</label>
             <input type="text" name="username" id="username"><br>
-            
         </div>
 
         <div class="textb">
@@ -45,7 +44,7 @@ session_start();
 
         <div class="textb">
             <label for="password">Confirm Password:</label>
-            <input type="password" name="password" id="password"><br>
+            <input type="password" name="password_confirm" id="password_confirm"><br>
         </div>
 
         <div class="textb">
@@ -55,8 +54,6 @@ session_start();
         
     
         <button class="btn fas fa-arrow-right" type="submit" name="login" >Submit</button>
-
-        
 
     </form>
 
