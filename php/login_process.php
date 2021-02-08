@@ -13,14 +13,14 @@ $Password = $_POST['Password'];
     if ($GetUserDataResult->num_rows >= 1) {
         while ($UserRow = $GetUserDataResult->fetch_assoc()) {
             if(password_verify($Password, $UserRow['Password'] )){
-                return "success";
+                echo "success";
                 session_start();
                 $_SESSION['Loggedin'] = true;
                 $_SESSION['ID_User'] = $UserRow['ID_User'];
             }else{
-                return "fail";
+                echo "fail";
             }
         }
     }else{
-        return "usernamefail";
+        echo "usernamefail";
     }

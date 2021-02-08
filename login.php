@@ -3,7 +3,7 @@ session_start();
 error_reporting(0);
 
 if ( $_SESSION['loggedin'] == true) {
-    header("location:../index.php");
+    header("location:index.php");
     die();
 }
 ?>
