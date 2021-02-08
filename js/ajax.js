@@ -40,8 +40,9 @@ function Register()
 {
     var user=$("#username").val();
     var pass=$("#password").val();
+    var passc=$("#password_confirm").val();
     var email=$("#email").val();
-    if(user!="" && pass!="" && email!="")
+    if(user!="" && pass!="" && passc!="" && email!="")
     {
 
         $.ajax
@@ -51,6 +52,7 @@ function Register()
             data:{
                 Username:user,
                 Password:pass,
+                Password_confirm:passc,
                 Email:email
             },
             success:function(response) {
