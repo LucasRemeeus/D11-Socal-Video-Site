@@ -107,9 +107,9 @@ require "php/config.php";
 
         <div class="ChannelInfo">
           
-          <div class="pf">
-            pf
-          </div>
+        <div class="channelpf">
+                <img src="img/TwotchLogo.png">
+            </div>
 
           <div class="ChannelName">
             <h1>/Channel Name\</h1>
