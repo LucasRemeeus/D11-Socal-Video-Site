@@ -91,7 +91,7 @@ require "php/config.php";
     </nav>
   </aside>
 
-  <div class="container-fluid mt-5 col-10 container">
+ 
 
    
 
@@ -169,7 +169,7 @@ require "php/config.php";
       </div>
     </div>
 
-  </div>
+  
 
 
 </body>
