@@ -78,44 +78,50 @@ function Register()
     return false;
 }
 
-function DeleteVideo()
+function DashboardVids()
 {
-    var user=$("#username").val();
-    var pass=$("#password").val();
-    var passc=$("#password_confirm").val();
-    var email=$("#email").val();
-    if(user!="" && pass!="" && passc!="" && email!="")
+
+    $.ajax
+    ({
+        type:'post',
+        url:'php/Dashboard_VideoList.php',
+        success:function(response) {
+            document.getElementById("resultaat").innerHTML = response;
+        }
+    });
+}
+
+
+
+function DeleteVideo(ID_Video)
+{
+
+    if(ID_Video!=="")
     {
 
         $.ajax
         ({
             type:'post',
-            url:'php/register_process.php',
+            url:'php/Video_Delete.php',
             data:{
-                Username:user,
-                Password:pass,
-                Password_confirm:passc,
-                Email:email
+                ID_Video:ID_Video
             },
             success:function(response) {
-                if(response=="success") {
-                    document.getElementById("result").innerHTML = "success";
-                    window.location.href="index.php";
-                }else if(response=="usernametaken"){
-                    document.getElementById("result").innerHTML = "Username or email already taken";
-                }else if (response=="fail"){
-                    document.getElementById("result").innerHTML = "Wrong Details";
-                }else if (response=="wrongpassword"){
-                    document.getElementById("result").innerHTML = "Password must consist out of: Minimal eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:";
+                if (response == "success"){
+                DashboardVids();
+                }else if (response == "ErrorDelete"){
+                    document.getElementById("error").innerHTML = "Error deleting";
+                }else if (response == "ErrorNumber"){
+                    document.getElementById("error").innerHTML = "Error no ID";
+                } else {
+                    document.getElementById("error").innerHTML = "Other error";
                 }
             }
         });
     }
 
     else
-    {
-        document.getElementById("result").innerHTML = "Please Fill All The Details";
-    }
 
     return false;
 }
+
