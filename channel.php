@@ -105,7 +105,7 @@ require "php/config.php";
           
         <div class="channelpf">
                 <img src="img/TwotchLogo.png">
-            </div>
+        </div>
 
 
       
