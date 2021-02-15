@@ -3,6 +3,7 @@ session_start();
 
 session_destroy();
 
-header("location:../index.php");
+$Refer = $_SERVER['HTTP_REFERER'];
+    header("location: $Refer");
 die();
 ?>
