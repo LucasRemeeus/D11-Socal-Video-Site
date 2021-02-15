@@ -11,7 +11,8 @@ if ( $_SESSION['Loggedin'] !== true) {
 ?>
 
 <head>
-    <title></title>
+    <title>Dashboard</title>
+
 </head>
 
 <body>
