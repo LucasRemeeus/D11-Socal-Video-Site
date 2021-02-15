@@ -28,6 +28,9 @@ require "php/config.php";
   <!-- Jquery link -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Ajax -->
+    <script src="js/ajax.js"></script>
 </head>
 
 <body>
@@ -68,19 +71,19 @@ require "php/config.php";
     <h1>Browse</h1>
     <ul class="row">
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" href="#">Speedrunners</a>
+        <a class="nav-link button-link button-browse" onclick="">Speedrunners</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" href="#">Gameplay</a>
+        <a class="nav-link button-link button-browse" onclick="">Gameplay</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" href="#">Tutorials</a>
+        <a class="nav-link button-link button-browse" onclick="">Tutorials</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" href="#">Ragequits</a>
+        <a class="nav-link button-link button-browse" onclick="">Ragequits</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" href="#">Most Watched</a>
+        <a class="nav-link button-link button-browse" onclick="">Most Watched</a>
       </li>
 
       <ul class="row">
