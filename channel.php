@@ -61,7 +61,7 @@ require "php/config.php";
       </li>
     </ul>
   </nav>
-  
+
   <!-- Page Content -->
   <aside class="col-12 col-md-2 p-0 flex-shrink-1">
     <nav class="navbar navbar-expand flex-row align-items-start py-2 sidebar">
