@@ -92,7 +92,7 @@ body {
 
 .ChannelInfo {
   margin-top: 5px;
-  height: 175px;
+  height: 120px;
   width: 100%;
   display: inline-block;
 }
@@ -138,6 +138,7 @@ body {
 
 .vids {
   margin-left: 2%;
+  margin-top: -10px;
 }
 
 .vid {
