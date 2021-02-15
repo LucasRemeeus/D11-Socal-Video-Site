@@ -93,9 +93,7 @@ require "php/config.php";
 
   <div class="container-fluid mt-5 col-10 container">
 
-    <div class="banner">
-      <img class="bannerphoto" src="img/testbanner.jpg">
-    </div>
+   
 
     <div class="container-fluid mt-5 col-10 container">
 
