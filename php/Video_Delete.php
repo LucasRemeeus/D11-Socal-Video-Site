@@ -1,5 +1,5 @@
 <?php
-
+$_SESSION['ID_User'];
 require 'config.php';
 
 $ID_Video = $_POST['ID_Video'];
