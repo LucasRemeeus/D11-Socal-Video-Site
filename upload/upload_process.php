@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(1);
 require '../php/config.php';
 if ( $_SESSION['Loggedin'] !== true) {
     header("location:../index.php");
@@ -49,6 +50,7 @@ if ($uploadOk == 0) {
 
     } else {
         echo "Sorry, there was an error uploading your file.";
+        echo $_FILES["fileToUpload"]["error"];
     }
 }
 ?>
