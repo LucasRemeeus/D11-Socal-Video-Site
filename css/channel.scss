@@ -1,0 +1,138 @@
+$main-background: #0E0E10;
+$main-nav: #18181B;
+$main-sidebar: #1F1F23;
+$main-text: #FFF;
+$main-sidebar-text: #d3d3d3;
+$main-link-hover: #772CE8;
+$main-buttons: #8433FB;
+$main-login-button: #373737;
+$main-login-button-hover: #272727;
+$main-signup-button-hover: #5a1bb9;
+$main-logo-px: 60px;
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    @include reset-list;
+    background-color: $main-background;
+}
+
+.nav {
+    background-color: $main-nav;
+    .logo {
+        width: $main-logo-px;
+        height: $main-logo-px;
+        margin: -20px;
+    }
+    .link {
+        color: $main-text;
+    }
+    .active {
+        color: $main-link-hover;
+        text-decoration: underline;
+    }
+    .button-login {
+        background-color: $main-login-button;
+        margin-right: 20px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        color: $main-text;
+        &:hover {
+            background-color: $main-login-button-hover;
+        }
+    }
+    .button-signup {
+        background-color: $main-buttons;
+        margin-right: 20px;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        color: $main-text;
+        &:hover {
+            background-color: $main-signup-button-hover;
+        }
+    }
+}
+
+.sidebar {
+    background-color: $main-sidebar;
+    height: 100vh;
+    width: 65%;
+    float: left;
+    p {
+        color: $main-text;
+    }
+}
+
+.container {
+    position: absolute;
+    color: $main-text;
+    background-color: black;
+    width: 100%;
+    height: auto;
+    margin-left: 200px;
+    float: right;
+    margin-left: 225px;
+}
+
+.banner {
+    background-color: white;
+    width: 100%;
+    height: 270px !important;
+    margin: 20px auto;
+    top: -10px;
+    display: inline-block;
+    background-color: rgb(19, 14, 14);
+    .bannerphoto {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.ChannelInfo {
+    margin-top: 5px;
+    height: 175px;
+    width: 100%;
+    background-color: rgb(19, 14, 14);
+    display: inline-block;
+}
+
+.pf {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50px;
+    color: black;
+    text-align: center;
+    float: left;
+}
+
+.ChannelName {
+    float: left;
+    margin-left: 20px;
+    color: white;
+}
+
+.vids {
+    margin-left: 2%;
+}
+
+.vid {
+    background-color: #323234;
+    width: 248px;
+    height: 290px;
+    margin-top: 50px;
+    margin-right: 5px;
+}
+
+.container-vid {
+    margin-bottom: 50px;
+    margin-left: -20px;
+}
