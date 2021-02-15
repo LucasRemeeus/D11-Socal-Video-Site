@@ -42,20 +42,24 @@ require "php/config.php";
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <?php if($_SESSION['Loggedin'] == true ) 
+        { ?><a class="nav-link button-link button-login" href="php/logout.php">&nbsp Log out &nbsp</a> <?php } 
+        else 
+        { ?> <a class="nav-link button-link button-login" href="login.php">&nbsp Log in &nbsp</a> <?php } ?>
+      </li>
+      <li class="nav-item">
+      <?php if($_SESSION['Loggedin'] == !true ) 
+      { ?><a class="nav-link button-link button-signup" href="register.php">Sign up</a><?php } ?>
+      </li>
         <li class="nav-item">
-        <?php if($_SESSION['Loggedin'] == true ) { ?><a class="nav-link button-link button-login" href="php/logout.php">&nbsp Log out &nbsp</a> <?php } else { ?> <a class="nav-link button-link button-login" href="login.php">&nbsp Log in &nbsp</a> <?php } ?>
-
-        </li>
-        <li class="nav-item">
-          <a class="nav-link button-link button-signup" href="register.php">Sign up</a>
-        </li>
-        <li class="nav-item">
-          <a class="navbar-brand" href="channel.php">
+          <a class="navbar-brand" href="#">
             <img class="logo" src="img/TwotchLogo.png" alt="Profile Logo">
           </a>
         </li>
       </ul>
     </nav>
+
 
     
 
@@ -94,11 +98,12 @@ require "php/config.php";
 
         
     <div class="container-fluid mt-5 col-10 container">
+      
         <div class="banner">
-          Banner
+          <img class="bannerphoto" src="img/testbanner.jpg">
         </div>
 
-        <br>
+        
 
         <div class="ChannelInfo">
           
@@ -110,10 +115,62 @@ require "php/config.php";
             <h1>/Channel Name\</h1>
             <h2>/Sub count\</h2>
           </div>
-          
+
+         </div>
+        
+        <div class="vids">
+
+        <div class="container-fluid container-vid">
+          <div class="row">
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+          </div>
         </div>
-    </div>
- 
+
+        <div class="container-fluid container-vid">
+          <div class="row">
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+  </div>
+
+        </div>
     
 
 </body>

@@ -28,6 +28,9 @@ require "php/config.php";
   <!-- Jquery link -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Ajax -->
+    <script src="js/ajax.js"></script>
 </head>
 
 <body>
@@ -46,10 +49,14 @@ require "php/config.php";
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <?php if($_SESSION['Loggedin'] == true ) { ?><a class="nav-link button-link button-login" href="php/logout.php">&nbsp Log out &nbsp</a> <?php } else { ?> <a class="nav-link button-link button-login" href="login.php">&nbsp Log in &nbsp</a> <?php } ?>
+        <?php if($_SESSION['Loggedin'] == true ) 
+        { ?><a class="nav-link button-link button-login" href="php/logout.php">&nbsp Log out &nbsp</a> <?php } 
+        else 
+        { ?> <a class="nav-link button-link button-login" href="login.php">&nbsp Log in &nbsp</a> <?php } ?>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-signup" href="register.php">Sign up</a>
+      <?php if($_SESSION['Loggedin'] == !true ) 
+      { ?><a class="nav-link button-link button-signup" href="register.php">Sign up</a><?php } ?>
       </li>
       <li class="nav-item">
         <a class="navbar-brand" href="channel.php">
@@ -64,19 +71,19 @@ require "php/config.php";
     <h1>Browse</h1>
     <ul class="row">
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" href="#">Speedrunners</a>
+        <a class="nav-link button-link button-browse" onclick="">Speedrunners</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" href="#">Gameplay</a>
+        <a class="nav-link button-link button-browse" onclick="">Gameplay</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" href="#">Tutorials</a>
+        <a class="nav-link button-link button-browse" onclick="">Tutorials</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" href="#">Ragequits</a>
+        <a class="nav-link button-link button-browse" onclick="">Ragequits</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" href="#">Most Watched</a>
+        <a class="nav-link button-link button-browse" onclick="">Most Watched</a>
       </li>
 
       <ul class="row">
@@ -140,8 +147,8 @@ require "php/config.php";
 
   
   <!-- Sidebar -->
-  <aside class="col-12 col-md-2 p-0 flex-shrink-1">
-    <nav class="navbar navbar-expand flex-row align-items-start py-2 sidebar">
+  <aside class="col-12 col-md-1 p-0 flex-shrink-1 sidebar">
+    <nav class="navbar navbar-expand flex-row align-items-start py-2">
       <div class="collapse navbar-collapse ">
         <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
           <p>Followed Channels</p>
