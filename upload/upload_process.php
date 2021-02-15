@@ -2,7 +2,7 @@
 session_start();
 require '../php/config.php';
 if ( $_SESSION['Loggedin'] !== true) {
-    header("location:./index.php");
+    header("location:../index.php");
     die();
 }
 
