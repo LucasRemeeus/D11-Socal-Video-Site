@@ -98,7 +98,7 @@ require "php/config.php";
     <div class="container-fluid mt-5 col-10 container">
 
       <div class="banner">
-        <img class="bannerphoto" src="img/testbanner.jpg">
+        <img class="bannerphoto" src="img/wauw.png">
       </div>
 
         <div class="ChannelInfo">
@@ -114,6 +114,12 @@ require "php/config.php";
           <h1>/Channel Name\</h1>
           <h2>/Sub count\</h2>
         </div>
+
+        <a href="#">
+                <div class="subscribeButton">
+                    <h2>Subscribe</h2>
+                </div>
+            </a>
 
       </div>
 

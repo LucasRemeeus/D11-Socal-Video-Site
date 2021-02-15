@@ -68,7 +68,6 @@ body {
 .container {
   position: absolute;
   color: #FFF;
-  background-color: black;
   width: 100%;
   height: auto;
   margin-left: 200px;
@@ -95,7 +94,6 @@ body {
   margin-top: 5px;
   height: 175px;
   width: 100%;
-  background-color: #130e0e;
   display: inline-block;
 }
 
@@ -111,6 +109,25 @@ body {
 .channelpf img {
   height: 100%;
   width: 100%;
+}
+
+.subscribeButton {
+  float: right;
+  width: 295px;
+  height: 51px;
+  background-color: #8433FB;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.subscribeButton h2 {
+  margin-top: 5px;
+  text-align: center;
+  color: #FFF;
+}
+
+.subscribeButton:hover {
+  background-color: #5a1bb9;
 }
 
 .ChannelName {

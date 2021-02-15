@@ -79,7 +79,6 @@ body {
 .container {
     position: absolute;
     color: $main-text;
-    background-color: black;
     width: 100%;
     height: auto;
     margin-left: 200px;
@@ -105,7 +104,6 @@ body {
     margin-top: 5px;
     height: 175px;
     width: 100%;
-    background-color: rgb(19, 14, 14);
     display: inline-block;
 }
 
@@ -119,6 +117,23 @@ body {
     img {
         height: 100%;
         width: 100%;
+    }
+}
+
+.subscribeButton {
+    float: right;
+    width: 295px;
+    height: 51px;
+    background-color: $main-buttons;
+    border-radius: 5px;
+    margin-top: 15px;
+    h2 {
+        margin-top: 5px;
+        text-align: center;
+        color: $main-text;
+    }
+    &:hover {
+        background-color: $main-signup-button-hover;
     }
 }
 
