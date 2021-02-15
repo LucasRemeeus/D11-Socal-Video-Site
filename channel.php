@@ -43,11 +43,14 @@ require "php/config.php";
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-        <?php if($_SESSION['Loggedin'] == true ) { ?><a class="nav-link button-link button-login" href="php/logout.php">&nbsp Log out &nbsp</a> <?php } else { ?> <a class="nav-link button-link button-login" href="login.php">&nbsp Log in &nbsp</a> <?php } ?>
-
+        <?php if($_SESSION['Loggedin'] == true ) 
+        { ?><a class="nav-link button-link button-login" href="php/logout.php">&nbsp Log out &nbsp</a> <?php } 
+        else 
+        { ?> <a class="nav-link button-link button-login" href="login.php">&nbsp Log in &nbsp</a> <?php } ?>
         </li>
         <li class="nav-item">
-          <a class="nav-link button-link button-signup" href="register.php">Sign up</a>
+        <?php if($_SESSION['Loggedin'] == !true ) 
+      { ?><a class="nav-link button-link button-signup" href="register.php">Sign up</a><?php } ?>
         </li>
         <li class="nav-item">
           <a class="navbar-brand" href="channel.php">
