@@ -10,17 +10,13 @@ body {
 }
 
 .nav .logo {
-  width: 80px;
-  height: 80px;
-  margin: -15px;
+  width: 60px;
+  height: 60px;
+  margin: -20px;
 }
 
 .nav .link {
   color: #FFF;
-}
-
-.nav .link:hover {
-  color: #772CE8;
 }
 
 .nav .active {
@@ -32,11 +28,13 @@ body {
   background-color: #373737;
   margin-right: 20px;
   margin-top: 10px;
+  margin-bottom: 5px;
   border-radius: 5px;
+  font-size: 12px;
   color: #FFF;
 }
 
-.nav:hover {
+.nav .button-login:hover {
   background-color: #272727;
 }
 
@@ -45,16 +43,18 @@ body {
   margin-right: 20px;
   margin-top: 10px;
   border-radius: 5px;
+  font-size: 12px;
   color: #FFF;
 }
 
-.nav:hover {
+.nav .button-signup:hover {
   background-color: #5a1bb9;
 }
 
 .sidebar {
   background-color: #1F1F23;
-  height: 1080px;
+  height: 100vh;
+  width: 65%;
   float: left;
 }
 
@@ -66,10 +66,11 @@ body {
   position: absolute;
   color: #FFF;
   background-color: black;
-  width: 1920px;
-  height: 1080px;
+  width: 100%;
+  height: auto;
   margin-left: 200px;
   float: right;
+  margin-left: 225px;
 }
 
 .banner {
@@ -80,6 +81,11 @@ body {
   margin: 20px auto;
   top: -10px;
   background-color: #130e0e;
+}
+
+.banner .bannerphoto {
+  width: 100%;
+  height: 100%;
 }
 
 .ChannelInfo {
@@ -104,5 +110,22 @@ body {
   float: left;
   margin-left: 20px;
   color: white;
+}
+
+.vids {
+  margin-left: 2%;
+}
+
+.vid {
+  background-color: #323234;
+  width: 248px;
+  height: 290px;
+  margin-top: 50px;
+  margin-right: 5px;
+}
+
+.container-vid {
+  margin-bottom: 50px;
+  margin-left: -20px;
 }
 /*# sourceMappingURL=channel.css.map */

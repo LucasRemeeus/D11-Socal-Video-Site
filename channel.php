@@ -53,6 +53,7 @@ session_start();
       </ul>
     </nav>
 
+
     
 
     
@@ -91,7 +92,7 @@ session_start();
         
     <div class="container-fluid mt-5 col-10 container">
         <div class="banner">
-          Banner
+          <img class="bannerphoto" src="img/testbanner.jpg">
         </div>
 
         <br>
@@ -106,10 +107,62 @@ session_start();
             <h1>/Channel Name\</h1>
             <h2>/Sub count\</h2>
           </div>
-          
+
+         </div>
+        
+        <div class="vids">
+
+        <div class="container-fluid container-vid">
+          <div class="row">
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+          </div>
         </div>
-    </div>
- 
+
+        <div class="container-fluid container-vid">
+          <div class="row">
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+            <div class="col-md vid">
+              &nbsp
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+  </div>
+
+        </div>
     
 
 </body>
