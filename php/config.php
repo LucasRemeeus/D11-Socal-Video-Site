@@ -15,3 +15,7 @@ if (!$mysqli) {
     echo "Error: " . mysqli_connect_errno() . "<br/>";
     exit;
 }
+
+if (!isset($_SESSION['Loggedin'])) {
+    $_SESSION['Loggedin'] = false;
+  }
