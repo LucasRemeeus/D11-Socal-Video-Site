@@ -33,7 +33,7 @@ require "php/config.php";
   <script src="js/ajax.js"></script>
 </head>
 
-<body>
+<body onload="getVideo()">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg nav">
     <a class="navbar-brand" href="index.php">
@@ -71,20 +71,22 @@ require "php/config.php";
     <h1>Browse</h1>
     <ul class="row">
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="">Speedrunners</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo()">Speedrunners</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="">Gameplay</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo()">Gameplay</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="">Tutorials</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo()">Tutorials</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="">Ragequits</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo()">Ragequits</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="">Most Watched</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo()">Most Watched</a>
       </li>
+
+      <div id="Result"></div>
 
       <ul class="row">
         <li class="nav-item">
