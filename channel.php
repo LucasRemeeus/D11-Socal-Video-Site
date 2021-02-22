@@ -10,7 +10,7 @@ require "php/config.php";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage</title>
+  <title>Channel</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -61,7 +61,7 @@ require "php/config.php";
       </li>
     </ul>
   </nav>
-  
+
   <!-- Page Content -->
   <aside class="col-12 col-md-2 p-0 flex-shrink-1">
     <nav class="navbar navbar-expand flex-row align-items-start py-2 sidebar">
@@ -91,30 +91,35 @@ require "php/config.php";
     </nav>
   </aside>
 
-  <div class="container-fluid mt-5 col-10 container">
+ 
 
-    <div class="banner">
-      <img class="bannerphoto" src="img/testbanner.jpg">
-    </div>
+   
 
     <div class="container-fluid mt-5 col-10 container">
 
       <div class="banner">
-        <img class="bannerphoto" src="img/testbanner.jpg">
+        <img class="bannerphoto" src="img/wauw.png">
       </div>
 
-
-
-      <div class="ChannelInfo">
-
-        <div class="pf">
-          pf
+        <div class="ChannelInfo">
+          
+        <div class="channelpf">
+                <img src="img/TwotchLogo.png">
         </div>
+
+
+      
 
         <div class="ChannelName">
           <h1>/Channel Name\</h1>
           <h2>/Sub count\</h2>
         </div>
+
+        <a href="#">
+                <div class="subscribeButton">
+                    <h2>Subscribe</h2>
+                </div>
+            </a>
 
       </div>
 
@@ -170,7 +175,7 @@ require "php/config.php";
       </div>
     </div>
 
-  </div>
+  
 
 
 </body>

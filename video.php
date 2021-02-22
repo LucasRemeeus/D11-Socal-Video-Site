@@ -74,7 +74,20 @@ session_start();
             </div>
         </div>
         <hr>
-
+        <div class="channelinfo">
+            <div class="channelpf">
+                <img src="img/TwotchLogo.png">
+            </div>
+            <div class="channelname">
+                <h4>Channel name</h4>
+                <h5>1,79K Subscribes</h5>
+            </div>
+            <a href="#">
+                <div class="subscribeButton">
+                    <h2>Subscribe</h2>
+                </div>
+            </a>
+        </div>
     </div>
 
 

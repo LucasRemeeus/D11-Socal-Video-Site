@@ -1,3 +1,7 @@
+$main-font: 'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
 $main-background: #0E0E10;
 $main-nav: #18181B;
 $main-sidebar: #1F1F23;
@@ -18,6 +22,7 @@ $main-logo-px: 60px;
 body {
     @include reset-list;
     background-color: $main-background;
+    font-family: $main-font;
 }
 
 .nav {
@@ -66,13 +71,14 @@ body {
     float: left;
     p {
         color: $main-text;
+        text-align: center;
+        font-size: 14px;
     }
 }
 
 .container {
     position: absolute;
     color: $main-text;
-    background-color: black;
     width: 100%;
     height: auto;
     margin-left: 200px;
@@ -96,22 +102,39 @@ body {
 
 .ChannelInfo {
     margin-top: 5px;
-    height: 175px;
+    height: 120px;
     width: 100%;
-    background-color: rgb(19, 14, 14);
     display: inline-block;
 }
 
-.pf {
+.channelpf {
     height: 100%;
     width: 100%;
-    background-color: white;
     max-width: 100px;
     max-height: 100px;
     border-radius: 50px;
-    color: black;
-    text-align: center;
     float: left;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.subscribeButton {
+    float: right;
+    width: 295px;
+    height: 51px;
+    background-color: $main-buttons;
+    border-radius: 5px;
+    margin-top: 15px;
+    h2 {
+        margin-top: 5px;
+        text-align: center;
+        color: $main-text;
+    }
+    &:hover {
+        background-color: $main-signup-button-hover;
+    }
 }
 
 .ChannelName {
@@ -122,6 +145,7 @@ body {
 
 .vids {
     margin-left: 2%;
+    margin-top: -10px;
 }
 
 .vid {

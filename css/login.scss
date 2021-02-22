@@ -1,0 +1,118 @@
+$img: url(../img/TwotchBanner.png);
+$background: rgb(50, 50, 52);
+$backgroundInput: rgb(196, 196, 196);
+$TwotchColor: rgb(132, 51, 251);
+$TextTwotch: white;
+$fontweight: 700;
+$SemiBold: 600;
+$borderRadius: 10px;
+body {
+    background-image: $img;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+img {
+    height: 130px;
+    width: 130px;
+    float: left;
+}
+
+p,
+a,
+label {
+    color: $TextTwotch;
+    font-weight: $SemiBold;
+}
+
+.Register {
+    padding-left: 100px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-form {
+    width: calc(100% - 20px);
+    max-width: 550px;
+    background-color: $background;
+    padding: 50px 40px;
+    border-radius: $borderRadius;
+    margin-left: 20%;
+}
+
+.login-form h1 {
+    text-align: center;
+    margin: 48px 0;
+    color: $TextTwotch;
+    font-size: 41;
+    font-weight: $SemiBold;
+}
+
+.textb {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.textb input {
+    width: 100%;
+    height: 60px;
+    border: none;
+    background-color: $backgroundInput;
+    border-radius: 4px;
+    color: #333;
+    font-size: 18px;
+    font-weight: $fontweight;
+    padding: 0 0 0 10px;
+}
+
+.placeholder {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: $fontweight;
+    position: absolute;
+    line-height: 70px;
+    top: 0;
+    left: 20px;
+    color: #9d9d9d;
+    user-select: none;
+    pointer-events: none;
+}
+
+.checkbox input:checked {
+    background-color: $TwotchColor;
+}
+
+.checkbox input:checked+.fa-check {
+    opacity: 1;
+}
+
+.btn {
+    display: block;
+    width: 450px;
+    height: 55px;
+    margin: 40px auto;
+    background-color: $TwotchColor;
+    color: $TextTwotch;
+    font-size: 32px;
+    border: none;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    transition: .3s linear;
+    font-weight: $SemiBold;
+}
+
+.btn:hover {
+    opacity: .85;
+}
+
+.login-form a:hover {
+    color: #111;
+}
