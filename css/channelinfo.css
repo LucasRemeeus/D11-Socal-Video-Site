@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #0E0E10;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.nav {
+  background-color: #18181B;
+}
+
+.nav .logo {
+  width: 60px;
+  height: 60px;
+  margin: -20px;
+}
+
+.nav .link {
+  color: #FFF;
+}
+
+.nav .active {
+  color: #772CE8;
+  text-decoration: underline;
+}
+
+.nav .button-login {
+  background-color: #373737;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #FFF;
+}
+
+.nav .button-login:hover {
+  background-color: #272727;
+}
+
+.nav .button-signup {
+  background-color: #8433FB;
+  margin-right: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #FFF;
+}
+
+.nav .button-signup:hover {
+  background-color: #5a1bb9;
+}
+
+.sidebar {
+  background-color: #1F1F23;
+  height: 100vh;
+  width: 65%;
+  float: left;
+}
+
+.sidebar p {
+  color: #FFF;
+  text-align: center;
+  font-size: 14px;
+}
+
+.container {
+  position: absolute;
+  color: #FFF;
+  width: 100%;
+  height: auto;
+  margin-left: 200px;
+  float: right;
+  margin-left: 225px;
+}
+
+.banner {
+  background-color: white;
+  width: 100%;
+  height: 270px !important;
+  margin: 20px auto;
+  top: -10px;
+  display: inline-block;
+  background-color: #130e0e;
+}
+
+.banner .bannerphoto {
+  width: 100%;
+  height: 100%;
+}
+
+.channelpf {
+  height: 100%;
+  width: 100%;
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.channelpf img {
+  height: 100%;
+  width: 100%;
+}
+
+.subscribeButton {
+  float: right;
+  width: 295px;
+  height: 51px;
+  background-color: #8433FB;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.subscribeButton h2 {
+  margin-top: 5px;
+  text-align: center;
+  color: #FFF;
+}
+
+.subscribeButton:hover {
+  background-color: #5a1bb9;
+}
+
+.ChannelName {
+  margin-left: 20px;
+  color: white;
+}
+
+.info-form {
+  text-align: center;
+}
+
+p {
+  font-size: 23px;
+}
+
+hr {
+  border-color: white;
+}
+
+.btn {
+  display: block;
+  width: 450px;
+  height: 55px;
+  margin: 40px auto;
+  background-color: #8433FB;
+  color: #FFF;
+  font-size: 32px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
+  font-weight: 600;
+}
+
+.btn:hover {
+  opacity: .85;
+}
+
+.textb {
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.textb input {
+  width: 20%;
+  height: 60px;
+  border: none;
+  background-color: #323232;
+  border-radius: 4px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0 0 0 10px;
+}
+
+.placeholder {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  line-height: 70px;
+  top: 0;
+  left: 20px;
+  color: #9d9d9d;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.checkbox input:checked {
+  background-color: #0E0E10;
+}
+
+.checkbox input:checked + .fa-check {
+  opacity: 1;
+}
+/*# sourceMappingURL=channelinfo.css.map */
