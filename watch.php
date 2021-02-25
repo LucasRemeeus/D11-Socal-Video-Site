@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+require "php/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +9,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video</title>
+    <title>Watch</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -17,7 +19,7 @@ session_start();
         crossorigin="anonymous"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/video.css">
+    <link rel="stylesheet" href="css/watch.css">
 
     <!-- De font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -43,10 +45,14 @@ session_start();
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link button-link button-login" href="#">&nbsp Log in &nbsp</a>
+                <?php if($_SESSION['Loggedin'] == true ) 
+        { ?><a class="nav-link button-link button-login" href="php/logout.php">&nbsp Log out &nbsp</a> <?php } 
+        else 
+        { ?> <a class="nav-link button-link button-login" href="login.php">&nbsp Log in &nbsp</a> <?php } ?>
             </li>
             <li class="nav-item">
-                <a class="nav-link button-link button-signup" href="#">Sign up</a>
+                <?php if($_SESSION['Loggedin'] == !true ) 
+      { ?><a class="nav-link button-link button-signup" href="register.php">Sign up</a><?php } ?>
             </li>
             <li class="nav-item">
                 <a class="navbar-brand" href="index.php">
@@ -91,7 +97,6 @@ session_start();
     </div>
 
 
-    <!-- <?php if(SESSION['ID_User']) { ?><button name="Logout"></button> <?php } else { ?> <button name="Login"></button> <?php } ?>  -->
     <!-- Sidebar -->
     <aside class="col-6 col-md-1 p-0 flex-shrink-1 sidebar">
         <nav class="navbar navbar-expand flex-row align-items-start py-2">

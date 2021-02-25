@@ -28,10 +28,11 @@ function Login() {
 }
 
 function Register() {
-    var user = $("#username").val();
-    var pass = $("#password").val();
-    var passc = $("#password_confirm").val();
-    var email = $("#email").val();
+    var user    = $("#username").val();
+    var pass    = $("#password").val();
+    var passc   = $("#password_confirm").val();
+    var email   = $("#email").val();
+
     if (user != "" && pass != "" && passc != "" && email != "") {
 
         $.ajax({
@@ -81,8 +82,8 @@ function DeleteVideo(ID_Video) {
     if (ID_Video !== "") {
 
         $.ajax({
-            type: 'post',
-            url: 'php/Video_Delete.php',
+            type:   'post',
+            url:    'php/Video_Delete.php',
             data: {
                 ID_Video: ID_Video
             },
@@ -138,7 +139,7 @@ function getVideo(Catagory) {
 
     $.ajax({
         type: 'post',
-        url: 'php/getVideo.php',
+        url:  'php/getVideo.php',
         data: {
             Catagory: Catagory
         },
