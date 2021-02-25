@@ -10,7 +10,7 @@ $GetUserData->bind_param('i', $_SESSION['ID_User']);
 $GetUserData->execute();
 $GetUserDataResult = $GetUserData->get_result();
 while ($UserRow = $GetUserDataResult->fetch_assoc()) {
-
+ echo $_SESSION['ID_User'];
     ?>
 
     <!DOCTYPE html>
@@ -45,9 +45,15 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
         <label for="Lastname">Last name: </label>
         <input name="Lastname" type="text" value="<?php echo $UserRow['Lastname'] ?>"><br><br>
 
-
-
         <input type="submit" name="submit" value="Save">
+    </form>
+
+    <form action="upload/profilepicture_process.php" method="post" enctype="multipart/form-data">
+        <img style="height: 200px; width: 200px;" src="upload/profilepicture/<?php echo $UserRow['ProfilePicture'] ?>">
+
+        <input type="file" accept="image/png, image/jpeg," required name="upload_image"><br>
+
+        <input type="submit" value="Save" name="form_submit">
     </form>
 
     </body>

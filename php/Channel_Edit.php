@@ -8,6 +8,8 @@ $Displayname = $_POST['Displayname'];
 $Description = $_POST['Description'];
 $Firstname = $_POST['Firstname'];
 $Lastname = $_POST['Lastname'];
+// TODO: Security
+
 
 
 $UpdateInfo = $mysqli -> prepare("UPDATE user SET Username=?, Email=?, Displayname=?, Description=?, Firstname=?, Lastname=? WHERE ID_User = ?");
