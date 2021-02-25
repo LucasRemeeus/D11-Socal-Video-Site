@@ -48,12 +48,33 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
         <input type="submit" name="submit" value="Save">
     </form>
 
-    <form action="upload/profilepicture_process.php" method="post" enctype="multipart/form-data">
-        <img style="height: 200px; width: 200px;" src="upload/profilepicture/<?php echo $UserRow['ProfilePicture'] ?>">
 
-        <input type="file" accept="image/png, image/jpeg," required name="upload_image"><br>
 
-        <input type="submit" value="Save" name="form_submit">
+    <form action="upload/profilepicture_process.php" method="post" enctype="multipart/form-data" runat="server">
+        <img style="height: 200px; width: 200px;" id="preview" src="upload/profilepicture/<?php echo $UserRow['ProfilePicture'] ?>"><br>
+
+        <input type="file" accept="image/png, image/jpeg," required id="imgInp" name="upload_image"><br>
+
+        <input type="submit" value="Save" name="form_submit"><br>
+
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#preview').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]); // convert to base64 string
+                }
+            }
+
+            $("#imgInp").change(function() {
+                readURL(this);
+            });
+        </script>
+
     </form>
 
     </body>
