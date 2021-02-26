@@ -77,6 +77,33 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
 
     </form>
 
+    <form action="upload/banner_process.php" method="post" enctype="multipart/form-data" runat="server">
+        <img style="height: 400px; width: 1800px;" id="previewbanner" src="upload/banner/<?php echo $UserRow['Banner'] ?>"><br>
+
+        <input type="file" accept="image/png, image/jpeg," required id="bannerInp" name="upload_banner"><br>
+
+        <input type="submit" value="Save" name="banner_submit"><br>
+
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#previewbanner').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]); // convert to base64 string
+                }
+            }
+
+            $("#bannerInp").change(function() {
+                readURL(this);
+            });
+        </script>
+
+    </form>
+
     </body>
     </html>
     <?php
