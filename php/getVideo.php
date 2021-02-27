@@ -19,8 +19,11 @@ $getVideoResult = $getVideo -> get_result();
 
 while ($Video = $getVideoResult -> fetch_assoc())
 {
-    ?> 
-    <h1><?php echo $Video['Title'] ?></h1>
+    ?>
+            <a href="watch.php?watch=<?php echo $Video['ID_Video'] ?>"><div class="col-md vid">
+                <h2><?php echo $Video['Title'] ?></h2>
+                <video width="140%" src="upload/<?php echo $Video['Video']?>" ></video>
+            </div></a>
     <?php
 }
 

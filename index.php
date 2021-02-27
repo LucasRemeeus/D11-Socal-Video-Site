@@ -86,7 +86,7 @@ require "php/config.php";
         <a class="nav-link button-link button-browse" onclick="getVideo()">Most Watched</a>
       </li>
 
-      <div id="Result"></div>
+
 
       <ul class="row">
         <li class="nav-item">
@@ -97,27 +97,12 @@ require "php/config.php";
         </li>
       </ul>
 
+
+
       <div>
         <div class="container-fluid container-vid">
           <div class="row">
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
+              <div id="Result"></div>
           </div>
         </div>
 

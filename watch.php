@@ -2,6 +2,27 @@
 session_start();
 
 require "php/config.php";
+
+    $getVideo = $mysqli -> prepare("SELECT * FROM video WHERE ID_Video = ?");
+    $getVideo -> bind_param("i", $_GET['watch']);
+    $getVideo -> execute();
+
+
+
+
+$getVideoResult = $getVideo -> get_result();
+
+while ($Video = $getVideoResult -> fetch_assoc()){
+
+    $getdata = $mysqli -> prepare("SELECT Username, ProfilePicture FROM user where ID_User =?");
+    $getdata -> bind_param('i', $Video['ID_User']);
+    $getdata -> execute();
+    $getdata -> bind_result($DataUserName, $DataProfilePicture);
+    $getdata -> fetch();
+    $getdata -> store_result();
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,9 +86,9 @@ require "php/config.php";
     <!-- Main content -->
     <div class="container-fluid col-10 mt-3 container">
         <br>
-        <iframe src="https://www.youtube.com/embed/NKHlTiV-Oug" title="Video iframe"></iframe>
+        <video width="100%" autoplay src="upload/<?php echo $Video['Video'] ?>" title="Video iframe"></video>
 
-        <h3>Title van video</h3>
+        <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
             <div class="col-sm">
                 Datum
@@ -85,7 +106,7 @@ require "php/config.php";
                 <img src="img/TwotchLogo.png">
             </div>
             <div class="channelname">
-                <h4>Channel name</h4>
+                <h4><?php echo $DataUserName; ?> </h4>
                 <h5>1,79K Subscribes</h5>
             </div>
             <a href="#">
@@ -97,6 +118,11 @@ require "php/config.php";
     </div>
 
 
+
+
+    <?php
+    }
+    ?>
     <!-- Sidebar -->
     <aside class="col-6 col-md-1 p-0 flex-shrink-1 sidebar">
         <nav class="navbar navbar-expand flex-row align-items-start py-2">
