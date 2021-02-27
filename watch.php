@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+if (!isset($_GET['watch'])){
+    header('Location:index.php');
+}
+
+
 require "php/config.php";
 
     $getVideo = $mysqli -> prepare("SELECT * FROM video WHERE ID_Video = ?");
@@ -14,13 +19,13 @@ $getVideoResult = $getVideo -> get_result();
 
 while ($Video = $getVideoResult -> fetch_assoc()){
 
-    $getdata = $mysqli -> prepare("SELECT Username, ProfilePicture FROM user where ID_User =?");
+    $getdata = $mysqli -> prepare("SELECT ID_User, Username, ProfilePicture FROM user where ID_User =?");
     $getdata -> bind_param('i', $Video['ID_User']);
     $getdata -> execute();
-    $getdata -> bind_result($DataUserName, $DataProfilePicture);
+    $getdata -> bind_result($DataUserID,$DataUserName, $DataProfilePicture);
     $getdata -> fetch();
     $getdata -> store_result();
-
+    $getdata -> close();
 
 
 ?>
@@ -48,9 +53,10 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     <!-- Jquery link -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="js/ajax.js">   </script>
 </head>
 
-<body>
+<body onload="GetLike(<?php echo $_GET['watch']; ?>)">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg nav">
         <a class="navbar-brand" href="index.php">
@@ -86,34 +92,35 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     <!-- Main content -->
     <div class="container-fluid col-10 mt-3 container">
         <br>
-        <video width="100%" autoplay src="upload/<?php echo $Video['Video'] ?>" title="Video iframe"></video>
+        <video width="100%" src="upload/<?php echo $Video['Video'] ?>" title="Video iframe"></video>
 
         <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
             <div class="col-sm">
                 Datum
             </div>
-            <div class="col-sm">
-                1 like
-            </div>
-            <div class="col-sm">
-                0 dislike
-            </div>
+        <div id="likes"></div>
         </div>
         <hr>
         <div class="channelinfo">
             <div class="channelpf">
-                <img src="img/TwotchLogo.png">
+                <img src="upload/profilepicture/<?php echo $DataProfilePicture; ?>">
             </div>
             <div class="channelname">
                 <h4><?php echo $DataUserName; ?> </h4>
                 <h5>1,79K Subscribes</h5>
             </div>
+            <?php
+            if($DataUserID !== $_SESSION['ID_User']){
+            ?>
             <a href="#">
                 <div class="subscribeButton">
                     <h2>Subscribe</h2>
                 </div>
             </a>
+            <?php
+            }
+            ?>
         </div>
     </div>
 

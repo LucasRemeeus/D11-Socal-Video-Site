@@ -148,3 +148,35 @@ function getVideo(Catagory) {
         }
     });
 }
+
+function Like(like, ID_Video) {
+
+    if (like === 0 || like === 1){
+
+    $.ajax({
+        type: 'post',
+        url: 'php/like_process.php',
+        data: {
+            like: like,
+            ID_Video: ID_Video
+        },
+        success: function (response) {
+            GetLike(ID_Video)
+        }
+    });
+    }
+}
+
+function GetLike(ID_Video) {
+
+        $.ajax({
+            type: 'post',
+            url: 'php/Get_like.php',
+            data:{
+                ID_Video: ID_Video
+            },
+            success: function (response) {
+                document.getElementById("likes").innerHTML = response;
+            }
+        });
+}
