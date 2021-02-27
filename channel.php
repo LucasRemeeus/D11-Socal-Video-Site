@@ -114,13 +114,19 @@ require "php/config.php";
           <h1>/Channel Name\</h1>
           <h2>/Sub count\</h2>
         </div>
-
         <a href="#">
                 <div class="subscribeButton">
                     <h2>Subscribe</h2>
                 </div>
+                
             </a>
 
+          <h4> <?php if($_SESSION['Loggedin'] == true ) 
+                   { ?><a class="nav-link button-link button-login" href="channel_info.php">&nbsp Edit Profile &nbsp</a> <?php } 
+                    else 
+                    { ?>  <?php } ?></h4>
+            <br>
+            
       </div>
 
       <div class="vids">

@@ -18,39 +18,125 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
     <head>
         <title>dashboard</title>
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/channelinfo.css">
+
+        <!-- De font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
         <!-- Jquery link -->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-                integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <!-- JS link -->
         <script src="js/ajax.js"></script>
     </head>
 
-    <form action="php/Channel_Edit.php" method="post">
-        <label for="Username">Username: </label>
-        <input name="Username" type="text" value="<?php echo $UserRow['Username'] ?>"><br><br>
+    
 
-        <label for="Email">Email: </label>
-        <input name="Email" type="email" value="<?php echo $UserRow['Email'] ?>"><br><br>
+    <body>
+  <nav class="navbar navbar-expand-lg nav">
+    <a class="navbar-brand" href="index.php">
+      <img class="logo" src="img/TwotchLogo.png" alt="TwotchLogo">
+    </a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link link active" href="#">Browse</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link" href="#">Following</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <?php if($_SESSION['Loggedin'] == true ) 
+        { ?><a class="nav-link button-link button-login" href="php/logout.php">&nbsp Log out &nbsp</a> <?php } 
+        else 
+        { ?> <a class="nav-link button-link button-login" href="login.php">&nbsp Log in &nbsp</a> <?php } ?>
+      </li>
+      <li class="nav-item">
+        <?php if($_SESSION['Loggedin'] == !true ) 
+      { ?><a class="nav-link button-link button-signup" href="register.php">Sign up</a><?php } ?>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" href="#">
+          <img class="logo" src="img/TwotchLogo.png" alt="Profile Logo">
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-        <label for="Displayname">Display Name: </label>
-        <input name="Displayname" type="text" value="<?php echo $UserRow['Displayname'] ?>"><br><br>
+  <!-- Page Content -->
+  <aside class="col-12 col-md-2 p-0 flex-shrink-1">
+    <nav class="navbar navbar-expand flex-row align-items-start py-2 sidebar">
+      <div class="collapse navbar-collapse ">
+        <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+          <p>Followed Channels</p>
+          <li class="nav-item">
+            <a class="nav-link pl-0 text-nowrap" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
 
-        <label for="Description">Description: </label>
-        <input name="Description" type="text" value="<?php echo $UserRow['Description'] ?>"><br><br>
+ 
 
-        <label for="Firstname">First name: </label>
-        <input name="Firstname" type="text" value="<?php echo $UserRow['Firstname'] ?>"><br><br>
+   
 
-        <label for="Lastname">Last name: </label>
-        <input name="Lastname" type="text" value="<?php echo $UserRow['Lastname'] ?>"><br><br>
+    <div class="container-fluid mt-5 col-10 container">
 
-        <input type="submit" name="submit" value="Save">
-    </form>
+         <h1>Change Your Info</h1> <br>
+        <div class="form1">
+            <br>
+        <form action="php/Channel_Edit.php" method="post" class="info-form">
+            <label for="Username" class="label">Username </label>
+            <input name="Username" type="text" value="<?php echo $UserRow['Username'] ?>" class="input"><br><br><hr>
+
+            <label for="Email" class="label">Email: </label>
+            <input name="Email" type="email" value="<?php echo $UserRow['Email'] ?>" class="input"><br><br><hr>
+
+            <label for="Displayname" class="label">Display Name: </label>
+            <input name="Displayname" type="text" value="<?php echo $UserRow['Displayname'] ?>" class="input"><br><br><hr>
+
+            <label for="Description" class="label">Description: </label>
+            <input name="Description" type="text" value="<?php echo $UserRow['Description'] ?>" class="input"><br><br><hr>
+
+            <label for="Firstname" class="label">First name: </label>
+            <input name="Firstname" type="text" value="<?php echo $UserRow['Firstname'] ?>" class="input"><br><br><hr>
+
+            <label for="Lastname" class="label">Last name: </label>
+            <input name="Lastname" type="text" value="<?php echo $UserRow['Lastname'] ?>" class="input"><br><br><hr>
+
+            <input type="submit" name="submit" value="Save" class="save">
+        </form>
+        </div>
 
 
-
-    <form action="upload/profilepicture_process.php" method="post" enctype="multipart/form-data" runat="server">
+        <h1>Change Your Profile Photo</h1> <br>
+    <div class="form1">
+    <form action="upload/profilepicture_process.php" method="post" enctype="multipart/form-data" runat="server" class="photo-form">
         <img style="height: 200px; width: 200px;" id="preview" src="upload/profilepicture/<?php echo $UserRow['ProfilePicture'] ?>"><br>
 
         <input type="file" accept="image/png, image/jpeg," required id="imgInp" name="upload_image"><br>
@@ -76,9 +162,13 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
         </script>
 
     </form>
+    </div>
 
-    <form action="upload/banner_process.php" method="post" enctype="multipart/form-data" runat="server">
-        <img style="height: 400px; width: 1800px;" id="previewbanner" src="upload/banner/<?php echo $UserRow['Banner'] ?>"><br>
+    
+    <h1>Change Your Banner</h1> <br>
+    <div class="form1">
+    <form action="upload/banner_process.php" method="post" enctype="multipart/form-data" runat="server" class="photo-form">
+        <img style="height: 400px; width: 1550px;" id="previewbanner" src="upload/banner/<?php echo $UserRow['Banner'] ?>"><br>
 
         <input type="file" accept="image/png, image/jpeg," required id="bannerInp" name="upload_banner"><br>
 
@@ -103,8 +193,15 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
         </script>
 
     </form>
+    </div>
 
-    </body>
+     
+    </div>
+
+  
+
+
+</body>
     </html>
     <?php
 }
