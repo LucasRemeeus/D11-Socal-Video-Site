@@ -105,40 +105,46 @@ body {
   width: 100%;
 }
 
-.subscribeButton {
-  float: right;
-  width: 295px;
-  height: 51px;
-  background-color: #8433FB;
-  border-radius: 5px;
-  margin-top: 15px;
-}
-
-.subscribeButton h2 {
-  margin-top: 5px;
-  text-align: center;
-  color: #FFF;
-}
-
-.subscribeButton:hover {
-  background-color: #5a1bb9;
-}
-
 .ChannelName {
   margin-left: 20px;
   color: white;
 }
 
-.info-form {
+.photo-form,
+h1 {
   text-align: center;
+  margin-top: 50px;
 }
 
-p {
-  font-size: 23px;
+.info-form {
+  margin-top: 10px;
+}
+
+.info-form .label {
+  float: left;
+  margin-left: 25%;
+}
+
+.info-form .input {
+  float: right;
+  margin-right: 25%;
+  width: 300px;
+}
+
+label {
+  margin-right: 10%;
 }
 
 hr {
-  border-color: white;
+  border-color: #303036;
+}
+
+.form1 {
+  background-color: #18181b;
+  border: #303036;
+  border-color: #303036;
+  border-radius: 10px;
+  margin-top: 50px;
 }
 
 .btn {

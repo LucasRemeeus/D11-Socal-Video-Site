@@ -22,6 +22,7 @@ $TextTwotch: white;
 $fontweight: 700;
 $SemiBold: 600;
 $borderRadius: 10px;
+$formbackground: rgb(24, 24, 27);
 @mixin reset-list {
     margin: 0;
     padding: 0;
@@ -123,38 +124,44 @@ body {
     }
 }
 
-.subscribeButton {
-    float: right;
-    width: 295px;
-    height: 51px;
-    background-color: $main-buttons;
-    border-radius: 5px;
-    margin-top: 15px;
-    h2 {
-        margin-top: 5px;
-        text-align: center;
-        color: $main-text;
-    }
-    &:hover {
-        background-color: $main-signup-button-hover;
-    }
-}
-
 .ChannelName {
     margin-left: 20px;
     color: white;
 }
 
-.info-form {
+.photo-form,
+h1 {
     text-align: center;
+    margin-top: 50px;
 }
 
-p {
-    font-size: 23px;
+.info-form {
+    margin-top: 10px;
+    .label {
+        float: left;
+        margin-left: 25%;
+    }
+    .input {
+        float: right;
+        margin-right: 25%;
+        width: 300px;
+    }
+}
+
+label {
+    margin-right: 10%;
 }
 
 hr {
-    border-color: white;
+    border-color: rgb(48, 48, 54);
+}
+
+.form1 {
+    background-color: $formbackground;
+    border: rgb(48, 48, 54);
+    border-color: rgb(48, 48, 54);
+    border-radius: 10px;
+    margin-top: 50px;
 }
 
 .btn {
