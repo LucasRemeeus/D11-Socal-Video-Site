@@ -27,7 +27,13 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     $getdata -> store_result();
     $getdata -> close();
 
-
+    $getlikes = $mysqli -> prepare("SELECT COUNT(`ID_Subscribe`) FROM `subscribe` where ID_User = ?");
+    $getlikes -> bind_param('i', $DataUserID);
+    $getlikes -> execute();
+    $getlikes -> bind_result($Subscribers);
+    $getlikes -> fetch();
+    $getlikes -> store_result();
+    $getlikes -> close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,8 +113,8 @@ while ($Video = $getVideoResult -> fetch_assoc()){
                 <img src="upload/profilepicture/<?php echo $DataProfilePicture; ?>">
             </div>
             <div class="channelname">
-                <h4><?php echo $DataUserName; ?> </h4>
-                <h5>1,79K Subscribes</h5>
+                <h4><?php echo $DataUserName;?> </h4>
+                <h5><?php echo $Subscribers;?> subscribers</h5>
             </div>
             <?php
             if($DataUserID !== $_SESSION['ID_User']){

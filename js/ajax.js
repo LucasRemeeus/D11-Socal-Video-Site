@@ -48,12 +48,8 @@ function Register() {
                 if (response == "success") {
                     document.getElementById("result").innerHTML = "success";
                     window.location.href = "index.php";
-                } else if (response == "usernametaken") {
-                    document.getElementById("result").innerHTML = "Username or email already taken";
-                } else if (response == "fail") {
-                    document.getElementById("result").innerHTML = "Wrong Details";
-                } else if (response == "wrongpassword") {
-                    document.getElementById("result").innerHTML = "Password must consist out of: Minimal eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:";
+                } else {
+                    document.getElementById("result").innerHTML = response;
                 }
             }
         });

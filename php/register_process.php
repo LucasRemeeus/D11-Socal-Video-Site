@@ -26,24 +26,31 @@ if(!preg_match($pattern, $Username))
 
 // check password
 $Password = $_POST['Password'];
-$pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
-if(!preg_match($pattern, $Password))
-{
-    echo "wrongpassword";
+
+if (strlen($_POST['Password']) <= '8') {
     $errors++;
+    echo "Your Password Must Contain At Least 8 Characters!<br>";
 }
+elseif(!preg_match("#[0-9]+#",$Password)) {
+    $errors++;
+    echo "Your Password Must Contain At Least 1 Number!<br>";
+}
+elseif(!preg_match("#[A-Z]+#",$Password)) {
+    $errors++;
+    echo "Your Password Must Contain At Least 1 Capital Letter!<br>";
+}
+elseif(!preg_match("#[a-z]+#",$Password)) {
+    $errors++;
+    echo "Your Password Must Contain At Least 1 Lowercase Letter!<br>";
+} elseif(!empty($_POST["password"])) {
+    $errors++;
+    echo "Please Check You've Entered Or Confirmed Your Password!";
+}
+
 
 // check password_confirm
-$Password = $_POST['Password_confirm'];
-$pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
-if(!preg_match($pattern, $Password))
-{
-    echo "wrongpassword";
-    $errors++;
-}
-
-if ($_POST['Password'] !== $_POST['Password_confirm']) {
-    echo "Passwords do not match!";
+if ($_POST['Password'] !== $_POST['Password_confirm'] && $errors == 0) {
+    echo "Passwords do not match!<br>";
     $errors++;
 }
 
@@ -60,11 +67,12 @@ $Usernamecheck->bind_param('ss', $Username, $Email);
 $Usernamecheck->execute();
 $UsernamecheckResult = $Usernamecheck->get_result();
 if ($UsernamecheckResult->num_rows >= 1) {
-    echo "usernametaken";
+    echo "Sorry username already taken<br>";
     $errors++;
 }
-
+$Usernamecheck -> close();
 if ($errors == 0) {
+
 
     $hash = password_hash($Password, PASSWORD_BCRYPT);
     $register->bind_param('sss', $Username, $hash, $Email);
@@ -75,8 +83,10 @@ if ($errors == 0) {
         $_SESSION['ID_User'] = $last_id;
         $_SESSION['loggedin'] = true;
     }else{
-        echo "fail";
+        echo "fail<br>";
     }
+}else{
+
 }
 
 $register->close();
