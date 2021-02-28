@@ -106,4 +106,14 @@ label {
   opacity: .85;
   background-color: #9149fc;
 }
+
+.formVideo {
+  width: calc(100% - 20px);
+  max-width: 550px;
+  background-color: #323234;
+  padding: 50px 40px;
+  border-radius: 10px;
+  margin-left: 20%;
+  color: #FFF;
+}
 /*# sourceMappingURL=dashboard.css.map */
