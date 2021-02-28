@@ -132,4 +132,8 @@ body {
 .container .subscribeButton:hover {
   background-color: #5a1bb9;
 }
+
+video {
+  max-height: 700px !important;
+}
 /*# sourceMappingURL=watch.css.map */
