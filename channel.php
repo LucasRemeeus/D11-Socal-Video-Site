@@ -151,13 +151,12 @@ $getlikes -> close();
           <h1><?php echo $channelData['Username'] ?></h1>
           <h2><?php echo $Subscribers ?></h2>
         </div>
-        <a href="#">
+            <?php if ($_SESSION['ID_User'] ===! $_GET['ID']){ ?>
+            <a href="#">
                 <div id="subscribeButton" class="subscribeButton">
-
                 </div>
-                
             </a>
-
+            <?php } ?>
           <h4> <?php if($_SESSION['Loggedin'] == true && $_SESSION['ID_User'] == $_GET['ID'] )
                    { ?><a class="nav-link button-link button-login" href="channel_info.php">&nbsp Edit Profile &nbsp</a> <?php } 
                     else 

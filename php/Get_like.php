@@ -17,10 +17,26 @@ $getlikes -> bind_result($Dislikes);
 $getlikes -> fetch();
 $getlikes -> store_result();
 $getlikes ->close();
+
+if($_SESSION['loggedin'] == true ){
 ?>
+
+
 <div class="col-sm">
     <button onclick="Like(1, <?php echo $_POST['ID_Video']; ?>)"><?php echo $Likes; ?> Like</button>
 </div>
 <div class="col-sm">
     <button onclick="Like(0, <?php echo $_POST['ID_Video']; ?>)"><?php echo $Dislikes; ?> Dislike</button>
 </div>
+    <?php
+}else{
+?>
+    <div class="col-sm">
+        <button ><?php echo $Likes; ?> Like</button>
+    </div>
+    <div class="col-sm">
+        <button ><?php echo $Dislikes; ?> Dislike</button>
+    </div>
+    <?php
+}
+?>
