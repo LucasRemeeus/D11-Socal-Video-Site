@@ -146,7 +146,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
         <input type="submit" value="Save" name="form_submit"><br>
 
         <script>
-            function readURL(input) {
+            function readpfp(input) {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
 
@@ -159,7 +159,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
             }
 
             $("#imgInp").change(function() {
-                readURL(this);
+                readpfp(this);
             });
         </script>
 
