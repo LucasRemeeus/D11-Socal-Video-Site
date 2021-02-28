@@ -3,6 +3,10 @@ session_start();
 
 require "php/config.php";
 
+if (!isset($_GET['ID'])){
+    $_GET['ID'] = $_SESSION['ID_User'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,9 +32,11 @@ require "php/config.php";
   <!-- Jquery link -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <script src="js/ajax.js" ></script>
 </head>
 
-<body>
+<body onload="GetSub(<?php echo $_GET['ID']; ?>), getVideoUser(<?php echo $_GET['ID']; ?>)">
   <nav class="navbar navbar-expand-lg nav">
     <a class="navbar-brand" href="index.php">
       <img class="logo" src="img/TwotchLogo.png" alt="TwotchLogo">
@@ -64,14 +70,14 @@ require "php/config.php";
     </ul>
   </nav>
 
-  <!-- Page Content -->
+  <!-- Sidenav -->
   <aside class="col-6 col-md-1 p-0 flex-shrink-1 sidebar">
       <nav class="navbar navbar-expand flex-row align-items-start py-2">
           <div class="collapse navbar-collapse ">
               <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                   <p>Followed Channels</p>
                   <?php
-                  $follow = $mysqli -> prepare("SELECT * FROM subscribe WHERE ID_Subscriber = ? LIMIT 10");
+                  $follow = $mysqli -> prepare("SELECT * FROM subscribe WHERE ID_Subscriber = ? LIMIT 1");
                   $follow -> bind_param("i", $_SESSION['ID_User']);
                   $follow -> execute();
 
@@ -88,8 +94,6 @@ require "php/config.php";
                       $getfollow -> store_result();
                       $getfollow -> close();
 
-
-
                       ?>
                       <li class="nav-item">
                           <a class="nav-link pl-0 text-nowrap" href="channel.php?ID=<?php echo $FollowUserID ?>"><img width="30px" src="upload/profilepicture/<?php echo $FollowProfilePicture ?>"><span class="d-none d-md-inline"><?php echo $FollowUserName ?></span></a>
@@ -102,37 +106,59 @@ require "php/config.php";
       </nav>
   </aside>
 
- 
 
-   
 
+
+  <!-- Page Content -->
+
+  <?php
+
+$getlikes = $mysqli -> prepare("SELECT COUNT(`ID_Subscribe`) FROM `subscribe` where ID_User = ?");
+$getlikes -> bind_param('i', $_GET['ID']);
+$getlikes -> execute();
+$getlikes -> bind_result($Subscribers);
+$getlikes -> fetch();
+$getlikes -> store_result();
+$getlikes -> close();
+
+
+
+  $channel = $mysqli -> prepare("SELECT * FROM user WHERE ID_User = ?");
+  $channel -> bind_param("i", $_GET['ID']);
+  $channel -> execute();
+
+  $channelResult = $channel -> get_result();
+
+  while ($channelData= $channelResult -> fetch_assoc())
+  {
+  ?>
     <div class="container-fluid mt-5 col-10 container">
 
       <div class="banner">
-        <img class="bannerphoto" src="img/wauw.png">
+        <img class="bannerphoto" src="upload/banner/<?php echo $channelData['Banner'] ?>">
       </div>
 
         <div class="ChannelInfo">
           
         <div class="channelpf">
-                <img src="img/TwotchLogo.png">
+                <img src="upload/profilepicture/<?php echo $channelData['ProfilePicture'] ?>">
         </div>
 
 
       
 
         <div class="ChannelName">
-          <h1>/Channel Name\</h1>
-          <h2>/Sub count\</h2>
+          <h1><?php echo $channelData['Username'] ?></h1>
+          <h2><?php echo $Subscribers ?></h2>
         </div>
         <a href="#">
-                <div class="subscribeButton">
-                    <h2>Subscribe</h2>
+                <div id="subscribeButton" class="subscribeButton">
+
                 </div>
                 
             </a>
 
-          <h4> <?php if($_SESSION['Loggedin'] == true ) 
+          <h4> <?php if($_SESSION['Loggedin'] == true && $_SESSION['ID_User'] == $_GET['ID'] )
                    { ?><a class="nav-link button-link button-login" href="channel_info.php">&nbsp Edit Profile &nbsp</a> <?php } 
                     else 
                     { ?>  <?php } ?></h4>
@@ -144,50 +170,9 @@ require "php/config.php";
 
         <div class="container-fluid container-vid">
           <div class="row">
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
+            <div id="Result"></div>
           </div>
         </div>
-
-        <div class="container-fluid container-vid">
-          <div class="row">
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-          </div>
-        </div>
-
 
       </div>
     </div>
@@ -198,3 +183,5 @@ require "php/config.php";
 </body>
 
 </html>
+<?php
+  }
