@@ -98,7 +98,9 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     <!-- Main content -->
     <div class="container-fluid col-10 mt-3 container">
         <br>
-        <video width="100%" src="upload/<?php echo $Video['Video'] ?>" title="Video iframe"></video>
+        <video width="100%"  title="Video iframe" controls>
+        <source src="upload/<?php echo $Video['Video'] ?>" type="video/mp4">
+        </video>
 
         <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
@@ -113,7 +115,7 @@ while ($Video = $getVideoResult -> fetch_assoc()){
                 <img src="upload/profilepicture/<?php echo $DataProfilePicture; ?>">
             </div>
             <div class="channelname">
-                <h4><?php echo $DataUserName;?> </h4>
+                <a href="channel.php?ID=<?php echo $DataUserID ?>"><h4><?php echo $DataUserName;?> </h4></a>
                 <h5><?php echo $Subscribers;?> subscribers</h5>
             </div>
             <?php
