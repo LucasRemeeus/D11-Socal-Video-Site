@@ -117,4 +117,9 @@ label {
 .login-form a:hover {
   color: #111;
 }
+
+.result {
+  color: white;
+  text-align: center;
+}
 /*# sourceMappingURL=login.css.map */

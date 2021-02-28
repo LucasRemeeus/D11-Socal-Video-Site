@@ -58,7 +58,7 @@ if ( $_SESSION['Loggedin'] == true) {
         <button class="btn fas fa-arrow-right" type="submit" name="login" >Login</button>
 
         <p class="register">Don't have an account, click <a href="register.php" >Here</a></p>
-
+        <div id="result" class="result"></div>
     </form>
     <div id="result"></div>
 

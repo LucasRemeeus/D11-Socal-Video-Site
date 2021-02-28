@@ -54,9 +54,9 @@ session_start();
         
     
         <button class="btn fas fa-arrow-right" type="submit" name="login" >Submit</button>
-
+        <div id="result" class="result"></div>
     </form>
 
-<div id="result"></div>
+
 </body>
 </html>
