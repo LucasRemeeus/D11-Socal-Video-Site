@@ -10,7 +10,7 @@ $GetUserData->bind_param('i', $_SESSION['ID_User']);
 $GetUserData->execute();
 $GetUserDataResult = $GetUserData->get_result();
 while ($UserRow = $GetUserDataResult->fetch_assoc()) {
- echo $_SESSION['ID_User'];
+ 
     ?>
 
     <!DOCTYPE html>
