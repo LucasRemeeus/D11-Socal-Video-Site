@@ -176,3 +176,30 @@ function GetLike(ID_Video) {
             }
         });
 }
+
+function Subscribe(ChannelID) {
+        $.ajax({
+            type: 'post',
+            url: 'php/Subscribe_process.php',
+            data: {
+                ChannelID: ChannelID
+            },
+            success: function (response) {
+                GetSub(ChannelID)
+            }
+        });
+}
+
+function GetSub(ChannelID) {
+
+    $.ajax({
+        type: 'post',
+        url: 'php/Get_Sub.php',
+        data:{
+            ChannelID: ChannelID
+        },
+        success: function (response) {
+            document.getElementById("subscribeButton").innerHTML = response;
+        }
+    });
+}

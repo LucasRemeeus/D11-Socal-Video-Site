@@ -62,7 +62,7 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     <script src="js/ajax.js">   </script>
 </head>
 
-<body onload="GetLike(<?php echo $_GET['watch']; ?>)">
+<body onload="GetLike(<?php echo $_GET['watch']; ?>), GetSub(<?php echo $DataUserID; ?>)">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg nav">
         <a class="navbar-brand" href="index.php">
@@ -119,9 +119,9 @@ while ($Video = $getVideoResult -> fetch_assoc()){
             <?php
             if($DataUserID !== $_SESSION['ID_User']){
             ?>
-            <a href="#">
-                <div class="subscribeButton">
-                    <h2>Subscribe</h2>
+            <a onclick="Subscribe(<?php echo $DataUserID ?>)">
+                <div id="subscribeButton" class="subscribeButton">
+
                 </div>
             </a>
             <?php
@@ -142,25 +142,33 @@ while ($Video = $getVideoResult -> fetch_assoc()){
             <div class="collapse navbar-collapse ">
                 <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                     <p>Followed Channels</p>
+                    <?php
+                        $follow = $mysqli -> prepare("SELECT * FROM subscribe WHERE ID_Subscriber = ? LIMIT 10");
+                        $follow -> bind_param("i", $_SESSION['ID_User']);
+                        $follow -> execute();
+
+                        $followResult = $follow -> get_result();
+
+                    while ($followlist= $followResult -> fetch_assoc())
+                        {
+
+                            $getfollow = $mysqli -> prepare("SELECT ID_User, Username, ProfilePicture FROM user where ID_User =?");
+                            $getfollow -> bind_param('i', $followlist['ID_User']);
+                            $getfollow -> execute();
+                            $getfollow -> bind_result($FollowUserID,$FollowUserName, $FollowProfilePicture);
+                            $getfollow -> fetch();
+                            $getfollow -> store_result();
+                            $getfollow -> close();
+
+
+
+                    ?>
                     <li class="nav-item">
-                        <a class="nav-link pl-0 text-nowrap" href="#"><span class="d-none d-md-inline">|| PHP
-                                ||</span></a>
+                        <a class="nav-link pl-0 text-nowrap" href="channel.php?ID=<?php echo $FollowUserID ?>"><img width="30px" src="upload/profilepicture/<?php echo $FollowProfilePicture ?>"><span class="d-none d-md-inline"><?php echo $FollowUserName ?></span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link pl-0" href="#"><span class="d-none d-md-inline">|| PHP ||</span></a>
-                    </li>
+                    <?php
+                        }
+                    ?>
                 </ul>
             </div>
         </nav>

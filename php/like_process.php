@@ -4,6 +4,8 @@
 $like = $_POST['like'];
 $ID_Video = $_POST['ID_Video'];
 
+if ($_SESSION['Loggedin'] == true && isset($_SESSION['ID_User'])){
+
 
 
 if ($like == 1 || $like == 0){
@@ -31,4 +33,5 @@ if ($like == 1 || $like == 0){
         $ChangeLike -> execute();
     }
 
+}
 }
