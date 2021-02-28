@@ -115,7 +115,7 @@ while ($Video = $getVideoResult -> fetch_assoc()){
                 <img src="upload/profilepicture/<?php echo $DataProfilePicture; ?>">
             </div>
             <div class="channelname">
-                <h4><?php echo $DataUserName;?> </h4>
+                <a href="channel.php?ID=<?php echo $DataUserID;?>"><h4><?php echo $DataUserName;?> </h4></a>
                 <h5><?php echo $Subscribers;?> subscribers</h5>
             </div>
             <?php
