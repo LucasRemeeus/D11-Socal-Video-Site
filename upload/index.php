@@ -39,7 +39,7 @@ if ( $_SESSION['Loggedin'] !== true) {
 
     <form class="formVideo" action="upload_process.php" method="post" enctype="multipart/form-data">
         <p>Select video to upload:</p>
-        <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+        <input type="file" accept="video/mp4" name="fileToUpload" id="fileToUpload"><br><br>
         <p>Title:</p>
         <input type="text" name="title"><br><br>
 

@@ -145,6 +145,22 @@ function getVideo(Catagory) {
     });
 }
 
+function getVideoUser(ID) {
+
+    $.ajax({
+        type: 'post',
+        url:  'php/getVideoUser.php',
+        data: {
+            ID: ID
+        },
+        success: function (response) {
+            document.getElementById("Result").innerHTML = response;
+        }
+    });
+}
+
+
+
 function Like(like, ID_Video) {
 
     if (like === 0 || like === 1){
