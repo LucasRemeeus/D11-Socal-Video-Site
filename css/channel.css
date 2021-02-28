@@ -151,9 +151,21 @@ h4 {
 .vid {
   background-color: #323234;
   width: 248px;
-  height: 290px;
+  height: 350px;
   margin-top: 50px;
   margin-right: 5px;
+  float: left;
+}
+
+.vid h2 {
+  color: #FFF;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.vid:hover {
+  color: #772CE8;
+  list-style: none;
 }
 
 .container-vid {
