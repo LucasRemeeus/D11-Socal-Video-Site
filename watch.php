@@ -98,7 +98,9 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     <!-- Main content -->
     <div class="container-fluid col-10 mt-3 container">
         <br>
-        <video width="100%" src="upload/<?php echo $Video['Video'] ?>" title="Video iframe"></video>
+        <video width="100%"  title="Video iframe" controls>
+        <source src="upload/<?php echo $Video['Video'] ?>" type="video/mp4">
+        </video>
 
         <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
