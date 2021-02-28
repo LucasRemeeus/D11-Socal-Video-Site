@@ -128,7 +128,7 @@ function RenameVideo(ID_Video, Title) {
         return false;
 }
 
-function getVideo(Catagory) {
+function getVideo(Catagory,divID) {
     if (Catagory == null) {
         Catagory = "*";
     }
@@ -140,7 +140,7 @@ function getVideo(Catagory) {
             Catagory: Catagory
         },
         success: function (response) {
-            document.getElementById("Result").innerHTML = response;
+            document.getElementById(divID).innerHTML = response;
         }
     });
 }

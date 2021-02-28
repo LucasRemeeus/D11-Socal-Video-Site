@@ -33,7 +33,7 @@ require "php/config.php";
   <script src="js/ajax.js"></script>
 </head>
 
-<body onload="getVideo()">
+<body onload="getVideo(`*`,`Random`)">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg nav">
     <a class="navbar-brand" href="index.php">
@@ -74,19 +74,19 @@ require "php/config.php";
     <h1>Browse</h1>
     <ul class="row">
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="getVideo()">Speedrunners</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo(1,`Result`)">Speedrunners</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="getVideo()">Gameplay</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo(2,`Result`)">Gameplay</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="getVideo()">Tutorials</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo(3,`Result`)">Tutorials</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="getVideo()">Ragequits</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo(4,`Result`)">Ragequits</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="getVideo()">Most Watched</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo(5,`Result`)">Most Watched</a>
       </li>
 
 
@@ -109,28 +109,12 @@ require "php/config.php";
           </div>
         </div>
 
-        <div class="container-fluid container-vid">
-          <div class="row">
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
-            <div class="col-md vid">
-              &nbsp
-            </div>
+          <div class="container-fluid container-vid">
+              <div class="row">
+                  <div id="Random"></div>
+              </div>
           </div>
-        </div>
+
       </div>
   </div>
 
