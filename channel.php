@@ -65,7 +65,7 @@ if (!isset($_GET['ID'])){
       { ?><a class="nav-link button-link button-signup" href="register.php">Sign up</a><?php } ?>
       </li>
       <li class="nav-item">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="channel.php">
           <img class="logo" src="img/TwotchLogo.png" alt="Profile Logo">
         </a>
       </li>
