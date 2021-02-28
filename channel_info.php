@@ -58,7 +58,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
         <?php if($_SESSION['Loggedin'] == true ) 
         { ?>
           <a class="nav-link button-link button-login" href="php/logout.php">&nbsp Log out &nbsp</a>
-          <a class="nav-link button-link button-signup" href="video/index.php">&nbsp Add Video &nbsp</a> <?php } 
+          <a class="nav-link button-link button-signup" href="upload/video/index.php">&nbsp Add Video &nbsp</a> <?php } 
         else 
         { ?> <a class="nav-link button-link button-login" href="login.php">&nbsp Log in &nbsp</a> <?php } ?>
       </li>
