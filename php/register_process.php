@@ -5,7 +5,7 @@ require_once 'config.php';
 
 $errors = 0;
 
-$register = $mysqli->prepare("INSERT INTO `user` (`ID_User`, `Username`, `Password`, `Email`) VALUES (NULL, ?, ?, ?)");
+$register = $mysqli->prepare("INSERT INTO `user` (`ID_User`, `Username`, `Password`, `Email`, `ProfilePicture`, `Banner`) VALUES (NULL, ?, ?, ?, 'TwotchLogo.png', 'wauw.png')");
 
 //check if fields are filled in
 if (isset($_POST['Username']) &&
@@ -70,12 +70,14 @@ if ($UsernamecheckResult->num_rows >= 1) {
     echo "Sorry username already taken<br>";
     $errors++;
 }
+
+
 $Usernamecheck -> close();
 if ($errors == 0) {
 
 
     $hash = password_hash($Password, PASSWORD_BCRYPT);
-    $register->bind_param('sss', $Username, $hash, $Email);
+    $register->bind_param('sss', $Username, $hash, $Email,);
 
     if ($register->execute()) {
         echo "success";
