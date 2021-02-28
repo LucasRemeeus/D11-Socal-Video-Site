@@ -4,7 +4,9 @@ session_start();
 require "php/config.php";
 
 if (!isset($_GET['ID'])){
-    $_GET['ID'] = $_SESSION['ID_User'];
+    $pageID = $_SESSION['ID_User'];
+}else{
+    $pageID = $_GET['ID'];
 }
 
 ?>
@@ -36,7 +38,7 @@ if (!isset($_GET['ID'])){
     <script src="js/ajax.js" ></script>
 </head>
 
-<body onload="GetSub(<?php echo $_GET['ID']; ?>), getVideoUser(<?php echo $_GET['ID']; ?>)">
+<body onload="GetSub(<?php echo $pageID; ?>), getVideoUser(<?php echo $pageID; ?>)">
   <nav class="navbar navbar-expand-lg nav">
     <a class="navbar-brand" href="index.php">
       <img class="logo" src="img/TwotchLogo.png" alt="TwotchLogo">
@@ -114,7 +116,7 @@ if (!isset($_GET['ID'])){
   <?php
 
 $getlikes = $mysqli -> prepare("SELECT COUNT(`ID_Subscribe`) FROM `subscribe` where ID_User = ?");
-$getlikes -> bind_param('i', $_GET['ID']);
+$getlikes -> bind_param('i', $pageID);
 $getlikes -> execute();
 $getlikes -> bind_result($Subscribers);
 $getlikes -> fetch();
@@ -124,7 +126,7 @@ $getlikes -> close();
 
 
   $channel = $mysqli -> prepare("SELECT * FROM user WHERE ID_User = ?");
-  $channel -> bind_param("i", $_GET['ID']);
+  $channel -> bind_param("i", $pageID);
   $channel -> execute();
 
   $channelResult = $channel -> get_result();
@@ -151,16 +153,15 @@ $getlikes -> close();
           <h1><?php echo $channelData['Username'] ?></h1>
           <h2><?php echo $Subscribers ?></h2>
         </div>
-            <?php if ($_SESSION['ID_User'] ===! $_GET['ID']){ ?>
+            <?php if ($_SESSION['ID_User'] !== $pageID){ ?>
             <a href="#">
-                <div id="subscribeButton" class="subscribeButton">
+                <div onclick="Subscribe(<?php echo $channelData['ID_User'] ?>)" id="subscribeButton" class="subscribeButton">
                 </div>
             </a>
             <?php } ?>
-          <h4> <?php if($_SESSION['Loggedin'] == true && $_SESSION['ID_User'] == $_GET['ID'] )
-                   { ?><a class="nav-link button-link button-login" href="channel_info.php">&nbsp Edit Profile &nbsp</a> <?php } 
-                    else 
-                    { ?>  <?php } ?></h4>
+           <?php if($_SESSION['ID_User'] == $pageID ) { ?>
+               <h4><a class="nav-link button-link button-login" href="channel_info.php">&nbsp Edit Profile &nbsp</a></h4>
+           <?php } ?>
             <br>
             
       </div>

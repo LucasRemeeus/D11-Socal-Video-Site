@@ -1,6 +1,8 @@
 <?php
 
 require 'config.php';
+session_start();
+
 
 $getlikes = $mysqli -> prepare("SELECT COUNT(`ID_Like`) FROM `like` where ID_Video = ? and likes = 1");
 $getlikes -> bind_param('i', $_POST['ID_Video']);
