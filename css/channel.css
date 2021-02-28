@@ -33,6 +33,7 @@ body {
   border-radius: 5px;
   font-size: 12px;
   color: #FFF;
+  float: right;
 }
 
 .nav .button-login:hover {
@@ -46,6 +47,7 @@ body {
   border-radius: 5px;
   font-size: 12px;
   color: #FFF;
+  float: right;
 }
 
 .nav .button-signup:hover {
