@@ -120,22 +120,19 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
             <br>
         <form action="php/Channel_Edit.php" method="post" class="info-form">
             <label for="Username" class="label">Username </label>
-            <input name="Username" type="text" value="<?php echo $UserRow['Username'] ?>" class="input"><br><br><hr>
+            <input name="Username" id="Username" type="text" value="<?php echo $UserRow['Username'] ?>" class="input"><br><br><hr>
 
             <label for="Email" class="label">Email: </label>
-            <input name="Email" type="email" value="<?php echo $UserRow['Email'] ?>" class="input"><br><br><hr>
-
-            <label for="Displayname" class="label">Display Name: </label>
-            <input name="Displayname" type="text" value="<?php echo $UserRow['Displayname'] ?>" class="input"><br><br><hr>
+            <input name="Email" id="Email" type="email" value="<?php echo $UserRow['Email'] ?>" class="input"><br><br><hr>
 
             <label for="Description" class="label">Description: </label>
-            <input name="Description" type="text" value="<?php echo $UserRow['Description'] ?>" class="input"><br><br><hr>
+            <input name="Description" id="Description" type="text" value="<?php echo $UserRow['Description'] ?>" class="input"><br><br><hr>
 
             <label for="Firstname" class="label">First name: </label>
-            <input name="Firstname" type="text" value="<?php echo $UserRow['Firstname'] ?>" class="input"><br><br><hr>
+            <input name="Firstname" id="Firstname" type="text" value="<?php echo $UserRow['Firstname'] ?>" class="input"><br><br><hr>
 
             <label for="Lastname" class="label">Last name: </label>
-            <input name="Lastname" type="text" value="<?php echo $UserRow['Lastname'] ?>" class="input"><br><br><hr>
+            <input name="Lastname" id="Lastname" type="text" value="<?php echo $UserRow['Lastname'] ?>" class="input"><br><br><hr>
 
             <input type="submit" name="submit" value="Save" class="save">
         </form>
