@@ -38,7 +38,7 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // Upload the video
 } else {
-    $uplaodfile = $target_dir. $title.".".$imageFileType;
+    $uplaodfile = $target_dir. $title.time().".".$imageFileType;
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $uplaodfile)) {
         $VideoUpload = $mysqli->prepare("INSERT INTO `video` (`ID_Video`, `Video`, `ID_User`, `Catagory`, `Title`) VALUES (NULL, ?, ?, ?,?)");
         $VideoUpload -> bind_param('siis',$uplaodfile, $_SESSION['ID_User'],$catagory, $title );

@@ -33,7 +33,7 @@ require "php/config.php";
   <script src="js/ajax.js"></script>
 </head>
 
-<body onload="getVideo(`*`,`Random`)">
+<body onload="getVideo(`*`,`Random`), getVideo(`*`,`Result`)">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg nav">
     <a class="navbar-brand" href="index.php">

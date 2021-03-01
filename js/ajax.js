@@ -103,24 +103,18 @@ function DeleteVideo(ID_Video) {
 
 function RenameVideo(ID_Video, Title) {
 
-    if (ID_Video !== "" || Title !== "") {
+    var title = prompt("edit de title", Title);
+    if(title != null){
 
         $.ajax({
             type: 'post',
             url: 'php/Video_Rename.php',
             data: {
                 ID_Video: ID_Video,
-                Title: Title
+                Title: title
             },
             success: function (response) {
-                if (response == "success") {
-                    DashboardVids();
-                    document.getElementById("error").innerHTML = "Success";
-                } else if (response == "ErrorRename") {
-                    document.getElementById("error").innerHTML = "Error renaming";
-                } else {
-                    document.getElementById("error").innerHTML = "Other error";
-                }
+                DashboardVids();
             }
         });
     } else

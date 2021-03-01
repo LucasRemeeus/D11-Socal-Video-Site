@@ -14,7 +14,6 @@ require "php/config.php";
 
 
 
-
 $getVideoResult = $getVideo -> get_result();
 
 while ($Video = $getVideoResult -> fetch_assoc()){
@@ -36,14 +35,12 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     $getlikes -> close();
 
 
-function Updateviews($mysqli){
-    
-    $Updateviews = $mysqli -> prepare("UPDATE `video` SET `Views` = `Views` +1 WHERE ID_Video = ?");
-    $Updateviews -> bind_param("i", $_GET['watch']);
-    $Updateviews -> execute();
-}
+$Updateviews = $mysqli->prepare("UPDATE `video` SET `Views` = `Views` +1 WHERE ID_Video = ?");
+$Updateviews->bind_param("i", $_GET['watch']);
+$Updateviews->execute();
+$Updateviews->close();
 
-Updateviews($mysqli);
+
 
 $Getviews = $mysqli -> prepare("SELECT `Views` FROM `video` WHERE ID_Video = ?");
 $Getviews -> bind_param("i", $_GET['watch']);
