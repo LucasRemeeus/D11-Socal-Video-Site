@@ -83,7 +83,7 @@ require "php/config.php";
         <a class="nav-link button-link button-browse" onclick="getVideo(4,`Result`)">Ragequits</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link button-link button-browse" onclick="getVideo(5,`Result`)">Most Watched</a>
+        <a class="nav-link button-link button-browse" onclick="getVideo(0,`Result`)">Most Watched</a>
       </li>
 
 

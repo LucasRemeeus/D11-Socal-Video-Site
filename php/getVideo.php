@@ -8,8 +8,10 @@ if ($Catagory == "*")
 {
     $getVideo = $mysqli -> prepare("SELECT * FROM video WHERE Catagory ORDER BY RAND() LIMIT 10");
     $getVideo -> execute();
-} else 
-{
+} else if($Catagory == 0){
+    $getVideo = $mysqli -> prepare("SELECT * FROM video ORDER BY Views DESC LIMIT 10");
+    $getVideo -> execute();
+}else {
     $getVideo = $mysqli -> prepare("SELECT * FROM video WHERE Catagory = ? ORDER BY RAND() LIMIT 10");
     $getVideo -> bind_param("i", $Catagory);
     $getVideo -> execute();
