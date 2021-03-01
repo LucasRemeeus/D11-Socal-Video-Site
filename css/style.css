@@ -146,12 +146,7 @@ body {
 }
 
 .container .Result {
-  height: 100%;
+  height: 100% !important;
   width: 100%;
-}
-
-.container .foto {
-  height: 100%;
-  max-height: 300px;
 }
 /*# sourceMappingURL=style.css.map */

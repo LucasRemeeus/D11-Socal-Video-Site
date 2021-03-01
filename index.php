@@ -104,18 +104,18 @@ require "php/config.php";
 
       <div>
         <div class="container-fluid container-vid">
-          <div class="row"><h2>Selected</h2>
+          <div class="row"><h3>Selected</h3>
               <div id="Result"></div>
           </div>
         </div>
 
           <div class="container-fluid container-vid">
-              <div class="row"><h2>Random</h2>
+              <div class="row"><h3>Random</h3>
                   <div id="Random"></div>
               </div>
           </div>
           <div class="container-fluid container-vid">
-              <div class="row"><h2>Followed</h2>
+              <div class="row"><h3>Followed</h3>
                   <div id="Followed">
                       <?php
 
