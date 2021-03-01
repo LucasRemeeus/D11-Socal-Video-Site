@@ -21,6 +21,7 @@ $Username = $_POST['Username'];
 $pattern = "/^[a-z\d_]{5,20}$/i";
 if(!preg_match($pattern, $Username))
 {
+    echo "Wrong Username!";
     $errors++;
 }
 
@@ -58,6 +59,7 @@ if ($_POST['Password'] !== $_POST['Password_confirm'] && $errors == 0) {
 $Email = $_POST['Email'];
 if(!filter_var($Email, FILTER_VALIDATE_EMAIL))
 {
+    echo "Wrong email!<br>";
     $errors++;
 }
 

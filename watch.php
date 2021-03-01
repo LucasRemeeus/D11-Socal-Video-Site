@@ -130,7 +130,15 @@ while ($Video = $getVideoResult -> fetch_assoc()){
             }
             ?>
         </div>
-    </div>
+        <div>
+            <form method="post" onsubmit="return Comment();">
+                <input type="number" value="<?php $_GET['watch'] ?>" hidden>
+                <input type="text" name="comment">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+        </div>
+
 
 
 

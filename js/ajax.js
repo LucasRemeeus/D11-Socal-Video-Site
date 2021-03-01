@@ -219,3 +219,29 @@ function GetSub(ChannelID) {
         }
     });
 }
+
+function Comment() {
+    var comment    = $("#comment").val();
+    var ID_Video   = $("#ID_Video").val()
+
+    if (comment !== "") {
+
+        $.ajax({
+            type: 'post',
+            url: 'php/register_process.php',
+            data: {
+                comment: comment,
+                ID_Video: ID_Video
+            },
+            success: function (response) {
+                if (response == "success") {
+
+                }
+            }
+        });
+    } else {
+        document.getElementById("result").innerHTML = "Please Fill All The Details";
+    }
+
+    return false;
+}

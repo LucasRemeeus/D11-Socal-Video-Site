@@ -119,7 +119,7 @@ require "php/config.php";
                   <div id="Followed">
                       <?php
 
-                          $getVideoFollow = $mysqli -> prepare("SELECT * FROM video WHERE ID_User = (SELECT subscribe.ID_User FROM subscribe WHERE subscribe.ID_Subscriber = ?) ORDER BY RAND() LIMIT 10");
+                          $getVideoFollow = $mysqli -> prepare("SELECT * FROM video WHERE ID_User IN (SELECT subscribe.ID_User FROM subscribe WHERE subscribe.ID_Subscriber = ?) ORDER BY RAND() LIMIT 10");
                           $getVideoFollow -> bind_param("i", $_SESSION['ID_User']);
                           $getVideoFollow -> execute();
 
