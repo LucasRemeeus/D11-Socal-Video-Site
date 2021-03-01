@@ -34,6 +34,24 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     $getlikes -> fetch();
     $getlikes -> store_result();
     $getlikes -> close();
+
+
+function Updateviews($mysqli){
+    
+    $Updateviews = $mysqli -> prepare("UPDATE `video` SET `Views` = `Views` +1 WHERE ID_Video = ?");
+    $Updateviews -> bind_param("i", $_GET['watch']);
+    $Updateviews -> execute();
+}
+
+Updateviews($mysqli);
+
+$Getviews = $mysqli -> prepare("SELECT `Views` FROM `video` WHERE ID_Video = ?");
+$Getviews -> bind_param("i", $_GET['watch']);
+$Getviews -> execute();
+$Getviews -> bind_result($Views);
+$Getviews -> fetch();
+$Getviews -> store_result();
+$Getviews -> close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +80,7 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     <script src="js/ajax.js">   </script>
 </head>
 
-<body onload="GetLike(<?php echo $_GET['watch']; ?>), GetSub(<?php echo $DataUserID; ?>)">
+<body onload="GetLike(<?php echo $_GET['watch']; ?>), GetSub(<?php echo $DataUserID; ?>), GetComment(<?php echo $_GET['watch']; ?>)">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg nav">
         <a class="navbar-brand" href="index.php">
@@ -105,7 +123,7 @@ while ($Video = $getVideoResult -> fetch_assoc()){
         <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
             <div class="col-sm">
-                Datum
+                <?php echo "Views: " . $Views; ?>
             </div>
         <div id="likes"></div>
         </div>
@@ -130,13 +148,23 @@ while ($Video = $getVideoResult -> fetch_assoc()){
             }
             ?>
         </div>
+        <?php
+        if($_SESSION['Loggedin'] == true){
+        ?>
         <div>
             <form method="post" onsubmit="return Comment();">
-                <input type="number" value="<?php $_GET['watch'] ?>" hidden>
-                <input type="text" name="comment">
+                <input type="number" name="ID_Video" id="ID_Video" value="<?php echo $_GET['watch'] ?>" hidden>
+                <input type="text" name="comment" value="" id="comment">
                 <input type="submit" value="submit">
             </form>
         </div>
+            <?php
+        }
+        ?>
+        <div id="Comments">
+
+        </div>
+
         </div>
 
 

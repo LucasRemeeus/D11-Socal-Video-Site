@@ -220,28 +220,58 @@ function GetSub(ChannelID) {
     });
 }
 
+function GetComment(VideoID) {
+
+    $.ajax({
+        type: 'post',
+        url: 'php/Get_Comment.php',
+        data:{
+            VideoID: VideoID
+        },
+        success: function (response) {
+            document.getElementById("Comments").innerHTML = response;
+        }
+    });
+}
+
+
 function Comment() {
     var comment    = $("#comment").val();
-    var ID_Video   = $("#ID_Video").val()
+    var ID_Video   = $("#ID_Video").val();
 
     if (comment !== "") {
 
         $.ajax({
             type: 'post',
-            url: 'php/register_process.php',
+            url: 'php/comment_process.php',
             data: {
                 comment: comment,
                 ID_Video: ID_Video
             },
             success: function (response) {
-                if (response == "success") {
+                    GetComment(ID_Video);
+                    document.getElementById("comment").value = "";
 
-                }
             }
         });
-    } else {
-        document.getElementById("result").innerHTML = "Please Fill All The Details";
     }
 
-    return false;
+}
+
+
+function DeleteComment(ID_comment) {
+        var VideoID   = $("#ID_Video").val();
+
+        $.ajax({
+            type: 'post',
+            url: 'php/comment_Delete.php',
+            data: {
+                ID_comment: ID_comment,
+            },
+            success: function (response) {
+                GetComment(VideoID);
+
+            }
+        });
+
 }
