@@ -150,26 +150,35 @@ h4 {
 
 .vid {
   background-color: #323234;
-  width: 248px;
-  height: 350px;
+  width: 19%;
+  height: 400px;
+  max-height: 50% !important;
   margin-top: 50px;
   margin-right: 5px;
+  border-radius: 5px;
   float: left;
 }
 
-.vid h2 {
+h2 {
   color: #FFF;
+  background-color: #8433FB;
+  border-radius: 5px;
   text-align: center;
   margin-top: 10px;
 }
 
 .vid:hover {
-  color: #772CE8;
+  background-color: #5a1bb9 !important;
   list-style: none;
 }
 
 .container-vid {
   margin-bottom: 50px;
   margin-left: -20px;
+}
+
+.Result {
+  height: 100% !important;
+  width: 100%;
 }
 /*# sourceMappingURL=channel.css.map */
