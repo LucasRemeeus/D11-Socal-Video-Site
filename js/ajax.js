@@ -269,3 +269,28 @@ function DeleteComment(ID_comment) {
         });
 
 }
+
+function EditChannel() {
+    var Username   = $("#Username").val();
+    var Email   = $("#Email").val();
+    var Description   = $("#Description").val();
+    var Firstname   = $("#Firstname").val();
+    var Lastname   = $("#Lastname").val();
+
+    $.ajax({
+        type: 'post',
+        url: 'php/Channel_Edit.php',
+        data: {
+            Username: Username,
+            Email: Email,
+            Description: Description,
+            Firstname: Firstname,
+            Lastname: Lastname
+        },
+        success: function (response) {
+            document.getElementById("Result").value = response;
+
+        }
+    });
+
+}
