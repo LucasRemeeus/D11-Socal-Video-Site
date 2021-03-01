@@ -110,7 +110,7 @@ require "php/config.php";
               <div class="row"><h3>Random</h3>
                   <div id="Random"></div>
               </div>
-          </div><br><br><br><br><br><br><br><br><br><br>
+          </div>
           <div class="container-fluid container-vid">
               <div class="row"><h3>Followed</h3>
                   <div id="Followed">
@@ -139,7 +139,34 @@ require "php/config.php";
                   </div>
               </div>
           </div>
+          <div class="container-fluid container-vid">
+              <div class="row"><h3>Recent</h3>
+                  <div id="Followed">
+                      <?php
 
+                      $getVideoFollow = $mysqli -> prepare("SELECT * FROM video ORDER BY ID_Video DESC LIMIT 10");
+
+                      $getVideoFollow -> execute();
+
+                      $getVideoFollowResult = $getVideoFollow -> get_result();
+
+                      while ($Followed = $getVideoFollowResult -> fetch_assoc())
+                      {
+                          ?>
+                          <a href="watch.php?watch=<?php echo $Followed['ID_Video'] ?>">
+                              <div class="col-md vid">
+                                  <div class="titelText">
+                                      <h2><?php echo $Followed['Title'] ?></h2><br>
+                                  </div>
+                                  <video width="100%" src="upload/<?php echo $Followed['Video']?>"></video>
+                              </div>
+                          </a>
+                          <?php
+                      }
+                      ?>
+                  </div>
+              </div>
+          </div>
 
       </div>
   </div>
