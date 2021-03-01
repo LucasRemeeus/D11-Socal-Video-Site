@@ -118,23 +118,34 @@ body {
 
 .container .vid {
   background-color: #323234;
-  width: 248px;
-  height: 350px;
+  width: 19%;
+  max-height: 50% !important;
   margin-top: 50px;
   margin-right: 5px;
+  border-radius: 5px;
   float: left;
 }
 
 .container .vid h2 {
   color: #FFF;
+  background-color: #8433FB;
+  border-radius: 5px;
   text-align: center;
   margin-top: 10px;
-  color: #5a1bb9;
+}
+
+.container .vid:hover {
+  background-color: #5a1bb9 !important;
   list-style: none;
 }
 
 .container .container-vid {
   margin-bottom: 50px;
   margin-left: -20px;
+}
+
+.container .Result {
+  height: 100%;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */
