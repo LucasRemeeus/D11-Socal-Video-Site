@@ -20,7 +20,7 @@ $getlikes -> fetch();
 $getlikes -> store_result();
 $getlikes ->close();
 
-if($_SESSION['loggedin'] == true ){
+if($_SESSION['Loggedin'] == true ){
 ?>
 
 
