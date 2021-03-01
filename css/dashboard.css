@@ -116,4 +116,16 @@ label {
   margin-left: 20%;
   color: #FFF;
 }
+
+.button {
+  float: left;
+  color: white;
+  background-color: #8433fb;
+  border-radius: 10px;
+}
+
+.button:hover {
+  color: #FFF;
+  background-color: #9149fc;
+}
 /*# sourceMappingURL=dashboard.css.map */

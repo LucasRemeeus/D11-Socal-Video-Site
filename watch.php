@@ -70,7 +70,7 @@ while ($Video = $getVideoResult -> fetch_assoc()){
         </a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link link active" href="#">Browse</a>
+                <a class="nav-link link active" href="index.php">Browse</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link link" href="#">Following</a>

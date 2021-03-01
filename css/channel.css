@@ -143,6 +143,14 @@ h4 {
   color: white;
 }
 
+.btn {
+  background-color: #8433FB;
+}
+
+.btn:hover {
+  background-color: #5a1bb9;
+}
+
 .vids {
   margin-left: 2%;
   margin-top: -10px;

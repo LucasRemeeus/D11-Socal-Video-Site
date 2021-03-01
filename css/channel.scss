@@ -150,6 +150,13 @@ h4 {
     color: white;
 }
 
+    .btn {
+        background-color: $main-buttons;
+    }
+    .btn:hover {
+        background-color: $main-signup-button-hover;
+    }
+
 .vids {
     margin-left: 2%;
     margin-top: -10px;

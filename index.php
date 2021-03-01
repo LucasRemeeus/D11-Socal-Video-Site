@@ -41,7 +41,7 @@ require "php/config.php";
     </a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link link active" href="#">Browse</a>
+        <a class="nav-link link active" href="index.php">Browse</a>
       </li>
       <li class="nav-item">
         <a class="nav-link link" href="#">Following</a>
@@ -113,7 +113,7 @@ require "php/config.php";
               <div class="row"><h3>Random</h3>
                   <div id="Random"></div>
               </div>
-          </div>
+          </div><br><br><br><br><br><br><br><br><br><br>
           <div class="container-fluid container-vid">
               <div class="row"><h3>Followed</h3>
                   <div id="Followed">

@@ -160,7 +160,8 @@ $getlikes -> close();
             </a>
             <?php } ?>
            <?php if($_SESSION['ID_User'] == $pageID ) { ?>
-               <h4><a class="nav-link button-link button-login" href="channel_info.php">&nbsp Edit Profile &nbsp</a></h4>
+                <h4><a class="nav-link btn btn-secondary button-link button-login" href="dashboard.php">&nbsp Dashboard Videos &nbsp</a></h4>
+                <h4><a class="nav-link button-link button-login" href="channel_info.php">&nbsp Edit Profile &nbsp</a></h4>
            <?php } ?>
             <br>
             
