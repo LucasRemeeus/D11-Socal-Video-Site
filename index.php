@@ -177,7 +177,7 @@ require "php/config.php";
 
                       ?>
                       <li class="nav-item">
-                          <a class="nav-link pl-0 text-nowrap" href="channel.php?ID=<?php echo $FollowUserID ?>"><img width="30px" src="upload/profilepicture/<?php echo $FollowProfilePicture ?>"><span class="d-none d-md-inline"><?php echo $FollowUserName ?></span></a>
+                          <a class="nav-link pl-0 text-nowrap" href="channel.php?ID=<?php echo $FollowUserID ?>"><img width="30px" src="upload/profilepicture/<?php echo $FollowProfilePicture ?>"> <span class="d-none d-md-inline"><?php echo $FollowUserName ?> </span></a>
                       </li>
                       <?php
                   }
