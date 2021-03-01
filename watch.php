@@ -15,9 +15,26 @@ require "php/config.php";
 
 
 
+
+
 $getVideoResult = $getVideo -> get_result();
 
 while ($Video = $getVideoResult -> fetch_assoc()){
+
+$Updateviews = $mysqli->prepare("UPDATE `video` SET `Views` = `Views` +1 WHERE ID_Video = ?");
+$Updateviews->bind_param("i", $_GET['watch']);
+$Updateviews->execute();
+$Updateviews->close();
+
+
+
+$Getviews = $mysqli -> prepare("SELECT `Views` FROM `video` WHERE ID_Video = ?");
+$Getviews -> bind_param("i", $_GET['watch']);
+$Getviews -> execute();
+$Getviews -> bind_result($Views);
+$Getviews -> fetch();
+$Getviews -> store_result();
+$Getviews -> close();
 
     $getdata = $mysqli -> prepare("SELECT ID_User, Username, ProfilePicture FROM user where ID_User =?");
     $getdata -> bind_param('i', $Video['ID_User']);
@@ -105,7 +122,7 @@ while ($Video = $getVideoResult -> fetch_assoc()){
         <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
             <div class="col-sm">
-                Datum
+                <?php echo $Views ?>
             </div>
         <div id="likes"></div>
         </div>
