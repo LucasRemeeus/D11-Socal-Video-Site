@@ -34,6 +34,24 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     $getlikes -> fetch();
     $getlikes -> store_result();
     $getlikes -> close();
+
+
+function Updateviews($mysqli){
+    
+    $Updateviews = $mysqli -> prepare("UPDATE `video` SET `Views` = `Views` +1 WHERE ID_Video = ?");
+    $Updateviews -> bind_param("i", $_GET['watch']);
+    $Updateviews -> execute();
+}
+
+Updateviews($mysqli);
+
+$Getviews = $mysqli -> prepare("SELECT `Views` FROM `video` WHERE ID_Video = ?");
+$Getviews -> bind_param("i", $_GET['watch']);
+$Getviews -> execute();
+$Getviews -> bind_result($Views);
+$Getviews -> fetch();
+$Getviews -> store_result();
+$Getviews -> close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -105,7 +123,7 @@ while ($Video = $getVideoResult -> fetch_assoc()){
         <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
             <div class="col-sm">
-                Datum
+                <?php echo "Views: " . $Views; ?>
             </div>
         <div id="likes"></div>
         </div>
