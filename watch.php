@@ -62,7 +62,7 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     <script src="js/ajax.js">   </script>
 </head>
 
-<body onload="GetLike(<?php echo $_GET['watch']; ?>), GetSub(<?php echo $DataUserID; ?>)">
+<body onload="GetLike(<?php echo $_GET['watch']; ?>), GetSub(<?php echo $DataUserID; ?>), GetComment(<?php echo $_GET['watch']; ?>)">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg nav">
         <a class="navbar-brand" href="index.php">
@@ -130,13 +130,23 @@ while ($Video = $getVideoResult -> fetch_assoc()){
             }
             ?>
         </div>
+        <?php
+        if($_SESSION['Loggedin'] == true){
+        ?>
         <div>
             <form method="post" onsubmit="return Comment();">
-                <input type="number" value="<?php $_GET['watch'] ?>" hidden>
-                <input type="text" name="comment">
+                <input type="number" name="ID_Video" id="ID_Video" value="<?php echo $_GET['watch'] ?>" hidden>
+                <input type="text" name="comment" value="" id="comment">
                 <input type="submit" value="submit">
             </form>
         </div>
+            <?php
+        }
+        ?>
+        <div id="Comments">
+
+        </div>
+
         </div>
 
 
