@@ -45,10 +45,7 @@ if (!isset($_GET['ID'])){
     </a>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link link active" href="#">Browse</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link link" href="#">Following</a>
+        <a class="nav-link link active" href="index.php">Browse</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
