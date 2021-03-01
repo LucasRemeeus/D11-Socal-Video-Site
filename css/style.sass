@@ -126,22 +126,30 @@ body
 
     .vid
         background-color: #323234
-        width: 20%
-        height: 50%
+        width: 19%
+        height: 100%
+        max-height: 400px !important
         margin-top: 50px
         margin-right: 5px
+        border-radius: 5px
         float: left
 
 
         h2
             color: $main-text
+            background-color: $main-buttons
+            border-radius: 5px
             text-align: center
             margin-top: 10px
 
-            &:hover
-            color: $main-signup-button-hover !important
+        &:hover
+            background-color: $main-signup-button-hover !important
             list-style: none
 
     .container-vid
         margin-bottom: 50px
         margin-left: -20px
+
+    .Result
+        height: 100% !important
+        width: 100%

@@ -104,18 +104,18 @@ require "php/config.php";
 
       <div>
         <div class="container-fluid container-vid">
-          <div class="row"><h2>Selected</h2>
+          <div class="row"><h3>Selected</h3>
               <div id="Result"></div>
           </div>
         </div>
 
           <div class="container-fluid container-vid">
-              <div class="row"><h2>Random</h2>
+              <div class="row"><h3>Random</h3>
                   <div id="Random"></div>
               </div>
           </div>
           <div class="container-fluid container-vid">
-              <div class="row"><h2>Followed</h2>
+              <div class="row"><h3>Followed</h3>
                   <div id="Followed">
                       <?php
 
@@ -177,7 +177,7 @@ require "php/config.php";
 
                       ?>
                       <li class="nav-item">
-                          <a class="nav-link pl-0 text-nowrap" href="channel.php?ID=<?php echo $FollowUserID ?>"><img width="30px" src="upload/profilepicture/<?php echo $FollowProfilePicture ?>"><span class="d-none d-md-inline"><?php echo $FollowUserName ?></span></a>
+                          <a class="nav-link pl-0 text-nowrap" href="channel.php?ID=<?php echo $FollowUserID ?>"><img width="30px" src="upload/profilepicture/<?php echo $FollowProfilePicture ?>"> <span class="d-none d-md-inline"><?php echo $FollowUserName ?> </span></a>
                       </li>
                       <?php
                   }
