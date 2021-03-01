@@ -14,6 +14,7 @@ require "php/config.php";
 
 
 
+
 $getVideoResult = $getVideo -> get_result();
 
 while ($Video = $getVideoResult -> fetch_assoc()){
@@ -33,22 +34,6 @@ while ($Video = $getVideoResult -> fetch_assoc()){
     $getlikes -> fetch();
     $getlikes -> store_result();
     $getlikes -> close();
-
-
-$Updateviews = $mysqli->prepare("UPDATE `video` SET `Views` = `Views` +1 WHERE ID_Video = ?");
-$Updateviews->bind_param("i", $_GET['watch']);
-$Updateviews->execute();
-$Updateviews->close();
-
-
-
-$Getviews = $mysqli -> prepare("SELECT `Views` FROM `video` WHERE ID_Video = ?");
-$Getviews -> bind_param("i", $_GET['watch']);
-$Getviews -> execute();
-$Getviews -> bind_result($Views);
-$Getviews -> fetch();
-$Getviews -> store_result();
-$Getviews -> close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +70,7 @@ $Getviews -> close();
         </a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link link active" href="index.php">Browse</a>
+                <a class="nav-link link active" href="#">Browse</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link link" href="#">Following</a>
@@ -120,7 +105,7 @@ $Getviews -> close();
         <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
             <div class="col-sm">
-                <?php echo "Views: " . $Views; ?>
+                Datum
             </div>
         <div id="likes"></div>
         </div>
@@ -148,19 +133,26 @@ $Getviews -> close();
         <?php
         if($_SESSION['Loggedin'] == true){
         ?>
-        <div>
-            <form method="post" onsubmit="return Comment();">
+        <div class="commentsection">
+           <h2> Comments </h2>
+            <hr>
+            <form class="commentform" method="post" onsubmit="return Comment();">
+            <div class="textb">
                 <input type="number" name="ID_Video" id="ID_Video" value="<?php echo $_GET['watch'] ?>" hidden>
                 <input type="text" name="comment" value="" id="comment">
                 <input type="submit" value="submit">
+            </div>
             </form>
-        </div>
             <?php
         }
         ?>
-        <div id="Comments">
-
+        <hr>
+        <div class="comments" id="Comments">
+            
         </div>
+    </div>
+
+    <div class="space"></div>
 
         </div>
 
@@ -208,6 +200,7 @@ $Getviews -> close();
             </div>
         </nav>
     </aside>
+    
 </body>
 
 </html>

@@ -103,13 +103,13 @@ require "php/config.php";
         <div class="container-fluid container-vid">
           <div class="row"><h3>Selected</h3>
               <div id="Result"></div>
-          </div>
+          </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
 
           <div class="container-fluid container-vid">
               <div class="row"><h3>Random</h3>
                   <div id="Random"></div>
-              </div>
+              </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
           </div>
           <div class="container-fluid container-vid">
               <div class="row"><h3>Followed</h3>

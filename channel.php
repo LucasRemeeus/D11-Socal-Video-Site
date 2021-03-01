@@ -76,7 +76,7 @@ if (!isset($_GET['ID'])){
               <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
                   <p>Followed Channels</p>
                   <?php
-                  $follow = $mysqli -> prepare("SELECT * FROM subscribe WHERE ID_Subscriber = ? LIMIT 1");
+                  $follow = $mysqli -> prepare("SELECT * FROM subscribe WHERE ID_Subscriber = ? LIMIT 10");
                   $follow -> bind_param("i", $_SESSION['ID_User']);
                   $follow -> execute();
 
