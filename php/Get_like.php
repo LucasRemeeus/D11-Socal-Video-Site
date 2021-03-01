@@ -25,10 +25,10 @@ if($_SESSION['Loggedin'] == true ){
 
 
 <div class="col-sm">
-    <button onclick="Like(1, <?php echo $_POST['ID_Video']; ?>)"><?php echo $Likes; ?> Like</button>
+    <button class="like" onclick="Like(1, <?php echo $_POST['ID_Video']; ?>)"><?php echo $Likes; ?> Like</button>
 </div>
 <div class="col-sm">
-    <button onclick="Like(0, <?php echo $_POST['ID_Video']; ?>)"><?php echo $Dislikes; ?> Dislike</button>
+    <button class="like" onclick="Like(0, <?php echo $_POST['ID_Video']; ?>)"><?php echo $Dislikes; ?> Dislike</button>
 </div>
     <?php
 }else{

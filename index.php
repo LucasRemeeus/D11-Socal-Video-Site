@@ -137,7 +137,7 @@ require "php/config.php";
                       }
                       ?>
                   </div>
-              </div>
+              </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
           </div>
           <div class="container-fluid container-vid">
               <div class="row"><h3>Recent</h3>

@@ -49,7 +49,7 @@ $GetUserDataResult = $GetUserData->get_result();
 
     <!--TODO: MODAL voor de rename-->
     <div class="titleBackground">
-        <div><a class="nav-link button button-link button-login" href="channel.php">Back to your channel</a></div>
+        <div><a class="nav-link button button-link button-login" href="channel.php">Back to your channel</a></div><br>
         <div id="resultaat"></div>
         <div class="error" id="error"></div>
     </div>
