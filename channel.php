@@ -35,17 +35,17 @@ if (!isset($_GET['ID'])){
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-    <script src="js/ajax.js" ></script>
+  <script src="js/ajax.js"></script>
 </head>
 
 <body onload="GetSub(<?php echo $pageID; ?>), getVideoUser(<?php echo $pageID; ?>)">
-    <!-- Navbar -->
-    <?php
+  <!-- Navbar -->
+  <?php
     include "include/nav.php";
     ?>
-    
-    <!-- Sidebar -->
-    <?php
+
+  <!-- Sidebar -->
+  <?php
       include "include/sidebar.php";
     ?>
 
@@ -75,51 +75,52 @@ $getlikes -> close();
   while ($channelData= $channelResult -> fetch_assoc())
   {
   ?>
-    <div class="container-fluid mt-5 col-10 container">
+  <div class="container-fluid mt-5 col-10 container">
 
-      <div class="banner">
-        <img class="bannerphoto" src="upload/banner/<?php echo $channelData['Banner'] ?>">
-      </div>
-
-        <div class="ChannelInfo">
-          
-        <div class="channelpf">
-                <img src="upload/profilepicture/<?php echo $channelData['ProfilePicture'] ?>">
-        </div>
-
-
-      
-
-        <div class="ChannelName">
-          <h1><?php echo $channelData['Username'] ?></h1>
-          <h2><?php echo $Subscribers ?></h2>
-        </div>
-            <?php if ($_SESSION['ID_User'] !== $pageID){ ?>
-            <a href="#">
-                <div onclick="Subscribe(<?php echo $channelData['ID_User'] ?>)" id="subscribeButton" class="subscribeButton">
-                </div>
-            </a>
-            <?php } ?>
-           <?php if($_SESSION['ID_User'] == $pageID ) { ?>
-                <h4><a class="nav-link btn btn-secondary button-link button-login" href="dashboard.php">&nbsp Dashboard Videos &nbsp</a></h4>
-                <h4><a class="nav-link button-link button-login" href="channel_info.php">&nbsp Edit Profile &nbsp</a></h4>
-           <?php } ?>
-            <br>
-            
-      </div>
-
-      <div class="vids">
-
-        <div class="container-fluid container-vid">
-          <div class="row">
-            <div id="Result"></div>
-          </div>
-        </div>
-
-      </div>
+    <div class="banner">
+      <img class="bannerphoto" src="upload/banner/<?php echo $channelData['Banner'] ?>">
     </div>
 
-  
+    <div class="ChannelInfo">
+
+      <div class="channelpf">
+        <img src="upload/profilepicture/<?php echo $channelData['ProfilePicture'] ?>">
+      </div>
+
+
+
+
+      <div class="ChannelName">
+        <h1><?php echo $channelData['Username'] ?></h1>
+        <h2><?php echo $Subscribers ?></h2>
+      </div>
+      <?php if ($_SESSION['ID_User'] !== $pageID){ ?>
+      <a href="#">
+        <div onclick="Subscribe(<?php echo $channelData['ID_User'] ?>)" id="subscribeButton" class="subscribeButton">
+        </div>
+      </a>
+      <?php } ?>
+      <?php if($_SESSION['ID_User'] == $pageID ) { ?>
+      <h4><a class="nav-link btn btn-secondary button-link button-login" href="dashboard.php">&nbsp Dashboard Videos
+          &nbsp</a></h4>
+      <h4><a class="nav-link button-link button-login" href="channel_info.php">&nbsp Edit Profile &nbsp</a></h4>
+      <?php } ?>
+      <br>
+
+    </div>
+
+    <div class="vids">
+
+      <div class="container-fluid container-vid">
+        <div class="row">
+          <div id="Result"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
 
 
 </body>

@@ -74,20 +74,23 @@ require "php/config.php";
 
       <div>
         <div class="container-fluid container-vid">
-          <div class="row"><h3>Selected</h3>
-              <div id="Result"></div>
+          <div class="row">
+            <h3>Selected</h3>
+            <div id="Result"></div>
           </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
 
-          <div class="container-fluid container-vid">
-              <div class="row"><h3>Random</h3>
-                  <div id="Random"></div>
-              </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          </div>
-          <div class="container-fluid container-vid">
-              <div class="row"><h3>Followed</h3>
-                  <div id="Followed">
-                      <?php
+        <div class="container-fluid container-vid">
+          <div class="row">
+            <h3>Random</h3>
+            <div id="Random"></div>
+          </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+        <div class="container-fluid container-vid">
+          <div class="row">
+            <h3>Followed</h3>
+            <div id="Followed">
+              <?php
 
                           $getVideoFollow = $mysqli -> prepare("SELECT * FROM video WHERE ID_User IN (SELECT subscribe.ID_User FROM subscribe WHERE subscribe.ID_Subscriber = ?) ORDER BY RAND() LIMIT 10");
                           $getVideoFollow -> bind_param("i", $_SESSION['ID_User']);
@@ -98,24 +101,25 @@ require "php/config.php";
                             while ($Followed = $getVideoFollowResult -> fetch_assoc())
                       {
                           ?>
-                          <a href="watch.php?watch=<?php echo $Followed['ID_Video'] ?>">
-                              <div class="col-md vid">
-                                  <div class="titelText">
-                                      <h2><?php echo $Followed['Title'] ?></h2><br>
-                                  </div>
-                                  <video width="100%" src="upload/<?php echo $Followed['Video']?>"></video>
-                              </div>
-                          </a>
-                          <?php
+              <a href="watch.php?watch=<?php echo $Followed['ID_Video'] ?>">
+                <div class="col-md vid">
+                  <div class="titelText">
+                    <h2><?php echo $Followed['Title'] ?></h2><br>
+                  </div>
+                  <video width="100%" src="upload/<?php echo $Followed['Video']?>"></video>
+                </div>
+              </a>
+              <?php
                       }
                       ?>
-                  </div>
-              </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          </div>
-          <div class="container-fluid container-vid">
-              <div class="row"><h3>Recent</h3>
-                  <div id="Followed">
-                      <?php
+            </div>
+          </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+        <div class="container-fluid container-vid">
+          <div class="row">
+            <h3>Recent</h3>
+            <div id="Followed">
+              <?php
 
                       $getVideoFollow = $mysqli -> prepare("SELECT * FROM video ORDER BY ID_Video DESC LIMIT 10");
 
@@ -126,20 +130,20 @@ require "php/config.php";
                       while ($Followed = $getVideoFollowResult -> fetch_assoc())
                       {
                           ?>
-                          <a href="watch.php?watch=<?php echo $Followed['ID_Video'] ?>">
-                              <div class="col-md vid">
-                                  <div class="titelText">
-                                      <h2><?php echo $Followed['Title'] ?></h2><br>
-                                  </div>
-                                  <video width="100%" src="upload/<?php echo $Followed['Video']?>"></video>
-                              </div>
-                          </a>
-                          <?php
+              <a href="watch.php?watch=<?php echo $Followed['ID_Video'] ?>">
+                <div class="col-md vid">
+                  <div class="titelText">
+                    <h2><?php echo $Followed['Title'] ?></h2><br>
+                  </div>
+                  <video width="100%" src="upload/<?php echo $Followed['Video']?>"></video>
+                </div>
+              </a>
+              <?php
                       }
                       ?>
-                  </div>
-              </div>
+            </div>
           </div>
+        </div>
 
       </div>
   </div>

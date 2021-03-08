@@ -76,10 +76,11 @@ $Getviews -> close();
     <!-- Jquery link -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="js/ajax.js">   </script>
+    <script src="js/ajax.js"> </script>
 </head>
 
-<body onload="GetLike(<?php echo $_GET['watch']; ?>), GetSub(<?php echo $DataUserID; ?>), GetComment(<?php echo $_GET['watch']; ?>)">
+<body
+    onload="GetLike(<?php echo $_GET['watch']; ?>), GetSub(<?php echo $DataUserID; ?>), GetComment(<?php echo $_GET['watch']; ?>)">
     <!-- Navbar -->
     <?php
         include "include/nav.php";
@@ -88,8 +89,8 @@ $Getviews -> close();
     <!-- Main content -->
     <div class="container-fluid col-10 mt-3 container">
         <br>
-        <video width="100%"   title="Video iframe" controls>
-        <source src="upload/<?php echo $Video['Video'] ?>" type="video/mp4">
+        <video width="100%" title="Video iframe" controls>
+            <source src="upload/<?php echo $Video['Video'] ?>" type="video/mp4">
         </video>
 
         <h3><?php echo $Video['Title'] ?></h3>
@@ -97,7 +98,7 @@ $Getviews -> close();
             <div class="col-sm">
                 <?php echo $Views ?>
             </div>
-        <div id="likes"></div>
+            <div id="likes"></div>
         </div>
         <hr>
         <div class="channelinfo">
@@ -105,7 +106,9 @@ $Getviews -> close();
                 <img src="upload/profilepicture/<?php echo $DataProfilePicture; ?>">
             </div>
             <div class="channelname">
-                <a href="channel.php?ID=<?php echo $DataUserID;?>"><h4><?php echo $DataUserName;?> </h4></a>
+                <a href="channel.php?ID=<?php echo $DataUserID;?>">
+                    <h4><?php echo $DataUserName;?> </h4>
+                </a>
                 <h5><?php echo $Subscribers;?> subscribers</h5>
             </div>
             <?php
@@ -124,27 +127,27 @@ $Getviews -> close();
         if($_SESSION['Loggedin'] == true){
         ?>
         <div class="commentsection">
-           <h2> Comments </h2>
+            <h2> Comments </h2>
             <hr>
             <form class="commentform" method="post" onsubmit="return Comment();">
-            <div class="textb">
-                <input type="number" name="ID_Video" id="ID_Video" value="<?php echo $_GET['watch'] ?>" hidden>
-                <input type="text" name="comment" value="" id="comment">
-                <input type="submit" value="submit">
-            </div>
+                <div class="textb">
+                    <input type="number" name="ID_Video" id="ID_Video" value="<?php echo $_GET['watch'] ?>" hidden>
+                    <input type="text" name="comment" value="" id="comment">
+                    <input type="submit" value="submit">
+                </div>
             </form>
             <?php
         }
         ?>
-        <hr>
-        <div class="comments" id="Comments">
-            
+            <hr>
+            <div class="comments" id="Comments">
+
+            </div>
         </div>
+
+        <div class="space"></div>
+
     </div>
-
-    <div class="space"></div>
-
-        </div>
 
 
 
@@ -157,7 +160,7 @@ $Getviews -> close();
     <?php
       include "include/sidebar.php";
     ?>
-    
+
 </body>
 
 </html>
