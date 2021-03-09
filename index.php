@@ -38,6 +38,10 @@ require "php/config.php";
   <?php
     include "include/nav.php";
   ?>
+   <!-- Sidebar -->
+   <?php
+    include "include/sidebar.php";
+  ?>
 
   <!-- Main content -->
   <div class="container-fluid col-10 mt-3 container">
@@ -150,10 +154,7 @@ require "php/config.php";
 
 
 
-  <!-- Sidebar -->
-  <?php
-    include "include/sidebar.php";
-  ?>
+ 
 </body>
 
 </html>
