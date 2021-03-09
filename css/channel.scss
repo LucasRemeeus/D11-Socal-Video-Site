@@ -85,7 +85,7 @@ body {
     height: auto;
     margin-left: 200px;
     float: right;
-    margin-left: 225px;
+    margin-left: 2% !important;
 }
 
 .banner {
@@ -150,12 +150,13 @@ h4 {
     color: white;
 }
 
-    .btn {
-        background-color: $main-buttons;
-    }
-    .btn:hover {
-        background-color: $main-signup-button-hover;
-    }
+.btn {
+    background-color: $main-buttons;
+}
+
+.btn:hover {
+    background-color: $main-signup-button-hover;
+}
 
 .vids {
     margin-left: 2%;
@@ -171,27 +172,27 @@ h4 {
     margin-right: 5px;
     border-radius: 5px;
     float: left;
-    }
-    
-    h2 {
-        color: $main-text;
-        background-color: $main-buttons;
-        border-radius: 5px;
-        text-align: center;
-        margin-top: 10px;
-    }
-    
-    .vid:hover {
-        background-color: $main-signup-button-hover !important;
-        list-style: none;
-    }
-    
-    .container-vid {
+}
+
+h2 {
+    color: $main-text;
+    background-color: $main-buttons;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.vid:hover {
+    background-color: $main-signup-button-hover !important;
+    list-style: none;
+}
+
+.container-vid {
     margin-bottom: 50px;
     margin-left: -20px;
-    }
-    
-    .Result {
+}
+
+.Result {
     height: 100% !important;
     width: 100%;
-    }
+}

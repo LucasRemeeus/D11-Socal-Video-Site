@@ -85,6 +85,10 @@ $Getviews -> close();
     <?php
         include "include/nav.php";
     ?>
+    <!-- Sidebar -->
+    <?php
+      include "include/sidebar.php";
+    ?>
 
     <!-- Main content -->
     <div class="container-fluid col-10 mt-3 container">
@@ -156,10 +160,7 @@ $Getviews -> close();
     <?php
     }
     ?>
-    <!-- Sidebar -->
-    <?php
-      include "include/sidebar.php";
-    ?>
+    
 
 </body>
 

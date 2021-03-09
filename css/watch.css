@@ -75,6 +75,7 @@ body {
   margin-left: 225px;
   width: 100%;
   color: #FFF;
+  margin-left: 2% !important;
 }
 
 .container li {
