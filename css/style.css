@@ -76,9 +76,9 @@ body {
 .container {
   position: absolute;
   display: inline-block;
-  margin-left: 225px;
-  width: 100%;
+  width: 99%;
   color: #FFF;
+  margin-left: 2% !important;
 }
 
 .container li {
@@ -144,7 +144,7 @@ body {
 
 .container .container-vid {
   margin-bottom: 50px;
-  margin-left: -20px;
+  margin-top: 1%;
 }
 
 .container .Result {

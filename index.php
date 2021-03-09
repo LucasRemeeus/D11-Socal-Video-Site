@@ -62,6 +62,7 @@ require "php/config.php";
       <li class="nav-item">
         <a class="nav-link button-link button-browse" onclick="getVideo(0,`Result`)">Most Watched</a>
       </li>
+    </ul>
 
 
 
@@ -81,14 +82,14 @@ require "php/config.php";
           <div class="row">
             <h3>Selected</h3>
             <div id="Result"></div>
-          </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div><br><br><br><br><br><br><br>
         </div>
 
         <div class="container-fluid container-vid">
           <div class="row">
             <h3>Random</h3>
             <div id="Random"></div>
-          </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div><br><br><br><br><br><br>
         </div>
         <div class="container-fluid container-vid">
           <div class="row">
@@ -117,7 +118,7 @@ require "php/config.php";
                       }
                       ?>
             </div>
-          </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div><br><br><br><br><br><br>
         </div>
         <div class="container-fluid container-vid">
           <div class="row">
