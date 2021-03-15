@@ -11,7 +11,7 @@ $main-buttons: #8433FB
 $main-login-button: #373737
 $main-login-button-hover: #272727
 $main-signup-button-hover: #5a1bb9
-$formbackground: rgb(24, 24, 27, 0,2)
+$formbackground: rgb(24, 24, 27)
 $commentbackground: rgb(22, 22, 25)
 
 $main-logo-px: 60px
@@ -163,6 +163,7 @@ video
     background-color: $commentbackground
     border-radius: 15px
     margin-top: 1%
+    padding: 10px
 
 
 .CommentUser
@@ -181,17 +182,29 @@ video
 .CommentContent
     
     width: 90%
+    max-height: 90% !important
+    height: auto
     display: inline-block
     margin-left 5%
     margin-top: 5px
     text-align: left
+    
     .comment
         margin-left: 1%
+        margin-bottom: 5px
         display: inline-block
 
-.delete
+.DeleteKnop
     float: right
-    display: inline-block
+    background-color: $main-buttons
+    margin-right: 20px
+    margin-top: 10px
+    border-radius: 5px
+    font-size: 12px
+    color: $main-text
+
+    &:hover
+        background-color: $main-signup-button-hover 
     
 .CommentInput,
 .SubmitKnop
@@ -200,8 +213,19 @@ video
    
 .SubmitKnop
     &:hover
-        background-color: pink !important   
+        background-color: $main-buttons !important   
+        color: white !important
 
+.PFPhoto
+    width: 4.7%
+    height: 4.7%
+    border-radius: 50px
+    float: left
+
+.lijntje
+    width: 30%
+    margin-right: 80%
+    margin-top: 35px
 
 h2,
 .commentform

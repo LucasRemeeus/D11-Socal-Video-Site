@@ -137,18 +137,31 @@ $Getviews -> close();
                 <div class="textb">
                     <input type="number" name="ID_Video" id="ID_Video" value="<?php echo $_GET['watch'] ?>" hidden>
                     <input type="text" class="CommentInput" name="comment" value="" id="comment" placeholder="Add a comment">
-                    <input type="submit" class="SubmitKnop"  placeholder="Submit">
+                    <input type="submit" class="SubmitKnop" value="submit" placeholder="Submit">
                 </div>
             </form>
+            <div class="comments" id="Comments">
+
+            </div>
+        </div>
             <?php
         }
         ?>
+
+        <?php
+        if($_SESSION['Loggedin'] == false){
+        ?>
+        <div class="commentsection">
+            <h2> Comments </h2>
             <hr>
             <div class="comments" id="Comments">
 
             </div>
         </div>
-
+            <?php
+        }
+        ?>
+            
         <div class="space"></div>
 
     </div>
