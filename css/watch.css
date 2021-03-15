@@ -146,12 +146,56 @@ video {
   height: 100%;
   background-color: #18181b;
   border-radius: 10px;
+  color: white;
 }
 
 .comments {
   margin-top: 5%;
   text-align: center;
   margin-bottom: 10px;
+}
+
+.CommentOutput {
+  width: 100%;
+  background-color: #161619;
+  border-radius: 15px;
+  margin-top: 1%;
+}
+
+.CommentUser {
+  width: 10%;
+  margin-left: 2%;
+  float: left;
+}
+
+.CommentDate {
+  width: 10%;
+  float: left;
+  margin-left: 1%;
+  color: darkgray;
+}
+
+.CommentContent {
+  width: 90%;
+  display: inline-block;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.CommentContent .comment {
+  margin-left: 1%;
+  display: inline-block;
+}
+
+.delete {
+  float: right;
+  display: inline-block;
+}
+
+.CommentInput,
+.SubmitKnop {
+  color: gray !important;
+  text-align: center;
 }
 
 h2,

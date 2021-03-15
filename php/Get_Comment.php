@@ -20,16 +20,17 @@ while ($Comment = $getCommentResult -> fetch_assoc()){
 
 
     ?>
-    <div>
-        <?php echo $CommentUsername?>
-        <?php echo $Comment['Comment']?>
-        <?php echo $Comment['Date']?>
+    <div class="CommentOutput">
+        <?php echo "<div class='CommentUser'>" . $CommentUsername . "</div>" ?>
+        <?php echo "<div class='CommentDate'>" . $Comment['Date'] . "</div>" ?>
+        <?php echo "<div class='CommentContent'> <div class='comment'>"  . $Comment['Comment'] . "</div>" ?>
         <?php
         if($_SESSION['ID_User'] == $Comment['ID_User']){
             ?>
-            <button onclick="DeleteComment(<?php echo $Comment['ID_Comment'] ?>)">Delete</button>
+            <button class="delete" onclick="DeleteComment(<?php echo $Comment['ID_Comment'] ?>)">Delete</button>
             <?php
         }
+        echo "</div>";
         ?>
     </div>
 
