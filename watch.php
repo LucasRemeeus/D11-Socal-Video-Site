@@ -136,8 +136,8 @@ $Getviews -> close();
             <form class="commentform" method="post" onsubmit="return Comment();">
                 <div class="textb">
                     <input type="number" name="ID_Video" id="ID_Video" value="<?php echo $_GET['watch'] ?>" hidden>
-                    <input type="text" name="comment" value="" id="comment">
-                    <input type="submit" value="submit">
+                    <input type="text" class="CommentInput" name="comment" value="" id="comment" placeholder="Add a comment">
+                    <input type="submit" class="SubmitKnop"  placeholder="Submit">
                 </div>
             </form>
             <?php

@@ -11,7 +11,8 @@ $main-buttons: #8433FB
 $main-login-button: #373737
 $main-login-button-hover: #272727
 $main-signup-button-hover: #5a1bb9
-$formbackground: rgb(24, 24, 27)
+$formbackground: rgb(24, 24, 27, 0,2)
+$commentbackground: rgb(22, 22, 25)
 
 $main-logo-px: 60px
 
@@ -148,6 +149,7 @@ video
     height: 100%
     background-color: $formbackground
     border-radius: 10px
+    color: white
     
     
 
@@ -156,6 +158,49 @@ video
     text-align: center
     margin-bottom: 10px
     
+.CommentOutput
+    width: 100%
+    background-color: $commentbackground
+    border-radius: 15px
+    margin-top: 1%
+
+
+.CommentUser
+    
+    width: 10%
+    margin-left: 2%
+    float: left
+
+.CommentDate
+    
+    width: 10%
+    float: left
+    margin-left: 1%
+    color: darkgray
+
+.CommentContent
+    
+    width: 90%
+    display: inline-block
+    margin-left 5%
+    margin-top: 5px
+    text-align: left
+    .comment
+        margin-left: 1%
+        display: inline-block
+
+.delete
+    float: right
+    display: inline-block
+    
+.CommentInput,
+.SubmitKnop
+    color: gray !important
+    text-align: center
+   
+.SubmitKnop
+    &:hover
+        background-color: pink !important   
 
 
 h2,
