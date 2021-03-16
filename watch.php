@@ -133,11 +133,11 @@ $Getviews -> close();
         <div class="commentsection">
             <h2> Comments </h2>
             <hr>
-            <form class="commentform" method="post" onsubmit="return Comment();">
+            <form class="commentform" method="post" ">
                 <div class="textb">
                     <input type="number" name="ID_Video" id="ID_Video" value="<?php echo $_GET['watch'] ?>" hidden>
                     <input type="text" class="CommentInput" name="comment" value="" id="comment" placeholder="Add a comment">
-                    <input type="submit" class="SubmitKnop" value="Submit" placeholder="Submit">
+                    <button type="submit" class="SubmitKnop" onclick="Comment();" value="Submit" placeholder="Submit">Submit</button>
                 </div>
             </form>
             <div class="comments" id="Comments">
