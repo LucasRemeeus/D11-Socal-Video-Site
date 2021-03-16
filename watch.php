@@ -100,7 +100,7 @@ $Getviews -> close();
         <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
             <div class="col-sm">
-                <?php echo $Views ?>
+            <?php echo "Views: " . $Views ?>
             </div>
             <div id="likes"></div>
         </div>
@@ -137,7 +137,7 @@ $Getviews -> close();
                 <div class="textb">
                     <input type="number" name="ID_Video" id="ID_Video" value="<?php echo $_GET['watch'] ?>" hidden>
                     <input type="text" class="CommentInput" name="comment" value="" id="comment" placeholder="Add a comment">
-                    <input type="submit" class="SubmitKnop" value="submit" placeholder="Submit">
+                    <input type="submit" class="SubmitKnop" value="Submit" placeholder="Submit">
                 </div>
             </form>
             <div class="comments" id="Comments">
