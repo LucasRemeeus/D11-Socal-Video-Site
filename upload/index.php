@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 session_start();
 require '../php/config.php';
@@ -8,6 +7,7 @@ if ( $_SESSION['Loggedin'] !== true) {
 }
 
 ?>
+<!DOCTYPE html>
 <head>
     <title>Dashboard</title>
     <!-- Jquery link -->
@@ -19,10 +19,10 @@ if ( $_SESSION['Loggedin'] !== true) {
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/upload.css">
 
     <!-- JS link -->
-    <script src="js/ajax.js"></script>
+    <script src="../js/ajax.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
