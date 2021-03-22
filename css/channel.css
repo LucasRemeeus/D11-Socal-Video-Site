@@ -28,7 +28,7 @@ body {
 .nav .button-login {
   background-color: #373737;
   margin-right: 20px;
-  margin-top: 10px;
+  margin-top: 1rem;
   margin-bottom: 5px;
   border-radius: 5px;
   font-size: 12px;
@@ -115,21 +115,21 @@ body {
 
 .subscribeButton {
   float: right;
-  width: 295px;
+  width: 200px;
   height: 51px;
   background-color: #8433FB;
   border-radius: 5px;
-  margin-top: 15px;
+  margin-left: 3rem;
+}
+
+.subscribeButton:hover {
+  background-color: #5a1bb9;
 }
 
 .subscribeButton h2 {
   margin-top: 5px;
   text-align: center;
   color: #FFF;
-}
-
-.subscribeButton:hover {
-  background-color: #5a1bb9;
 }
 
 h4 {
