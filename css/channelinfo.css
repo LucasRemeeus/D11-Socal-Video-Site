@@ -209,4 +209,25 @@ hr {
 .checkbox input:checked + .fa-check {
   opacity: 1;
 }
+
+.save {
+  width: 10%;
+  font-size: 29px;
+  background-color: #373737;
+  border-radius: 15px;
+  margin-left: 2%;
+  padding: 0.6%;
+  border: 1px black;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.save:hover {
+  background-color: #8433FB !important;
+  color: white !important;
+}
+
+.saveinfo {
+  margin-left: 46%;
+}
 /*# sourceMappingURL=channelinfo.css.map */

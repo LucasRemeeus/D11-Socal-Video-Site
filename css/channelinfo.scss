@@ -222,3 +222,23 @@ hr {
 .checkbox input:checked+.fa-check {
     opacity: 1;
 }
+
+.save {
+    width: 10%;
+    font-size: 29px;
+    background-color: $main-login-button;
+    border-radius: 15px;
+    margin-left: 2%;
+    padding: 0.6%;
+    border: 1px black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    &:hover {
+        background-color: $main-buttons !important;
+        color: white !important;
+    }
+}
+
+.saveinfo {
+    margin-left: 46%;
+}

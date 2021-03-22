@@ -81,7 +81,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
           class="input"><br><br>
         <hr>
 
-        <input type="submit" name="submit" value="Save" class="save">
+        <input type="submit" name="submit" value="Save" class="save saveinfo">
       </form>
     </div>
 
@@ -95,7 +95,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
 
         <input type="file" accept="image/png, image/jpeg," required id="imgInp" name="upload_image"><br>
 
-        <input type="submit" value="Save" name="form_submit"><br>
+        <input type="submit" value="Save" class="save" name="form_submit"><br>
 
         <script>
           function readpfp(input) {
@@ -128,7 +128,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
 
         <input type="file" accept="image/png, image/jpeg," required id="bannerInp" name="upload_banner"><br>
 
-        <input type="submit" value="Save" name="banner_submit"><br>
+        <input type="submit" value="Save" class="save" name="banner_submit"><br>
 
         <script>
           function readURL(input) {
