@@ -16,7 +16,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
 <!DOCTYPE html>
 
 <head>
-  <title>dashboard</title>
+  <title>Edit Profile</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"

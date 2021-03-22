@@ -244,7 +244,7 @@ input[type=file]::file-selector-button:hover {
 .save {
   width: 10%;
   font-size: 20px;
-  background-color: #373737;
+  background-color: #8433FB;
   border-radius: 15px;
   margin-left: 2%;
   padding: 0.6%;
@@ -254,7 +254,7 @@ input[type=file]::file-selector-button:hover {
 }
 
 .save:hover {
-  background-color: #8433FB !important;
+  background-color: #5a1bb9 !important;
   color: white !important;
 }
 
