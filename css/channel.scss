@@ -68,7 +68,7 @@ body {
 
 .sidebar {
     background-color: $main-sidebar;
-    height: 150vh;
+    height: 100vh !important;
     width: 65%;
     float: left;
     p {

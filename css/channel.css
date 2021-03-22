@@ -56,7 +56,7 @@ body {
 
 .sidebar {
   background-color: #1F1F23;
-  height: 150vh;
+  height: 100vh !important;
   width: 65%;
   float: left;
 }
