@@ -210,9 +210,40 @@ hr {
   opacity: 1;
 }
 
+.inputfile {
+  margin-top: 1%;
+  display: inline-block;
+  border-right: 10px;
+}
+
+input[type=text],
+input[type=email] {
+  width: 25% !important;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 0.4%;
+  border: 1px black;
+}
+
+input[type=file]::file-selector-button {
+  border: 2px;
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color: #373737;
+  -webkit-transition: 1s;
+  transition: 1s;
+  color: white;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #8433FB !important;
+  color: white !important;
+}
+
 .save {
   width: 10%;
-  font-size: 29px;
+  font-size: 20px;
   background-color: #373737;
   border-radius: 15px;
   margin-left: 2%;

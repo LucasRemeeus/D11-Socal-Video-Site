@@ -93,7 +93,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
         <img style="height: 200px; width: 200px;" id="preview"
           src="upload/profilepicture/<?php echo $UserRow['ProfilePicture'] ?>"><br>
 
-        <input type="file" accept="image/png, image/jpeg," required id="imgInp" name="upload_image"><br>
+        <input type="file" class="inputfile" accept="image/png, image/jpeg," required id="imgInp" name="upload_image"><br>
 
         <input type="submit" value="Save" class="save" name="form_submit"><br>
 
@@ -126,7 +126,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
         <img style="height: 400px; width: 1550px;" id="previewbanner"
           src="upload/banner/<?php echo $UserRow['Banner'] ?>"><br>
 
-        <input type="file" accept="image/png, image/jpeg," required id="bannerInp" name="upload_banner"><br>
+        <input class="inputfile" type="file" accept="image/png, image/jpeg," required id="bannerInp" name="upload_banner"><br>
 
         <input type="submit" value="Save" class="save" name="banner_submit"><br>
 
