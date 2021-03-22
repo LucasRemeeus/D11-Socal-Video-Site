@@ -16,7 +16,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
 <!DOCTYPE html>
 
 <head>
-  <title>Edit Profile</title>
+  <title>dashboard</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -90,7 +90,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
     <div class="form1">
       <form action="upload/profilepicture_process.php" method="post" enctype="multipart/form-data" runat="server"
         class="photo-form">
-        <img style="height: 200px; width: 200px;" id="preview"
+        <img class="preview" style="height: 200px; width: 200px;" id="preview"
           src="upload/profilepicture/<?php echo $UserRow['ProfilePicture'] ?>"><br>
 
         <input type="file" class="inputfile" accept="image/png, image/jpeg," required id="imgInp" name="upload_image"><br>
@@ -123,7 +123,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
     <div class="form1">
       <form action="upload/banner_process.php" method="post" enctype="multipart/form-data" runat="server"
         class="photo-form">
-        <img style="height: 400px; width: 1550px;" id="previewbanner"
+        <img class="preview banner" style="height: 400px; width: 1550px;" id="previewbanner"
           src="upload/banner/<?php echo $UserRow['Banner'] ?>"><br>
 
         <input class="inputfile" type="file" accept="image/png, image/jpeg," required id="bannerInp" name="upload_banner"><br>

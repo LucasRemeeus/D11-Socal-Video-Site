@@ -22,7 +22,7 @@ $TextTwotch: white;
 $fontweight: 700;
 $SemiBold: 600;
 $borderRadius: 10px;
-$formbackground: rgb(24, 24, 27);
+$formbackground: rgb(24, 24, 26);
 @mixin reset-list {
     margin: 0;
     padding: 0;
@@ -100,7 +100,7 @@ body {
 
 .banner {
     background-color: white;
-    width: 100%;
+    width: 100% !important;
     height: 270px !important;
     margin: 20px auto;
     top: -10px;
@@ -150,6 +150,11 @@ h1 {
     }
 }
 
+.photo-form {
+    border: 2px solid $main-buttons;
+    box-shadow: 0px 10px 20px 1px $main-buttons;
+}
+
 label {
     margin-right: 10%;
 }
@@ -190,18 +195,6 @@ hr {
     position: relative;
 }
 
-.textb input {
-    width: 20%;
-    height: 60px;
-    border: none;
-    background-color: $backgroundInput;
-    border-radius: 4px;
-    color: #333;
-    font-size: 18px;
-    font-weight: $fontweight;
-    padding: 0 0 0 10px;
-}
-
 .placeholder {
     text-transform: uppercase;
     font-size: 14px;
@@ -233,10 +226,25 @@ input[type=text],
 input[type=email] {
     width: 25% !important;
     font-size: 20px;
-    background-color: white;
-    border-radius: 15px;
+    border-radius: 12px;
     padding: 0.4%;
     border: 1px black;
+}
+
+input[type=text]:hover,
+input[type=email]:hover {
+    background-color: #E9E9E9;
+    border: 1.5px solid $main-buttons;
+    color: black;
+    outline-width: 0;
+}
+
+input[type=text]:focus,
+input[type=email]:focus {
+    background-color: black;
+    border: 2px solid $main-buttons;
+    color: white;
+    outline-width: 0;
 }
 
 input[type=file]::file-selector-button {
@@ -246,10 +254,7 @@ input[type=file]::file-selector-button {
     background-color: $main-login-button;
     transition: 1s;
     color: white;
-    &:hover {
-        background-color: $main-buttons !important;
-        color: white !important;
-    }
+    margin-left: 17%;
 }
 
 .save {
@@ -260,12 +265,17 @@ input[type=file]::file-selector-button {
     margin-left: 2%;
     padding: 0.6%;
     border: 1px black;
-    margin-bottom: 10px;
+    margin-bottom: 2%;
     margin-top: 10px;
     &:hover {
         background-color: $main-signup-button-hover !important;
         color: white !important;
     }
+}
+
+.preview {
+    margin-top: 2%;
+    width: 100%;
 }
 
 .saveinfo {
