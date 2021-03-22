@@ -79,9 +79,28 @@ body {
 .container table td {
   border: 1px solid #fff;
   text-align: center;
+  padding-top: 2rem;
 }
 
 .container table td p {
   font-size: 22px;
+}
+
+.container table td a {
+  -webkit-transition: -webkit-transform 250ms;
+  transition: -webkit-transform 250ms;
+  transition: transform 250ms;
+  transition: transform 250ms, -webkit-transform 250ms;
+  height: 4rem;
+  margin-bottom: -1rem;
+}
+
+.container table td a:hover {
+  -webkit-transition: -webkit-transform 125ms;
+  transition: -webkit-transform 125ms;
+  transition: transform 125ms;
+  transition: transform 125ms, -webkit-transform 125ms;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
 }
 /*# sourceMappingURL=dashboard.css.map */
