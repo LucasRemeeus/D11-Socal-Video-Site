@@ -79,7 +79,7 @@ body {
 
 .banner {
   background-color: white;
-  width: 100%;
+  width: 100% !important;
   height: 270px !important;
   margin: 20px auto;
   top: -10px;
@@ -133,6 +133,12 @@ h1 {
   width: 300px;
 }
 
+.photo-form {
+  border: 2px solid #8433FB;
+  -webkit-box-shadow: 0px 10px 20px 1px #8433FB;
+          box-shadow: 0px 10px 20px 1px #8433FB;
+}
+
 label {
   margin-right: 10%;
 }
@@ -142,7 +148,7 @@ hr {
 }
 
 .form1 {
-  background-color: #18181b;
+  background-color: #18181a;
   border: #303036;
   border-color: #303036;
   border-radius: 10px;
@@ -172,18 +178,6 @@ hr {
 .textb {
   margin-bottom: 12px;
   position: relative;
-}
-
-.textb input {
-  width: 20%;
-  height: 60px;
-  border: none;
-  background-color: #323232;
-  border-radius: 4px;
-  color: #333;
-  font-size: 18px;
-  font-weight: 700;
-  padding: 0 0 0 10px;
 }
 
 .placeholder {
@@ -220,10 +214,25 @@ input[type=text],
 input[type=email] {
   width: 25% !important;
   font-size: 20px;
-  background-color: white;
-  border-radius: 15px;
+  border-radius: 12px;
   padding: 0.4%;
   border: 1px black;
+}
+
+input[type=text]:hover,
+input[type=email]:hover {
+  background-color: #E9E9E9;
+  border: 1.5px solid #8433FB;
+  color: black;
+  outline-width: 0;
+}
+
+input[type=text]:focus,
+input[type=email]:focus {
+  background-color: black;
+  border: 2px solid #8433FB;
+  color: white;
+  outline-width: 0;
 }
 
 input[type=file]::file-selector-button {
@@ -234,11 +243,7 @@ input[type=file]::file-selector-button {
   -webkit-transition: 1s;
   transition: 1s;
   color: white;
-}
-
-input[type=file]::file-selector-button:hover {
-  background-color: #8433FB !important;
-  color: white !important;
+  margin-left: 17%;
 }
 
 .save {
@@ -249,13 +254,18 @@ input[type=file]::file-selector-button:hover {
   margin-left: 2%;
   padding: 0.6%;
   border: 1px black;
-  margin-bottom: 10px;
+  margin-bottom: 2%;
   margin-top: 10px;
 }
 
 .save:hover {
   background-color: #5a1bb9 !important;
   color: white !important;
+}
+
+.preview {
+  margin-top: 2%;
+  width: 100%;
 }
 
 .saveinfo {
