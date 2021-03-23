@@ -258,21 +258,51 @@ input[type=file]::file-selector-button {
     margin-left: 17%;
 }
 
-.save {
-    width: 10%;
-    font-size: 20px;
-    background-color: $main-buttons;
-    border-radius: 15px;
-    margin-left: 2%;
-    padding: 0.6%;
-    border: 1px black;
-    margin-bottom: 2%;
-    margin-top: 10px;
-    &:hover {
-        background-color: $main-signup-button-hover !important;
-        color: white !important;
-    }
+.offset {  
+  box-shadow: 
+    0.3em 0.3em 0 0 var(--color),
+    inset 0.3em 0.3em 0 0 var(--color);
+  
+  &:hover,
+  &:focus {
+    box-shadow: 
+      0 0 0 0 var(--hover),
+      inset 6em 3.5em 0 0 var(--hover);
+  }
 }
+
+$colors: (
+  offset: $main-buttons
+);
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 5deg)};
+  }
+}
+
+button {  
+  color: var(--color);
+  transition: 0.25s;
+  
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #fff;
+  }
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+h1 { font-weight: 400; }
 
 .preview {
     margin-top: 2%;
@@ -280,5 +310,5 @@ input[type=file]::file-selector-button {
 }
 
 .saveinfo {
-    margin-left: 46%;
+    margin-left: 46.5%;
 }

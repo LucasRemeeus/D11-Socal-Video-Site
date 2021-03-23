@@ -154,9 +154,6 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
 
   </div>
 
-
-
-
 </body>
 
 </html>
