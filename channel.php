@@ -83,16 +83,14 @@ $getlikes -> close();
 
     <div class="ChannelInfo">
 
-      <div class="channelpf">
-        <img src="upload/profilepicture/<?php echo $channelData['ProfilePicture'] ?>">
-      </div>
-
-
-
-
+      
       <div class="ChannelName">
-        <h1><?php echo $channelData['Username'] ?></h1>
-        <h2><?php echo $Subscribers ?></h2>
+        <div class="channelpf">
+          <img class="channelpf" src="upload/profilepicture/<?php echo $channelData['ProfilePicture'] ?>">
+        </div>
+        <div class="Name"><?php echo $channelData['Username'] ?></div>
+        <hr class="lijntje">
+        <div class="Subs"><?php echo $Subscribers ?></div>
       </div>
       <?php if ($_SESSION['ID_User'] !== $pageID){ ?>
       <a href="#">
@@ -101,8 +99,8 @@ $getlikes -> close();
       </a>
       <?php } ?>
       <?php if($_SESSION['ID_User'] == $pageID ) { ?>
-      <h4><a class="nav-link btn btn-secondary button-link button-login" href="dashboard.php">Dashboard Videos</a></h4>
-      <h4><a class="nav-link button-link button-login" href="channel_info.php">&nbsp Edit Profile &nbsp</a></h4>
+      <h4><a class="Dashboardbutton" href="dashboard.php">Dashboard Videos</a></h4>
+      <h4><a class="EditProfileButton" href="channel_info.php">&nbsp Edit Profile &nbsp</a></h4>
       <?php } ?>
       <br>
 

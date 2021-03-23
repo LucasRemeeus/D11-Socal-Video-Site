@@ -106,7 +106,7 @@ body {
     margin-top: 5px;
     height: 120px;
     width: 100%;
-    display: inline-block;
+    float: right;
 }
 
 .channelpf {
@@ -129,16 +129,14 @@ body {
     background-color: $main-buttons;
     border-radius: 5px;
     margin-left: 3rem;
-
     &:hover {
         background-color: $main-signup-button-hover;
     }
-
-        h2 {
+    h2 {
         margin-top: 5px;
         text-align: center;
         color: $main-text;
-        }
+    }
 }
 
 h4 {
@@ -147,9 +145,18 @@ h4 {
 }
 
 .ChannelName {
-    float: left;
     margin-left: 20px;
     color: white;
+    display: inline-block;
+    margin-bottom: 30px !important;
+    height: 100%;
+    font-size: 29px;
+    width: 20%;
+    .Name,
+    .Subs {
+        text-align: center;
+        margin-right: 25%;
+    }
 }
 
 .btn {
@@ -198,3 +205,11 @@ h2 {
     height: 100% !important;
     width: 100%;
 }
+
+.lijntje {
+    width: 100% !important;
+}
+
+.Dashboardbutton {}
+
+.EditProfileButton {}
