@@ -96,7 +96,7 @@ body {
   margin-top: 5px;
   height: 120px;
   width: 100%;
-  display: inline-block;
+  float: right;
 }
 
 .channelpf {
@@ -138,9 +138,19 @@ h4 {
 }
 
 .ChannelName {
-  float: left;
   margin-left: 20px;
   color: white;
+  display: inline-block;
+  margin-bottom: 30px !important;
+  height: 100%;
+  font-size: 29px;
+  width: 20%;
+}
+
+.ChannelName .Name,
+.ChannelName .Subs {
+  text-align: center;
+  margin-right: 25%;
 }
 
 .btn {
@@ -188,5 +198,9 @@ h2 {
 .Result {
   height: 100% !important;
   width: 100%;
+}
+
+.lijntje {
+  width: 100% !important;
 }
 /*# sourceMappingURL=channel.css.map */
