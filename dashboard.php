@@ -54,6 +54,7 @@ $GetUserDataResult = $GetUserData->get_result();
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+                <a class="navbar-brand" href="channel.php">
                     <?php if($_SESSION['Loggedin'] == true ) 
         { ?>
                     <img class="logo" id="preview" src="upload/profilepicture/<?php echo $UserRow['ProfilePicture'] ?>"
