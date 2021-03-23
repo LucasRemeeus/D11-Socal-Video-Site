@@ -2,7 +2,7 @@
 session_start();
 require 'config.php';
 
-$statement = $mysqli -> prepare("SELECT * FROM `video` WHERE ID_User = ?");
+$statement = $mysqli -> prepare("SELECT * FROM `video` WHERE ID_User = ? ORDER BY ID_Video DESC");
 $statement->bind_param("i", $_SESSION['ID_User']);
 $statement -> execute();
 $result = $statement->get_result();
@@ -39,7 +39,7 @@ $result = $statement->get_result();
                 
                 <tr>
                     <td><video width="50%" src="upload/<?php echo $row['Video']?>"></video></td>
-                    <td><p><?php echo $row['Title']?></p></td>
+                    <td><a href="watch.php?watch=<?php echo $row['ID_Video'] ?>" ><?php echo $row['Title']?></a></td>
                     <td><a type="button" onclick="RenameVideo(ID_Video = <?php echo $row['ID_Video']?>, Title = '<?php echo $row['Title']?>')"><img src="img/pen.png" width="15%"></a></td>
                     <td><a type="button" onclick="DeleteVideo(ID_Video = <?php echo $row['ID_Video']?>)"><img src="img/prullenbak.png" width="15%"></a></td>
                     <td><?php echo $row['Views']?></td>
