@@ -99,8 +99,8 @@ $getlikes -> close();
       </a>
       <?php } ?>
       <?php if($_SESSION['ID_User'] == $pageID ) { ?>
-      <button class="offset "><a href="dashboard.php">Dashboard Videos</a></button>
-      <button class="offset "><a href="channel_info.php">&nbsp Edit Profile &nbsp</a></button>
+        <a href="dashboard.php"><button class="offset ">Dashboard Videos</button></a>
+        <a href="channel_info.php"><button class="offset ">&nbsp Edit Profile &nbsp</button></a>
       <?php } ?>
       <br>
 
