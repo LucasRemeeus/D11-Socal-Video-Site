@@ -247,21 +247,43 @@ input[type=file]::file-selector-button {
   margin-left: 17%;
 }
 
-.save {
-  width: 10%;
-  font-size: 20px;
-  background-color: #8433FB;
-  border-radius: 15px;
-  margin-left: 2%;
-  padding: 0.6%;
-  border: 1px black;
-  margin-bottom: 2%;
-  margin-top: 10px;
+.offset {
+  -webkit-box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+          box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
 }
 
-.save:hover {
-  background-color: #5a1bb9 !important;
-  color: white !important;
+.offset:hover, .offset:focus {
+  -webkit-box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+          box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+
+.offset {
+  --color: #8433FB;
+  --hover: #9533fb;
+}
+
+button {
+  color: var(--color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+h1 {
+  font-weight: 400;
 }
 
 .preview {
@@ -270,6 +292,6 @@ input[type=file]::file-selector-button {
 }
 
 .saveinfo {
-  margin-left: 46%;
+  margin-left: 46.5%;
 }
 /*# sourceMappingURL=channelinfo.css.map */
