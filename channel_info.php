@@ -54,7 +54,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
   <div class="container-fluid mt-5 col-10 container">
 
     <h1>Change Your Info</h1> <br>
-    <div class="form1">
+    <div class="formInfo">
       <br>
       <form action="php/Channel_Edit.php" method="post" class="info-form">
         <label for="Username" class="label">Username </label>

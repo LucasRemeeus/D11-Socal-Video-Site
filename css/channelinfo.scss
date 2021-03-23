@@ -78,7 +78,7 @@ body {
 
 .sidebar {
     background-color: $main-sidebar;
-    height: 200vh;
+    height: 220vh !important;
     width: 65%;
     float: left;
     p {
@@ -150,9 +150,10 @@ h1 {
     }
 }
 
-.photo-form {
+.photo-form,
+.formInfo {
     border: 2px solid $main-buttons;
-    box-shadow: 0px 10px 20px 1px $main-buttons;
+    box-shadow: 5px 10px 15px 0px $main-buttons;
 }
 
 label {
