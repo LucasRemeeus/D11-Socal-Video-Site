@@ -22,7 +22,7 @@ $TextTwotch: white;
 $fontweight: 700;
 $SemiBold: 600;
 $borderRadius: 10px;
-$formbackground: rgb(24, 24, 27);
+$formbackground: rgb(24, 24, 26);
 @mixin reset-list {
     margin: 0;
     padding: 0;
@@ -78,7 +78,7 @@ body {
 
 .sidebar {
     background-color: $main-sidebar;
-    height: 200vh;
+    height: 220vh !important;
     width: 65%;
     float: left;
     p {
@@ -100,7 +100,7 @@ body {
 
 .banner {
     background-color: white;
-    width: 100%;
+    width: 100% !important;
     height: 270px !important;
     margin: 20px auto;
     top: -10px;
@@ -150,6 +150,12 @@ h1 {
     }
 }
 
+.photo-form,
+.formInfo {
+    border: 2px solid $main-buttons;
+    box-shadow: 5px 10px 15px 0px $main-buttons;
+}
+
 label {
     margin-right: 10%;
 }
@@ -190,18 +196,6 @@ hr {
     position: relative;
 }
 
-.textb input {
-    width: 20%;
-    height: 60px;
-    border: none;
-    background-color: $backgroundInput;
-    border-radius: 4px;
-    color: #333;
-    font-size: 18px;
-    font-weight: $fontweight;
-    padding: 0 0 0 10px;
-}
-
 .placeholder {
     text-transform: uppercase;
     font-size: 14px;
@@ -221,4 +215,100 @@ hr {
 
 .checkbox input:checked+.fa-check {
     opacity: 1;
+}
+
+.inputfile {
+    margin-top: 1%;
+    display: inline-block;
+    border-right: 10px;
+}
+
+input[type=text],
+input[type=email] {
+    width: 25% !important;
+    font-size: 20px;
+    border-radius: 12px;
+    padding: 0.4%;
+    border: 1px black;
+}
+
+input[type=text]:hover,
+input[type=email]:hover {
+    background-color: #E9E9E9;
+    border: 1.5px solid $main-buttons;
+    color: black;
+    outline-width: 0;
+}
+
+input[type=text]:focus,
+input[type=email]:focus {
+    background-color: black;
+    border: 2px solid $main-buttons;
+    color: white;
+    outline-width: 0;
+}
+
+input[type=file]::file-selector-button {
+    border: 2px;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: $main-login-button;
+    transition: 1s;
+    color: white;
+    margin-left: 17%;
+}
+
+.offset {  
+  box-shadow: 
+    0.3em 0.3em 0 0 var(--color),
+    inset 0.3em 0.3em 0 0 var(--color);
+  
+  &:hover,
+  &:focus {
+    box-shadow: 
+      0 0 0 0 var(--hover),
+      inset 6em 3.5em 0 0 var(--hover);
+  }
+}
+
+$colors: (
+  offset: $main-buttons
+);
+
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 5deg)};
+  }
+}
+
+button {  
+  color: var(--color);
+  transition: 0.25s;
+  
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #fff;
+  }
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+h1 { font-weight: 400; }
+
+.preview {
+    margin-top: 2%;
+    width: 100%;
+}
+
+.saveinfo {
+    margin-left: 46.5%;
 }

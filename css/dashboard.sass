@@ -1,127 +1,101 @@
-$img: url(../img/TwotchBanner.png);
-$background: rgb(50, 50, 52);
-$backgroundInput: rgb(196, 196, 196);
-$TwotchColor: rgb(132, 51, 251);
-$ButtonColor: rgb(145, 73, 252);
-$TextTwotch: white;
-$fontweight: 700;
-$SemiBold: 600;
-$borderRadius: 10px;
+$main-font: 'Helvetica Neue', Helvetica, Arial, sans-serif
+    
+$main-background: #0E0E10
+$main-nav: #18181B
+$main-sidebar: #1F1F23
+$main-text: #FFF
+$main-sidebar-text: #d3d3d3
 
-body 
-    background-image: $img
-    background-size: cover
-    min-height: 100vh
-    display: flex
-    align-items: center
+$main-link-hover: #772CE8
+$main-buttons: #8433FB
+$main-login-button: #373737
+$main-login-button-hover: #272727
+$main-signup-button-hover: #5a1bb9
 
+$main-logo-px: 60px
 
-img 
-    height: 130px
-    width: 130px
-    float: left
+@mixin reset-list
+  margin: 0
+  padding: 0
+  list-style: none
 
-
-p,
-a,
-label 
-    color: $TextTwotch
-    font-weight: $SemiBold
+body
+    @include reset-list
+    background-color: $main-background
+    font-family: $main-font
 
 
-.Register 
-    padding-left: 100px
+.nav 
+    background-color: $main-nav
+    height: 65px
 
+    .logo 
+        width: $main-logo-px
+        height: $main-logo-px
+        margin-bottom: 1px
+        margin-left: 1px !important
+        border-radius: 50%   !important
 
-* 
-    padding: 0
-    margin: 0
-    box-sizing: border-box
-    -moz-box-sizing: border-box
-    font-family: 'Montserrat', sans-serif
+    .link
+        color: $main-text
 
+    &:hover
+        color: $main-link-hover
 
-.titleBackground 
-    width: calc(100% - 20px)
-    max-width: 550px
-    background-color: $background
-    padding: 50px 40px
-    border-radius: $borderRadius
-    margin-left: 20%
+    .active
+        color: $main-link-hover
+        text-decoration: underline
+        margin-left: -10px
 
-
-.textb 
-    margin-bottom: 12px
-    position: relative
-
-
-.textb input 
+.sidebar
+    background-color: $main-sidebar
+    height: 425vh !important
     width: 100%
-    height: 60px
-    border: none
-    background-color: $backgroundInput
-    border-radius: 4px
-    color: #333
-    font-size: 18px
-    font-weight: $fontweight
-    padding: 0 0 0 10px
+    display: inline-block
 
+    p
+        color: $main-text
+        text-align: center
+        font-size: 14px
 
-.placeholder 
-    text-transform: uppercase
-    font-size: 14px
-    font-weight: $fontweight
+.container
     position: absolute
-    line-height: 70px
-    top: 0
-    left: 20px
-    color: #9d9d9d
-    user-select: none
-    pointer-events: none
+    display: inline-block
+    width: 100%
+    color: $main-text
+    margin-left: 2% !important
 
+    h1
+        font-size: 24px
+        text-decoration: underline
+        margin-top: 15px
 
-.checkbox input:checked 
-    background-color: $TwotchColor
+    li 
+        list-style: none
 
+    table
+        width: 98% !important
 
-.checkbox input:checked+.fa-check 
-    opacity: 1
+        th
+            border: 1px solid #fff
+            padding: 5px
+            text-align: center !important
+            padding-left: 70px !important
+            padding-right: 70px !important
 
+        td
+            border: 1px solid #fff
+            text-align: center
+            padding: 1rem
 
-.btn 
-    display: block
-    width: 350px
-    height: 55px
-    margin: 40px auto
-    background-color: $TwotchColor
-    color: $TextTwotch
-    font-size: 32px
-    border: none
-    border-radius: $borderRadius
-    cursor: pointer
-    transition: .3s linear
-    font-weight: $SemiBold
+            p
+                font-size: 22px
 
+            a
+                transition: transform 250ms
+                height: 3rem
+                
 
-    &:hover
-        opacity: .85
-        background-color: $ButtonColor
-
-.formVideo
-    width: calc(100% - 20px)
-    max-width: 550px
-    background-color: $background
-    padding: 50px 40px
-    border-radius: $borderRadius
-    margin-left: 20%
-    color: #FFF
-
-.button 
-    float: left
-    color: $TextTwotch
-    background-color: $TwotchColor
-    border-radius: $borderRadius
-
-    &:hover
-        color: #FFF
-        background-color: $ButtonColor    
+            a:hover
+                transition: transform 125ms
+                transform: scale(1.5)

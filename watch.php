@@ -100,7 +100,7 @@ $Getviews -> close();
         <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
             <div class="col-sm">
-                <?php echo $Views ?>
+            <?php echo "Views: " . $Views ?>
             </div>
             <div id="likes"></div>
         </div>
@@ -133,22 +133,35 @@ $Getviews -> close();
         <div class="commentsection">
             <h2> Comments </h2>
             <hr>
-            <form class="commentform" method="post" onsubmit="return Comment();">
+            <form class="commentform" method="post" ">
                 <div class="textb">
                     <input type="number" name="ID_Video" id="ID_Video" value="<?php echo $_GET['watch'] ?>" hidden>
-                    <input type="text" name="comment" value="" id="comment">
-                    <input type="submit" value="submit">
+                    <input type="text" class="CommentInput" name="comment" value="" id="comment" placeholder="Add a comment">
+                    <button type="submit" class="SubmitKnop" onclick="Comment();" value="Submit" placeholder="Submit">Submit</button>
                 </div>
             </form>
+            <div class="comments" id="Comments">
+
+            </div>
+        </div>
             <?php
         }
         ?>
+
+        <?php
+        if($_SESSION['Loggedin'] == false){
+        ?>
+        <div class="commentsection">
+            <h2> Comments </h2>
             <hr>
             <div class="comments" id="Comments">
 
             </div>
         </div>
-
+            <?php
+        }
+        ?>
+            
         <div class="space"></div>
 
     </div>

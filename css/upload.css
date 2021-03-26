@@ -1,0 +1,30 @@
+body {
+  background-image: url(../img/TwotchBanner.png);
+  background-size: cover;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+img {
+  height: 130px;
+  width: 130px;
+  float: left;
+}
+
+form {
+  background-color: #323234;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  margin-left: 40%;
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+}
+/*# sourceMappingURL=upload.css.map */

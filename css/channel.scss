@@ -42,7 +42,7 @@ body {
     .button-login {
         background-color: $main-login-button;
         margin-right: 20px;
-        margin-top: 10px;
+        margin-top: 1rem;
         margin-bottom: 5px;
         border-radius: 5px;
         font-size: 12px;
@@ -68,7 +68,7 @@ body {
 
 .sidebar {
     background-color: $main-sidebar;
-    height: 150vh;
+    height: 100vh !important;
     width: 65%;
     float: left;
     p {
@@ -106,7 +106,7 @@ body {
     margin-top: 5px;
     height: 120px;
     width: 100%;
-    display: inline-block;
+    float: right;
 }
 
 .channelpf {
@@ -124,18 +124,18 @@ body {
 
 .subscribeButton {
     float: right;
-    width: 295px;
+    width: 200px;
     height: 51px;
     background-color: $main-buttons;
     border-radius: 5px;
-    margin-top: 15px;
+    margin-left: 3rem;
+    &:hover {
+        background-color: $main-signup-button-hover;
+    }
     h2 {
         margin-top: 5px;
         text-align: center;
         color: $main-text;
-    }
-    &:hover {
-        background-color: $main-signup-button-hover;
     }
 }
 
@@ -145,9 +145,18 @@ h4 {
 }
 
 .ChannelName {
-    float: left;
     margin-left: 20px;
     color: white;
+    display: inline-block;
+    margin-bottom: 30px !important;
+    height: 100%;
+    font-size: 29px;
+    width: 20%;
+    .Name,
+    .Subs {
+        text-align: center;
+        margin-right: 25%;
+    }
 }
 
 .btn {
@@ -195,4 +204,54 @@ h2 {
 .Result {
     height: 100% !important;
     width: 100%;
+}
+
+.lijntje {
+    width: 100% !important;
+}
+
+.offset {
+    box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+    &:hover,
+    &:focus {
+        box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+    }
+}
+
+$colors: ( offset: $main-buttons);
+@each $button,
+$color in $colors {
+    .#{$button} {
+        --color: #{$color};
+        --hover: #{adjust-hue($color, 5deg)};
+    }
+}
+
+button {
+    color: var(--color);
+    transition: 0.25s;
+    &:hover,
+    &:focus {
+        border-color: var(--hover);
+        color: #fff;
+    }
+}
+
+button {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin-left: 5% !important;
+    padding: 1em 2em;
+    float: right;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none !important;
+    color: white !important;
 }

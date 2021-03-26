@@ -28,7 +28,7 @@ body {
 .nav .button-login {
   background-color: #373737;
   margin-right: 20px;
-  margin-top: 10px;
+  margin-top: 1rem;
   margin-bottom: 5px;
   border-radius: 5px;
   font-size: 12px;
@@ -56,7 +56,7 @@ body {
 
 .sidebar {
   background-color: #1F1F23;
-  height: 150vh;
+  height: 100vh !important;
   width: 65%;
   float: left;
 }
@@ -96,7 +96,7 @@ body {
   margin-top: 5px;
   height: 120px;
   width: 100%;
-  display: inline-block;
+  float: right;
 }
 
 .channelpf {
@@ -115,11 +115,15 @@ body {
 
 .subscribeButton {
   float: right;
-  width: 295px;
+  width: 200px;
   height: 51px;
   background-color: #8433FB;
   border-radius: 5px;
-  margin-top: 15px;
+  margin-left: 3rem;
+}
+
+.subscribeButton:hover {
+  background-color: #5a1bb9;
 }
 
 .subscribeButton h2 {
@@ -128,19 +132,25 @@ body {
   color: #FFF;
 }
 
-.subscribeButton:hover {
-  background-color: #5a1bb9;
-}
-
 h4 {
   float: right;
   margin-top: 20px;
 }
 
 .ChannelName {
-  float: left;
   margin-left: 20px;
   color: white;
+  display: inline-block;
+  margin-bottom: 30px !important;
+  height: 100%;
+  font-size: 29px;
+  width: 20%;
+}
+
+.ChannelName .Name,
+.ChannelName .Subs {
+  text-align: center;
+  margin-right: 25%;
 }
 
 .btn {
@@ -188,5 +198,54 @@ h2 {
 .Result {
   height: 100% !important;
   width: 100%;
+}
+
+.lijntje {
+  width: 100% !important;
+}
+
+.offset {
+  -webkit-box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+          box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+}
+
+.offset:hover, .offset:focus {
+  -webkit-box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+          box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+
+.offset {
+  --color: #8433FB;
+  --hover: #9533fb;
+}
+
+button {
+  color: var(--color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin-left: 5% !important;
+  padding: 1em 2em;
+  float: right;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none !important;
+  color: white !important;
 }
 /*# sourceMappingURL=channel.css.map */

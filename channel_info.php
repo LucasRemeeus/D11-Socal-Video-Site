@@ -54,7 +54,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
   <div class="container-fluid mt-5 col-10 container">
 
     <h1>Change Your Info</h1> <br>
-    <div class="form1">
+    <div class="formInfo">
       <br>
       <form action="php/Channel_Edit.php" method="post" class="info-form">
         <label for="Username" class="label">Username </label>
@@ -81,7 +81,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
           class="input"><br><br>
         <hr>
 
-        <input type="submit" name="submit" value="Save" class="save">
+        <button type="submit" class="offset saveinfo">Save</button><br><br>
       </form>
     </div>
 
@@ -90,12 +90,12 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
     <div class="form1">
       <form action="upload/profilepicture_process.php" method="post" enctype="multipart/form-data" runat="server"
         class="photo-form">
-        <img style="height: 200px; width: 200px;" id="preview"
+        <img class="preview" style="height: 200px; width: 200px;" id="preview"
           src="upload/profilepicture/<?php echo $UserRow['ProfilePicture'] ?>"><br>
 
-        <input type="file" accept="image/png, image/jpeg," required id="imgInp" name="upload_image"><br>
+        <input type="file" class="inputfile" accept="image/png, image/jpeg," required id="imgInp" name="upload_image"><br>
 
-        <input type="submit" value="Save" name="form_submit"><br>
+        <button type="submit" class="offset" name="form_submit">Save</button><br><br>
 
         <script>
           function readpfp(input) {
@@ -120,15 +120,15 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
 
 
     <h1>Change Your Banner</h1> <br>
-    <div class="form1">
+    <div class="form1 buttons">
       <form action="upload/banner_process.php" method="post" enctype="multipart/form-data" runat="server"
         class="photo-form">
-        <img style="height: 400px; width: 1550px;" id="previewbanner"
+        <img class="preview banner" style="height: 400px; width: 1550px;" id="previewbanner"
           src="upload/banner/<?php echo $UserRow['Banner'] ?>"><br>
 
-        <input type="file" accept="image/png, image/jpeg," required id="bannerInp" name="upload_banner"><br>
+        <input class="inputfile" type="file" accept="image/png, image/jpeg," required id="bannerInp" name="upload_banner"><br>
 
-        <input type="submit" value="Save" name="banner_submit"><br>
+        <button type="submit" class="offset" name="banner_submit">Save</button><br><br>
 
         <script>
           function readURL(input) {
@@ -153,9 +153,6 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
 
 
   </div>
-
-
-
 
 </body>
 
