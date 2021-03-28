@@ -45,13 +45,14 @@ if(isset($_POST["form_submit"])) {
                 break;
         }
 
-        if($fileName !== "" && $DataProfilePicture !== ""){
+
+        if($fileName !== "" && $DataProfilePicture !== "TwotchLogo.png"){
             if (file_exists($uploadPath.$DataProfilePicture)) {
                 unlink($uploadPath.$DataProfilePicture);
             }
         }
 
-        if (file_exists($uploadPath.$DataProfilePicture) && $DataProfilePicture !== "") {
+        if (file_exists($uploadPath.$DataProfilePicture) && $DataProfilePicture !== "TwotchLogo.png") {
             unlink($uploadPath.$DataProfilePicture);
         }
 

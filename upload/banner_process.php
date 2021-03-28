@@ -45,13 +45,13 @@ if($getdata -> execute()){
                     break;
             }
 
-            if($fileName !== "" && $DataProfilePicture !== ""){
+            if($fileName !== "" && $DataProfilePicture !== "wauw.png"){
                 if (file_exists($uploadPath.$DataProfilePicture)) {
                     unlink($uploadPath.$DataProfilePicture);
                 }
             }
 
-            if (file_exists($uploadPath.$DataProfilePicture) && $DataProfilePicture !== "") {
+            if (file_exists($uploadPath.$DataProfilePicture) && $DataProfilePicture !== "wauw.png") {
                 unlink($uploadPath.$DataProfilePicture);
             }
 

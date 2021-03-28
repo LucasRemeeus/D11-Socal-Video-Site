@@ -90,7 +90,7 @@ if ($UsernamecheckResult->num_rows == 0 || $UsernamecheckResult->num_rows > 1) {
 
             $mail->send();
             echo 'Message has been sent';
-            header("location:index.php");
+            header("location:../index.php");
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
