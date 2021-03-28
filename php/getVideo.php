@@ -20,6 +20,10 @@ if ($Catagory == "*")
 $getVideoResult = $getVideo -> get_result();
 
 
+
+
+
+
 while ($Video = $getVideoResult -> fetch_assoc())
 {
 $getlikes = $mysqli -> prepare("SELECT COUNT(`ID_Like`) FROM `like` where ID_Video = ? and likes = 1");
@@ -37,6 +41,15 @@ $getlikes -> bind_result($Dislikes);
 $getlikes -> fetch();
 $getlikes -> store_result();
 $getlikes ->close();
+
+    $getuser = $mysqli -> prepare("SELECT Username FROM `user` where ID_User = ?");
+    $getuser -> bind_param('i', $Video['ID_User']);
+    $getuser -> execute();
+    $getuser -> bind_result($Username);
+    $getuser -> fetch();
+    $getuser -> store_result();
+    $getuser ->close();
+
     ?>
 <ul>
     <li class="booking-card"
@@ -48,7 +61,7 @@ $getlikes ->close();
         </div>
         <div class="informations-container">
             <h2 class="title"><?php echo $Video['Title'] ?></h2>
-            <p class="sub-title"><?php echo $Video['ID_User'] ?></p>
+            <p class="sub-title"><?php echo $Username ?></p>
             <div class="more-information">
                 <div class="info-and-date-container">
                     <div class="box info">

@@ -297,9 +297,7 @@ function EditChannel() {
 
 function vzoeken()
 {
-    var Search   = $("#search").val();
-    document.getElementById("SearchResult").value = Search;
-
+    var Search   = document.getElementById('search').value;
 
     $.ajax({
         type: 'post',
