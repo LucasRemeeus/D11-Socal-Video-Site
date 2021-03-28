@@ -51,11 +51,14 @@ $getlikes ->close();
     $getuser ->close();
 
     ?>
+
 <ul class="CARDS">
 
-           
-        
-    <li class="booking-card" source src="upload/<?php echo $Video['Video'] ?>" type="video/mp4">
+    <li class="booking-card" style="background-image: src:upload/<?php echo $Video['Video'] ?>"  >
+
+    <video width="100%" height="250px" src="upload/<?php echo $Video['Video']?>">
+    
+    </video>
         <div class="book-container">
             <div class="content">
                 <a href="watch.php?watch=<?php echo $Video['ID_Video'] ?>"><button class="btn">Watch</button></a>

@@ -178,7 +178,7 @@ $orange: #ec992c
 
 =cardsOpen
   &::before
-    background: rgba(10, 72, 112, 0.6)
+    background: rgba(211, 88, 255, 0.1)
 
   .book-container
     .content
@@ -205,6 +205,7 @@ ul
   flex-wrap: wrap
   list-style: none
   padding: 0
+  
 
 .CARDS
   float: left  !important
@@ -218,6 +219,9 @@ ul
     flex-direction: column
     margin: 20px
     margin-bottom: 30px
+    border: 2px solid $main-buttons
+    box-shadow: 0px 4px 8px 0px $main-buttons
+   
     
 
     +radius(10px)
@@ -236,11 +240,11 @@ ul
       left: 0
       right: 0
       bottom: 0
-      background: rgba(10, 72, 112, 0)
+      background: rgba(87, 72, 118, 0.1)
       transition: .3s
 
     .book-container
-      height: 200px
+      height: 80px
 
       .content
         position: relative
@@ -248,7 +252,7 @@ ul
         display: flex
         align-items: center
         justify-content: center
-        height: 100%
+        height: 90%
         width: 100%
         transform: translateY(-200px)
         transition: .3s
@@ -359,3 +363,126 @@ ul
 h1
   margin: 10px 20px
 
+
+//Buttons 
+$base: #0f1923
+$white: #F0F0FF
+$pink: #ff4655
+$purple: #9146FF
+$height: 54px
+$transition: 0.3s ease-out all
+
+.TButtons
+  display: flex
+  height: 100vh
+  align-items: center
+  justify-content: center
+  flex-flow: column
+
+  & a
+    width: 100%
+    max-width: 240px
+    height: $height
+    padding: 8px
+    font-size: 0.8rem
+    font-weight: 900
+    color: $pink
+    text-align: center
+    text-transform: uppercase
+    text-decoration: none
+    box-shadow: 0 0 0 1px inset rgba($white, 0.3)
+    position: relative
+    margin: 10px 0
+
+    &.white:hover > p
+      color: $base
+
+    &.white > p
+      background: $purple
+      color: $white
+
+      & span.base
+        border: 1px solid transparent
+
+    &:after,
+    &:before
+      content: ""
+      width: 1px
+      position: absolute
+      height: 8px
+      background: $base
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+
+    &:before
+      right: 0
+      left: initial
+
+    & p
+      margin: 0
+      height: $height
+      line-height: $height
+      box-sizing: border-box
+      z-index: 1
+      left: 0
+      width: 100%
+      position: relative
+      overflow: hidden
+
+      & span.base
+        box-sizing: border-box
+        position: absolute
+        z-index: 2
+        width: 100%
+        height: 100%
+        left: 0
+        border: 1px solid $pink
+
+        &:before
+          content: ""
+          width: 2px
+          height: 2px
+          left: -1px
+          top: -1px
+          background: $base
+          position: absolute
+          transition: $transition
+
+      & span.bg
+        left: -5%
+        position: absolute
+        background: $white
+        width: 0
+        height: 100%
+        z-index: 3
+        transition: $transition
+        transform: skewX(-10deg)
+
+      & span.text
+        z-index: 4
+        width: 100%
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+
+        &:after
+          content: ""
+          width: 4px
+          height: 4px
+          right: 0
+          bottom: 0
+          background: $base
+          position: absolute
+          transition: $transition
+          z-index: 5
+
+    &:hover
+      color: $white
+
+      & span.bg
+        width: 110%
+
+      & span.text:after
+        background: $white
