@@ -294,3 +294,22 @@ function EditChannel() {
     });
 
 }
+
+function vzoeken()
+{
+    var Search   = $("#search").val();
+    document.getElementById("SearchResult").value = Search;
+
+
+    $.ajax({
+        type: 'post',
+        url: 'include/search.php',
+        data: {
+            Search: Search
+        },
+        success: function (response) {
+            document.getElementById("SearchResult").value = response;
+
+        }
+    });
+}

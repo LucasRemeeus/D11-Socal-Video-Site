@@ -45,6 +45,13 @@ $UserRow = $GetUserDataResult->fetch_assoc()
         <a class="nav-link link active" href="index.php">Browse</a>
       </li>
     </ul>
+    <form method="post">
+        <input type="text" onkeyup='vzoeken()' id="search" name="search" placeholder="Search">
+        <button type="submit" name="submit-search">search</button>
+    </form>
+    <div id="SearchResult">
+
+    </div>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <?php if($_SESSION['Loggedin'] == true ) 
