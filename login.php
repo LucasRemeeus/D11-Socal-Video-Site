@@ -51,7 +51,7 @@ if ( $_SESSION['Loggedin'] == true) {
             <p>Password</p>
             <input type="password" name="password" id="password" required>
         </div>
-        <a href="">Forgot Password?</a>
+        <a href="PasswordReset.php">Forgot Password?</a>
         
 
 
