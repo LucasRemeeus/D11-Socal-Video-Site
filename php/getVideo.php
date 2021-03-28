@@ -51,9 +51,11 @@ $getlikes ->close();
     $getuser ->close();
 
     ?>
-<ul>
-    <li class="booking-card"
-        style="background-image: url(https://images.unsplash.com/photo-1578944032637-f09897c5233d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ)">
+<ul class="CARDS">
+
+           
+        
+    <li class="booking-card" source src="upload/<?php echo $Video['Video'] ?>" type="video/mp4">
         <div class="book-container">
             <div class="content">
                 <a href="watch.php?watch=<?php echo $Video['ID_Video'] ?>"><button class="btn">Watch</button></a>
