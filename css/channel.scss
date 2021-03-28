@@ -36,8 +36,11 @@ body {
         color: $main-text;
     }
     .active {
-        color: $main-link-hover;
+        color: $main-link-hover !important;
         text-decoration: underline;
+    }
+    .nav-item {
+        color: $main-link-hover !important;
     }
     .button-login {
         background-color: $main-login-button;
