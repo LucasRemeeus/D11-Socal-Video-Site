@@ -33,7 +33,7 @@ if ($UsernamecheckResult->num_rows == 0 || $UsernamecheckResult->num_rows > 1) {
     $ifexist->bind_param('s', $email);
     $ifexist->execute();
     $ifexistResult = $ifexist->get_result();
-    if ($ifexistResult->num_rows == 0 || $ifexistResult->num_rows > 1) {
+    if ($ifexistResult->num_rows >= 1) {
         echo "Sorry already send a email<br>";
     }else{
 
