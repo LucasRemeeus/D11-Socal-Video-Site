@@ -21,8 +21,12 @@ body {
 }
 
 .nav .active {
-  color: #772CE8;
+  color: #772CE8 !important;
   text-decoration: underline;
+}
+
+.nav .nav-item {
+  color: #772CE8 !important;
 }
 
 .nav .button-login {
