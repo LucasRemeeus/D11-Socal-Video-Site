@@ -45,6 +45,7 @@ if ($errors == 0){
         $deleteToken -> bind_param('i', $token);
         if($deleteToken -> execute()){
             echo "password has ben reset";
+            header("location:index.php");
         }
     }else{
         echo "something went wrong!";

@@ -18,6 +18,7 @@ if (!isset($_GET['ID'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Channel</title>
 
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -105,7 +106,7 @@ $getlikes -> close();
       <br>
 
     </div>
-
+      <div id="twitch-embed"></div>
     <div class="vids">
 
       <div class="container-fluid container-vid">
@@ -117,9 +118,15 @@ $getlikes -> close();
     </div>
   </div>
 
-
-
-
+    <?php if (isset($channelData['Displayname'])){ ?>
+      <script type="text/javascript">
+          new Twitch.Embed("twitch-embed", {
+              width: 854,
+              height: 480,
+              channel: "<?php echo $channelData['Displayname']?>",
+          });
+      </script>
+  <?php } ?>
 </body>
 
 </html>
