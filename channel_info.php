@@ -80,6 +80,10 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
         <input name="Lastname" id="Lastname" type="text" value="<?php echo $UserRow['Lastname'] ?>"
           class="input"><br><br>
         <hr>
+          <label for="Twitchname" class="label">Twitch name: </label>
+          <input name="Twitchname" id="Twitchname" type="text" value="<?php echo $UserRow['Displayname'] ?>"
+                 class="input"><br><br>
+          <hr>
 
         <button type="submit" class="offset saveinfo">Save</button><br><br>
       </form>

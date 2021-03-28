@@ -38,7 +38,7 @@ if ( $_SESSION['Loggedin'] !== true) {
         <p>Select video to upload:</p>
         <input type="file" accept="video/mp4" name="fileToUpload" id="fileToUpload"><br><br>
         <p>Title:</p>
-        <input type="text" name="title"><br><br>
+        <input type="text" name="title" maxlength="50"><br><br>
 
         <select name="catagory" id="catagory">
 

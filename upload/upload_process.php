@@ -15,6 +15,11 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $title = $_POST['title'];
 $catagory = $_POST['catagory'];
 
+if(strlen($title) > 50){
+    echo "Sorry, Title too long.";
+    $uploadOk = 0;
+}
+
 // Check if file video exists
 if (file_exists($target_dir. $title.".".$imageFileType)) {
     echo "Sorry, file already exists.";

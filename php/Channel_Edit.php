@@ -8,7 +8,8 @@ require 'config.php';
 if (isset($_POST['Username']) && 
     isset($_POST['Email']) &&
     isset($_POST['Description']) && 
-    isset($_POST['Firstname']) && 
+    isset($_POST['Firstname']) &&
+    isset($_POST['Twitchname']) &&
     isset($_POST['Lastname'])){
 
    
@@ -71,8 +72,8 @@ if(!preg_match($pattern, $Lastname)){
 
 if ($errors == 0) {
 
-    $UpdateInfo = $mysqli -> prepare("UPDATE user SET Username=?, Email=?,  Description=?, Firstname=?, Lastname=? WHERE ID_User = ?");
-    $UpdateInfo -> bind_param('sssssi', $Username, $Email,  $Description, $Firstname, $Lastname, $_SESSION['ID_User']);
+    $UpdateInfo = $mysqli -> prepare("UPDATE user SET Username=?, Email=?,  Description=?, Firstname=?, Lastname=?, Displayname=? WHERE ID_User = ?");
+    $UpdateInfo -> bind_param('ssssssi', $Username, $Email,  $Description, $Firstname, $Lastname, $_POST['Twitchname'], $_SESSION['ID_User']);
 
     if($UpdateInfo ->execute()){
     echo "suc6";
