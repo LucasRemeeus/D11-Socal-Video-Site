@@ -94,7 +94,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
     <div class="form1">
       <form action="upload/profilepicture_process.php" method="post" enctype="multipart/form-data" runat="server"
         class="photo-form">
-        <img class="preview" style="height: 200px; width: 200px;" id="preview"
+        <img class="preview" style="height: 200px; width: 200px;" id="previewim"
           src="upload/profilepicture/<?php echo $UserRow['ProfilePicture'] ?>"><br>
 
         <input type="file" class="inputfile" accept="image/png, image/jpeg," required id="imgInp" name="upload_image"><br>
@@ -107,7 +107,7 @@ while ($UserRow = $GetUserDataResult->fetch_assoc()) {
               var reader = new FileReader();
 
               reader.onload = function (e) {
-                $('#preview').attr('src', e.target.result);
+                $('#previewim').attr('src', e.target.result);
               }
 
               reader.readAsDataURL(input.files[0]); // convert to base64 string
