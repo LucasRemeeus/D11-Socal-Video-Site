@@ -170,29 +170,29 @@ h4 {
     background-color: $main-signup-button-hover;
 }
 
-.vids {
-    margin-left: 2%;
-    margin-top: -10px;
-}
+// .vids {
+//     margin-left: 2%;
+//     margin-top: -10px;
+// }
 
-.vid {
-    background-color: #323234;
-    width: 19%;
-    height: 400px;
-    max-height: 50% !important;
-    margin-top: 50px;
-    margin-right: 5px;
-    border-radius: 5px;
-    float: left;
-}
+// .vid {
+//     background-color: #323234;
+//     width: 19%;
+//     height: 400px;
+//     max-height: 50% !important;
+//     margin-top: 50px;
+//     margin-right: 5px;
+//     border-radius: 5px;
+//     float: left;
+// }
 
-h2 {
-    color: $main-text;
-    background-color: $main-buttons;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 10px;
-}
+// .vid h2 {
+//     color: $main-text;
+//     background-color: $main-buttons;
+//     border-radius: 5px;
+//     text-align: center;
+//     margin-top: 10px;
+// }
 
 .vid:hover {
     background-color: $main-signup-button-hover !important;
@@ -254,7 +254,7 @@ h1 {
     font-weight: 400;
 }
 
-a {
+.ChannelInfo a {
     text-decoration: none !important;
     color: white !important;
 }

@@ -37,35 +37,40 @@ while ($Video = $getVideoResult -> fetch_assoc())
     $getuser -> store_result();
     $getuser ->close();
     ?>
-        <ul class="CARDS"> 
-        <li class="booking-card" source src="upload/<?php echo $Video['Video'] ?>" type="video/mp4">
-            <div class="book-container">
-                <div class="content">
-                    <a href="watch.php?watch=<?php echo $Video['ID_Video'] ?>"><button class="btn">Watch</button></a>
-                </div>
+    <ul class="CARDS">
+
+    <li class="booking-card" style="background-image: src:upload/<?php echo $Video['Video'] ?>"  >
+
+    <video width="100%" height="250px" src="upload/<?php echo $Video['Video']?>">
+
+    </video>
+        <div class="book-container">
+            <div class="content">
+                <a href="watch.php?watch=<?php echo $Video['ID_Video'] ?>"><button class="btn">Watch</button></a>
             </div>
-            <div class="informations-container">
-                <h2 class="title"><?php echo $Video['Title'] ?></h2>
-                <p class="sub-title"><?php echo $Username ?></p>
-                <div class="more-information">
-                    <div class="info-and-date-container">
-                        <div class="box info">
-                            <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
-                            </svg>
-                            <p>Views: <?php echo $Video['Views'] ?></p>
-                        </div>
-                        <div class="box date">
-                            <p><?php echo $Likes?> Likes</p>
-                            <p><?php echo $Dislikes?> Dislikes</p>
-                        </div>
+        </div>
+        <div class="informations-container">
+            <h2 class="title vtitle"><?php echo $Video['Title'] ?></h2>
+            <p class="sub-title"><?php echo $Username ?></p>
+            <div class="more-information">
+                <div class="info-and-date-container">
+                    <div class="box info">
+                        <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                        </svg>
+                        <p>Views: <?php echo $Video['Views'] ?></p>
                     </div>
-                    <p class="disclaimer"></p>
+                    <div class="box date">
+                        <p><?php echo $Likes?> Likes</p>
+                        <p><?php echo $Dislikes?> Dislikes</p>
+                    </div>
                 </div>
+                <p class="disclaimer"></p>
             </div>
-        </li>
-        </ul>
+        </div>
+    </li>
+    </ul>
     <?php
 }
 
