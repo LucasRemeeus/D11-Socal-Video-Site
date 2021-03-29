@@ -522,4 +522,8 @@ ul {
 .TButtons a:hover span.text:after {
   background: #F0F0FF;
 }
+
+.no-video {
+  color: #FFF;
+}
 /*# sourceMappingURL=style.css.map */
