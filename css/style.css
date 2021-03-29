@@ -114,6 +114,10 @@ body {
   margin-left: 2% !important;
 }
 
+.container .browse {
+  text-align: left;
+}
+
 .container li {
   list-style: none;
 }
@@ -396,10 +400,6 @@ ul {
 
 .credits a {
   color: #e3ebf1;
-}
-
-h1 {
-  margin: 10px 20px;
 }
 
 .TButtons {
