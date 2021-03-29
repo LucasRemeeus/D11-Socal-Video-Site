@@ -47,7 +47,7 @@ $UserRow = $GetUserDataResult->fetch_assoc()
     </ul>
     </div>
     <ul class="navbar-nav ml-auto">
-      <form method="post">
+      <form method="post" action="searchs.php">
         <button type="submit" class="nav-link search-submit" name="submit-search">Search</button>
         <input type="text" class="search-btn" onkeyup='vzoeken()' id="search" name="search" placeholder="Search">
       </form>
