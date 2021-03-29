@@ -271,4 +271,8 @@ h2,
   -webkit-box-shadow: 0px 4px 8px 0px #8433FB;
           box-shadow: 0px 4px 8px 0px #8433FB;
 }
+
+.commentsection h2 {
+  color: #FFF;
+}
 /*# sourceMappingURL=watch.css.map */
