@@ -93,10 +93,12 @@ $Getviews -> close();
     <!-- Main content -->
     <div class="container-fluid col-10 mt-3 container">
         <br>
-        <video width="100%" title="Video iframe" controls>
-            <source src="upload/<?php echo $Video['Video'] ?>" type="video/mp4">
-        </video>
-
+        <div class="VideoPlayer">
+            <video width="100%" title="Video iframe" controls>
+                <source src="upload/<?php echo $Video['Video'] ?>" type="video/mp4">
+            </video>
+        </div>
+        <br>
         <h3><?php echo $Video['Title'] ?></h3>
         <div class="col-3 row likes">
             <div class="col-sm">
