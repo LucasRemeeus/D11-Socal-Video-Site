@@ -161,7 +161,7 @@ body {
 }
 
 h2 {
-  color: #0a4870;
+  color: #000;
   font-weight: 500;
 }
 
@@ -202,7 +202,7 @@ ul {
   background-position: center center;
   background-size: cover;
   text-align: center;
-  color: #0a4870;
+  color: #000;
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -259,7 +259,7 @@ ul {
 .CARDS .booking-card .book-container .content .btn:hover {
   background: white;
   border: 0px solid white;
-  color: #0a4870;
+  color: #9146FF;
 }
 
 .CARDS .booking-card .informations-container {
@@ -291,7 +291,7 @@ ul {
   height: 3px;
   width: 50px;
   margin: auto;
-  background: #0a4870;
+  background: #9146FF;
 }
 
 .CARDS .booking-card .informations-container .price {
@@ -340,14 +340,14 @@ ul {
 }
 
 .CARDS .booking-card .informations-container .more-information .info-and-date-container .box.info {
-  color: #ec992c;
+  color: #9146FF;
   margin-right: 10px;
 }
 
 .CARDS .booking-card .informations-container .more-information .disclaimer {
   margin-top: 20px;
   font-size: 0.8em;
-  color: #7d7d7d;
+  color: #9146FF;
 }
 
 .CARDS .booking-card:hover::before {
@@ -385,21 +385,6 @@ ul {
   ul .booking-card .informations-container .more-information {
     opacity: 1;
   }
-}
-
-.credits {
-  display: table;
-  background: #0a4870;
-  color: white;
-  line-height: 25px;
-  margin: 10px auto;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.credits a {
-  color: #e3ebf1;
 }
 
 .TButtons {

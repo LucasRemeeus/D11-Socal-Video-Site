@@ -14,6 +14,13 @@ $main-signup-button-hover: #5a1bb9
 
 $main-logo-px: 60px
 
+$base: #0f1923
+$white: #F0F0FF
+$pink: #ff4655
+$purple: #9146FF
+$height: 54px
+$transition: 0.3s ease-out all
+
 @mixin reset-list
   margin: 0
   padding: 0
@@ -227,7 +234,7 @@ $orange: #ec992c
   font-family: $font
 
 h2
-  color: #0a4870
+  color: $black
   font-weight: 500
 
 ul
@@ -260,7 +267,7 @@ ul
     background-position: center center
     background-size: cover
     text-align: center
-    color: $blue
+    color: $black
     transition: .3s
 
     &::before
@@ -301,7 +308,7 @@ ul
           &:hover
             background: white
             border: 0px solid white
-            color: $blue
+            color: $purple
 
     .informations-container
       flex: 1 0 auto
@@ -326,7 +333,7 @@ ul
           height: 3px
           width: 50px
           margin: auto
-          background: $blue
+          background: $purple
 
       .price
         display: flex
@@ -359,13 +366,13 @@ ul
               margin-bottom: 5px
 
             &.info
-              color: $orange
+              color: $purple
               margin-right: 10px
 
         .disclaimer
           margin-top: 20px
           font-size: 0.8em
-          color: $grey
+          color: $purple
 
     &:hover
       +cardsOpen
@@ -375,29 +382,8 @@ ul
     .booking-card
       +cardsOpen
 
-.credits
-  display: table
-  background: $blue
-  color: white
-  line-height: 25px
-  margin: 10px auto
-  padding: 20px
-
-  +radius(10px)
-
-  text-align: center
-
-  a
-    color: $blue2
-
-
 //Buttons 
-$base: #0f1923
-$white: #F0F0FF
-$pink: #ff4655
-$purple: #9146FF
-$height: 54px
-$transition: 0.3s ease-out all
+
 
 .TButtons
   display: flex
