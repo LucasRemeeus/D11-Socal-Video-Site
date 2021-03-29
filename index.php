@@ -76,9 +76,6 @@ require "php/config.php";
       <li class="nav-item">
         <a class="nav-link button-link button-videos" href="#">Videos</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link button-link button-livechannels" href="#">Live Channels</a>
-      </li>
     </ul>
 
 
