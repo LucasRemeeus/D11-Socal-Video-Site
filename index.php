@@ -21,7 +21,6 @@ require "php/config.php";
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/style2.css">
 
   <!-- De font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -46,7 +45,7 @@ require "php/config.php";
 
   <!-- Main content -->
   <div class="container-fluid col-10 mt-3 container">
-  <h1>Browse</h1>
+  <h1 class="browse">Browse</h1>
       <div class="TButtons">
         <a class="white" href="#">
           <p><span class="bg"></span><span class="base"></span><span class="text"
@@ -58,15 +57,15 @@ require "php/config.php";
         </a>
         <a class="white" href="#">
           <p><span class="bg"></span><span class="base"></span><span class="text"
-              onclick="getVideo(3,`Result`)">Gameplay</span></p>
+              onclick="getVideo(3,`Result`)">Tutorials</span></p>
         </a>
         <a class="white" href="#">
           <p><span class="bg"></span><span class="base"></span><span class="text"
-              onclick="getVideo(4,`Result`)">Gameplay</span></p>
+              onclick="getVideo(4,`Result`)">Ragequits</span></p>
         </a>
         <a class="white" href="#">
           <p><span class="bg"></span><span class="base"></span><span class="text"
-              onclick="getVideo(0,`Result`)">Gameplay</span></p>
+              onclick="getVideo(0,`Result`)">Most Watched</span></p>
         </a>
       </a></div>
 
