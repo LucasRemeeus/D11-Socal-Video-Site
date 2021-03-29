@@ -47,7 +47,6 @@ require "php/config.php";
   <!-- Main content -->
   <div class="container-fluid col-10 mt-3 container">
   <h1>Browse</h1>
-    <ul class="row">
       <div class="TButtons">
         <a class="white" href="#">
           <p><span class="bg"></span><span class="base"></span><span class="text"
@@ -69,8 +68,7 @@ require "php/config.php";
           <p><span class="bg"></span><span class="base"></span><span class="text"
               onclick="getVideo(0,`Result`)">Gameplay</span></p>
         </a>
-        </a></div>
-    </ul>
+      </a></div>
 
 
 
