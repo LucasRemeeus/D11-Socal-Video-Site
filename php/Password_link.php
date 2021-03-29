@@ -27,6 +27,7 @@ $UsernamecheckResult = $Usernamecheck->get_result();
 
 if ($UsernamecheckResult->num_rows == 0 || $UsernamecheckResult->num_rows > 1) {
     echo "Sorry Email does not exist<br>";
+    header("location:../PasswordReset.php");
 }else {
 
     $ifexist = $mysqli->prepare("SELECT ID_Reset FROM passwordreset WHERE Email = ?");
@@ -35,6 +36,7 @@ if ($UsernamecheckResult->num_rows == 0 || $UsernamecheckResult->num_rows > 1) {
     $ifexistResult = $ifexist->get_result();
     if ($ifexistResult->num_rows >= 1) {
         echo "Sorry already send a email<br>";
+        header("location:../PasswordReset.php");
     }else{
 
         $Usernamecheck->close();
