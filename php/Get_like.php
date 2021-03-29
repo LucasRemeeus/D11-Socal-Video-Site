@@ -34,10 +34,10 @@ if($_SESSION['Loggedin'] == true ){
 }else{
 ?>
     <div class="col-sm">
-        <button ><?php echo $Likes; ?> Like</button>
+        <button class="like"><?php echo $Likes; ?> Like</button>
     </div>
     <div class="col-sm">
-        <button ><?php echo $Dislikes; ?> Dislike</button>
+        <button class="like"><?php echo $Dislikes; ?> Dislike</button>
     </div>
     <?php
 }
