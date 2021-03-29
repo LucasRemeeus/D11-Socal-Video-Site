@@ -102,6 +102,7 @@ require "php/config.php";
       <div class="container-fluid container-vid">
         <div class="row">
           <h3>Followed</h3>
+          
           <div id="Followed">
             <?php
 
@@ -113,15 +114,64 @@ require "php/config.php";
 
                             while ($Followed = $getVideoFollowResult -> fetch_assoc())
                       {
+                        $getlikes = $mysqli -> prepare("SELECT COUNT(`ID_Like`) FROM `like` where ID_Video = ? and likes = 1");
+                        $getlikes -> bind_param('i', $Followed['ID_Video']);
+                        $getlikes -> execute();
+                        $getlikes -> bind_result($Likes);
+                        $getlikes -> fetch();
+                        $getlikes -> store_result();
+                        $getlikes ->close();
+
+                        $getlikes = $mysqli -> prepare("SELECT COUNT(`ID_Like`) FROM `like` where ID_Video = ? and likes = 0");
+                        $getlikes -> bind_param('i', $Followed['ID_Video']);
+                        $getlikes -> execute();
+                        $getlikes -> bind_result($Dislikes);
+                        $getlikes -> fetch();
+                        $getlikes -> store_result();
+                        $getlikes ->close();
+
+                        $getuser = $mysqli -> prepare("SELECT Username FROM `user` where ID_User = ?");
+                        $getuser -> bind_param('i', $Followed['ID_User']);
+                        $getuser -> execute();
+                        $getuser -> bind_result($Username);
+                        $getuser -> fetch();
+                        $getuser -> store_result();
+                        $getuser ->close();
                           ?>
-            <a href="watch.php?watch=<?php echo $Followed['ID_Video'] ?>">
-              <div class="col-md vid">
-                <div class="titelText">
-                  <h2><?php echo $Followed['Title'] ?></h2><br>
+            <ul class="CARDS">
+
+<li class="booking-card" style="background-image: src:upload/<?php echo $Followed['Video'] ?>"  >
+
+<video width="100%" height="250px" src="upload/<?php echo $Followed['Video']?>">
+
+</video>
+    <div class="book-container">
+        <div class="content">
+            <a href="watch.php?watch=<?php echo $Followed['ID_Video'] ?>"><button class="btn">Watch</button></a>
+        </div>
+    </div>
+    <div class="informations-container">
+        <h2 class="title"><?php echo $Followed['Title'] ?></h2>
+        <p class="sub-title"><?php echo $Username ?></p>
+        <div class="more-information">
+            <div class="info-and-date-container">
+                <div class="box info">
+                    <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                    </svg>
+                    <p>Views: <?php echo $Followed['Views'] ?></p>
                 </div>
-                <video width="100%" src="upload/<?php echo $Followed['Video']?>"></video>
-              </div>
-            </a>
+                <div class="box date">
+                    <p><?php echo $Likes?> Likes</p>
+                    <p><?php echo $Dislikes?> Dislikes</p>
+                </div>
+            </div>
+            <p class="disclaimer"></p>
+        </div>
+    </div>
+</li>
+</ul>
             <?php
                       }
                       ?>
@@ -142,15 +192,66 @@ require "php/config.php";
 
                       while ($Followed = $getVideoFollowResult -> fetch_assoc())
                       {
+                        $getlikes = $mysqli -> prepare("SELECT COUNT(`ID_Like`) FROM `like` where ID_Video = ? and likes = 1");
+                        $getlikes -> bind_param('i', $Followed['ID_Video']);
+                        $getlikes -> execute();
+                        $getlikes -> bind_result($Likes);
+                        $getlikes -> fetch();
+                        $getlikes -> store_result();
+                        $getlikes ->close();
+                        
+                        $getlikes = $mysqli -> prepare("SELECT COUNT(`ID_Like`) FROM `like` where ID_Video = ? and likes = 0");
+                        $getlikes -> bind_param('i', $Followed['ID_Video']);
+                        $getlikes -> execute();
+                        $getlikes -> bind_result($Dislikes);
+                        $getlikes -> fetch();
+                        $getlikes -> store_result();
+                        $getlikes ->close();
+
+                        $getuser = $mysqli -> prepare("SELECT Username FROM `user` where ID_User = ?");
+                        $getuser -> bind_param('i', $Followed['ID_User']);
+                        $getuser -> execute();
+                        $getuser -> bind_result($Username);
+                        $getuser -> fetch();
+                        $getuser -> store_result();
+                        $getuser ->close();
+
                           ?>
-            <a href="watch.php?watch=<?php echo $Followed['ID_Video'] ?>">
-              <div class="col-md vid">
-                <div class="titelText">
-                  <h2><?php echo $Followed['Title'] ?></h2><br>
+            
+<ul class="CARDS">
+
+    <li class="booking-card" style="background-image: src:upload/<?php echo $Followed['Video'] ?>"  >
+
+    <video width="100%" height="250px" src="upload/<?php echo $Followed['Video']?>">
+    
+    </video>
+        <div class="book-container">
+            <div class="content">
+                <a href="watch.php?watch=<?php echo $Followed['ID_Video'] ?>"><button class="btn">Watch</button></a>
+            </div>
+        </div>
+        <div class="informations-container">
+            <h2 class="title"><?php echo $Followed['Title'] ?></h2>
+            <p class="sub-title"><?php echo $Username ?></p>
+            <div class="more-information">
+                <div class="info-and-date-container">
+                    <div class="box info">
+                        <svg class="icon" style="width:24px;height:24px" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+                        </svg>
+                        <p>Views: <?php echo $Followed['Views'] ?></p>
+                    </div>
+                    <div class="box date">
+                        <p><?php echo $Likes?> Likes</p>
+                        <p><?php echo $Dislikes?> Dislikes</p>
+                    </div>
                 </div>
-                <video width="100%" src="upload/<?php echo $Followed['Video']?>"></video>
-              </div>
-            </a>
+                <p class="disclaimer"></p>
+            </div>
+        </div>
+    </li>
+</ul>
             <?php
                       }
                       ?>
