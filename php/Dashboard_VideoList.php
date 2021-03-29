@@ -35,6 +35,14 @@ $result = $statement->get_result();
                 $getlikes -> fetch();
                 $getlikes -> store_result();
                 $getlikes ->close();
+
+                $getlikes = $mysqli -> prepare("SELECT COUNT(`ID_Comment`) FROM `comment` where ID_Video = ?");
+                $getlikes -> bind_param('i', $row['ID_Video']);
+                $getlikes -> execute();
+                $getlikes -> bind_result($commentcount);
+                $getlikes -> fetch();
+                $getlikes -> store_result();
+                $getlikes ->close();
                 ?>
                 
                 <tr>
@@ -43,7 +51,7 @@ $result = $statement->get_result();
                     <td><a type="button" onclick="RenameVideo(ID_Video = <?php echo $row['ID_Video']?>, Title = '<?php echo $row['Title']?>')"><img src="img/pen.png" width="15%"></a></td>
                     <td><a type="button" onclick="DeleteVideo(ID_Video = <?php echo $row['ID_Video']?>)"><img src="img/prullenbak.png" width="15%"></a></td>
                     <td><?php echo $row['Views']?></td>
-                    <td>Comments</td>
+                    <td><?php echo $commentcount ?></td>
                     <td><?php echo $Likes?></td>
                     <td><?php echo $Dislikes?></td>
                 </tr>
